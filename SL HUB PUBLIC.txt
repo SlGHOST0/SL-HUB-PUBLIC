@@ -2065,6 +2065,6 @@ Credits:AddLabel("Join My Discord Server").TextSize = 30
 
 Credits:AddLabel(" ").TextSize = 30
 
-Credits:AddLabel("Made for SL_CLAN CLAN OWNED BY SL_GHOST").TextSize = 30
+Credits:AddLabel("Made for SL_CLAN CLAN OWNED BY TA7_GHOST👻").TextSize = 30
 
-Credits:AddLabel("Key SYSTEM BY SL_GHOST👻").TextSize = 30
+Credits:AddLabel("Key SYSTEM BY TA7_GHOST👻").TextSize = 30
