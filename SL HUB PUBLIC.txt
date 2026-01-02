@@ -2057,7 +2057,7 @@ Credits:AddLabel("SL HUB").TextSize = 30
 
 Credits:AddLabel(" ").TextSize = 30
 
-Credits:AddLabel("Made by TA7_GHOST"👻).TextSize = 30
+Credits:AddLabel("Made by TA7_GHOST👻").TextSize = 30
 
 Credits:AddLabel(" ").TextSize = 30
 
