@@ -1,0 +1,671 @@
+local http_get = game.HttpGetAsync or game.HttpGet
+local fluent_code = http_get(game, "https://github.com/ActualMasterOogway/Fluent-Renewed/releases/latest/download/Fluent.luau")
+local Fluent = loadstring(fluent_code)()
+local save_manager = loadstring(http_get(game, "https://raw.githubusercontent.com/ActualMasterOogway/Fluent-Renewed/master/Addons/SaveManager.luau"))()
+local interface_manager = loadstring(http_get(game, "https://raw.githubusercontent.com/ActualMasterOogway/Fluent-Renewed/master/Addons/InterfaceManager.luau"))()
+
+local Window = Fluent:CreateWindow({
+    Title = "ZenX Hub",
+    SubTitle = "By ZORO",
+    TabWidth = 125,
+    Size = UDim2.fromOffset(830, 525),
+    MinSize = Vector2.new(470, 380),
+    Resize = true,
+    Acrylic = true,
+    Theme = "DuoTone Dark Sea",
+    MinimizeKey = Enum.KeyCode.RightControl,
+})
+
+local tabs = {
+    Main = Window:CreateTab({ Title = "Main", Icon = "phosphor-house-bold" }),
+    AutoBuy = Window:CreateTab({ Title = "Auto Buy", Icon = "phosphor-shopping-cart-bold" }),
+    AutoStuff = Window:CreateTab({ Title = "Auto Stuff", Icon = "phosphor-robot-bold" }),
+    AutoFarm = Window:CreateTab({ Title = "Auto Farm", Icon = "phosphor-robot-bold" }),
+    Rebirth = Window:CreateTab({ Title = "Rebirth", Icon = "phosphor-arrows-clockwise-bold" }),
+    Killer = Window:CreateTab({ Title = "Killer", Icon = "phosphor-sword-bold" }),
+    Crystals = Window:CreateTab({ Title = "Crystals", Icon = "phosphor-diamond-bold" }),
+    Teleport = Window:CreateTab({ Title = "Teleport", Icon = "phosphor-dog-bold" }),
+    Stats = Window:CreateTab({ Title = "Stats", Icon = "phosphor-sparkle-bold" }),
+    Misc = Window:CreateTab({ Title = "Misc", Icon = "phosphor-map-pin-bold" }),
+    Settings = Window:CreateTab({ Title = "Settings", Icon = "phosphor-sliders-bold" }),
+}
+
+local Config = {
+    SizeChanger = 2,
+    AutoSize = false,
+    SpeedChanger = 125,
+    AutoSpeed = false,
+    WalkOnWater = false,
+    AutoFarm = {},
+    AutoRebirthTarget = false,
+    AutoRebirthInfinite = false,
+    TargetRebirth = 1,
+    AutoSize1 = false,
+    KingTeleport = false,
+    FrameToggle = false,
+    ToolSpeed = false,
+    KillV2 = false,
+    SelectedTarget = nil,
+}
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local function getPlayerByName(name)
+    if not name or name == "" then return nil end
+    local p = Players:FindFirstChild(name) or Players:GetPlayers() and table.find(Players:GetPlayers(), function(pl) return pl.Name == name or pl.DisplayName == name end)
+    if type(p) == "number" then
+        return Players:GetPlayers()[p]
+    end
+    return Players:FindFirstChild(name)
+end
+
+do
+    local section = tabs.Main:CreateSection("Basic Controls")
+
+    section:AddInput("SizeChanger", {
+        Title = "Size Changer",
+        Description = "Enter Size",
+        Default = "2",
+        Placeholder = "Type here...",
+        Numeric = true,
+        Finished = true,
+        Callback = function(value)
+            local num = tonumber(value) or 2
+            Config.SizeChanger = num
+            if LocalPlayer and LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") then
+                LocalPlayer.Character.Humanoid.BodyScale.Scale.Value = num
+            end
+        end,
+    })
+
+    section:AddToggle("AutoSize", {
+        Title = "Auto Set Size",
+        Description = "Auto Set ur Choosed Size",
+        Default = false,
+        Callback = function(enabled)
+            Config.AutoSize = enabled
+            if enabled then
+                task.spawn(function()
+                    while Config.AutoSize do
+                        task.wait(0.5)
+                        if LocalPlayer and LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") then
+                            pcall(function()
+                                LocalPlayer.Character.Humanoid.BodyScale.Scale.Value = Config.SizeChanger
+                            end)
+                        end
+                    end
+                end)
+            end
+        end,
+    ,
+    })
+
+    section:AddInput("SpeedChanger", {
+        Title = "Speed Changer",
+        Description = "Enter Speed",
+        Default = "125",
+        Placeholder = "Enter Speed",
+        Numeric = true,
+        Finished = true,
+        Callback = function(value)
+            Config.SpeedChanger = tonumber(value) or 125
+            if LocalPlayer and LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") then
+                LocalPlayer.Character.Humanoid.WalkSpeed = Config.SpeedChanger
+            end
+        end,
+    })
+
+    section:AddToggle("AutoSpeed", {
+        Title = "Auto Set Speed",
+        Description = "Auto Set ur Choosed Speed",
+        Default = false,
+        Callback = function(enabled)
+            Config.AutoSpeed = enabled
+            if enabled then
+                task.spawn(function()
+                    while Config.AutoSpeed do
+                        task.wait(0.5)
+                        if LocalPlayer and LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") then
+                            pcall(function()
+                                LocalPlayer.Character.Humanoid.WalkSpeed = Config.SpeedChanger
+                            end)
+                        end
+                    end
+                end)
+            end
+        end,
+    })
+
+    section:AddButton("FreeAutoLiftGamepass", {
+        Title = "Free AutoLift Gamepass",
+        Callback = function()
+            pcall(function()
+                local rs = game:GetService("ReplicatedStorage")
+                local rf = rs:FindFirstChild("RequestGamepass") or rs:FindFirstChild("GamepassRemote")
+                if rf and rf.FireServer then rf:FireServer("AutoLift") end
+            end)
+        end,
+    })
+
+    section:AddToggle("WalkOnWater", {
+        Title = "Walk on Water",
+        Description = "",
+        Default = false,
+        Callback = function(enabled)
+            Config.WalkOnWater = enabled
+            if enabled then
+                task.spawn(function()
+                    while Config.WalkOnWater do
+                        task.wait(0.5)
+                        pcall(function()
+                            local char = LocalPlayer.Character
+                            if char and char:FindFirstChild("HumanoidRootPart") then
+                                local hrp = char.HumanoidRootPart
+                                if hrp.Position.Y < workspace.FallenPartsDestroyHeight + 100 then
+                                    hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)
+                                end
+                            end
+                        end)
+                    end
+                end)
+            end
+        end,
+    })
+end
+
+do
+    local farmTab = tabs.AutoFarm
+    local farmSection = farmTab:CreateSection("AutoFarm")
+
+    farmSection:AddToggle("Weight", {
+        Title = "Auto Weight",
+        Description = "Auto Lift Weight",
+        Default = false,
+        Callback = function(enabled) Config.AutoFarm.Weight = enabled end,
+    })
+    farmSection:AddToggle("Pushups", {
+        Title = "Auto Pushups",
+        Description = "Auto Lift Pushups",
+        Default = false,
+        Callback = function(enabled) Config.AutoFarm.Pushups = enabled end,
+    })
+    farmSection:AddToggle("Handstands", {
+        Title = "Auto Handstands",
+        Description = "Auto Lift Handstands",
+        Default = false,
+        Callback = function(enabled) Config.AutoFarm.Handstands = enabled end,
+    })
+    farmSection:AddToggle("Situps", {
+        Title = "Auto Situps",
+        Description = "Auto Lift Situps",
+        Default = false,
+        Callback = function(enabled) Config.AutoFarm.Situps = enabled end,
+    })
+    farmSection:AddToggle("Punch", {
+        Title = "Auto Punch",
+        Description = "Auto Punch",
+        Default = false,
+        Callback = function(enabled) Config.AutoFarm.Punch = enabled end,
+    })
+    farmSection:AddToggle("ToolSpeed", {
+        Title = "Fast Tools",
+        Description = "Fast Tools..., What u didn't get.",
+        Default = false,
+        Callback = function(enabled) Config.ToolSpeed = enabled end,
+    })
+
+    local rockSection = farmTab:CreateSection("Rock Farm")
+    local rockLocations = {
+        TinyIsland = "Tiny Island",
+        StarterIsland = "Starter Island",
+        LegendBeach = "Legend Beach",
+        FrostGym = "Frost Gym",
+        MythicalGym = "Mythical Gym",
+        EternalGym = "Eternal Gym",
+        LegendGym = "Legend Gym",
+        MuscleKingGym = "Muscle King Gym",
+        AncientJungle = "Ancient Jungle",
+    }
+
+    for key, name in pairs(rockLocations) do
+        rockSection:AddToggle(key, {
+            Title = ("Farm %s"):format(name),
+            Description = ("Farm rocks at %s"):format(name),
+            Default = false,
+            Callback = (function(loc)
+                return function(enabled)
+                    Config.AutoFarm[loc] = enabled
+                end
+            end)(key)
+        })
+    end
+
+    task.spawn(function()
+        while true do
+            task.wait(0.6)
+            if LocalPlayer and LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+                if Config.AutoFarm.Weight then
+                    pcall(function()
+                        local reps = game:GetService("ReplicatedStorage")
+                        local interact = reps:FindFirstChild("LiftWeightEvent")
+                        if interact and interact.FireServer then
+                            interact:FireServer()
+                        end
+                    end)
+                end
+
+                if Config.ToolSpeed then
+                    pcall(function()
+                        local backpack = LocalPlayer.Backpack
+                        for _, tool in pairs(backpack:GetChildren()) do
+                            if tool:IsA("Tool") then
+                                if tool:FindFirstChild("Handle") and tool:FindFirstChild("Remote") then
+                                    pcall(function() tool.Remote:FireServer("SetSpeed", 0.01) end)
+                                end
+                            end
+                        end
+                    end)
+                end
+
+                for nameKey, _ in pairs(rockLocations) do
+                    if Config.AutoFarm[nameKey] then
+                        pcall(function()
+                            local rocks = workspace:FindFirstChild("Rocks")
+                            if rocks then
+                                local rock = rocks:FindFirstChild(nameKey) or rocks:FindFirstChildWhichIsA("Part")
+                                if rock and LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("LeftHand") then
+                                    firetouchinterest(rock, LocalPlayer.Character.LeftHand, 0)
+                                    firetouchinterest(rock, LocalPlayer.Character.LeftHand, 1)
+                                end
+                            end
+                        end)
+                    end
+                end
+            end
+        end
+    end)
+end
+
+do
+    local rebirthTab = tabs.Rebirth
+    local autoRebirthSection = rebirthTab:CreateSection("AutoRebirth")
+
+    local statsParagraph = rebirthTab:CreateParagraph("RebirthStats", {
+        Title = "Rebirth Statistics",
+        Content = "Loading stats...",
+        TitleAlignment = "Left",
+        ContentAlignment = Enum.TextXAlignment.Left,
+    })
+
+    local function updateRebirthStats()
+        pcall(function()
+            local p = Players.LocalPlayer
+            local leaderstats = p and p:FindFirstChild("leaderstats")
+            if leaderstats then
+                local reb = leaderstats:FindFirstChild("Rebirths")
+                local str = leaderstats:FindFirstChild("Strength")
+                local kills = leaderstats:FindFirstChild("Kills")
+                local brawls = leaderstats:FindFirstChild("Brawls")
+                local content = {}
+                table.insert(content, "Rebirths: " .. (reb and tostring(reb.Value) or "0"))
+                table.insert(content, "Strength: " .. (str and tostring(str.Value) or "0"))
+                table.insert(content, "Kills: " .. (kills and tostring(kills.Value) or "0"))
+                table.insert(content, "Brawls: " .. (brawls and tostring(brawls.Value) or "0"))
+                statsParagraph:SetContent(table.concat(content, "\n"))
+            end
+        end)
+    end
+
+    if LocalPlayer and LocalPlayer:FindFirstChild("leaderstats") then
+        local reb = LocalPlayer.leaderstats:FindFirstChild("Rebirths")
+        if reb and reb.Changed then
+            reb.Changed:Connect(updateRebirthStats)
+            updateRebirthStats()
+        else
+            updateRebirthStats()
+        end
+    else
+        spawn(function()
+            repeat task.wait(0.5) until LocalPlayer and LocalPlayer:FindFirstChild("leaderstats")
+            local reb = LocalPlayer.leaderstats:FindFirstChild("Rebirths")
+            if reb and reb.Changed then
+                reb.Changed:Connect(updateRebirthStats)
+            end
+            updateRebirthStats()
+        end)
+    end
+
+    autoRebirthSection:AddInput("TargetRebirth", {
+        Title = "Target Rebirth Amount",
+        Description = "Enter your target rebirth goal",
+        Default = "1",
+        Placeholder = "Enter amount...",
+        Numeric = true,
+        Finished = true,
+        Callback = function(value)
+            Config.TargetRebirth = tonumber(value) or 1
+        end,
+    })
+
+    autoRebirthSection:AddToggle("AutoRebirthTarget", {
+        Title = "Auto Rebirth (Target)",
+        Description = "Automatically rebirth until target is reached",
+        Default = false,
+        Callback = function(enabled)
+            Config.AutoRebirthTarget = enabled
+            if enabled then
+                task.spawn(function()
+                    while Config.AutoRebirthTarget do
+                        task.wait(0.6)
+                        pcall(function()
+                            local leaderstats = LocalPlayer:FindFirstChild("leaderstats")
+                            local reb = leaderstats and leaderstats:FindFirstChild("Rebirths")
+                            if reb and reb.Value >= Config.TargetRebirth then
+                                Config.AutoRebirthTarget = false
+                                break
+                            end
+                            local rs = game:GetService("ReplicatedStorage")
+                            local rebRemote = rs:FindFirstChild("RebirthRemote") or rs:FindFirstChild("RequestRebirth")
+                            if rebRemote and rebRemote.FireServer then
+                                rebRemote:FireServer()
+                            end
+                        end)
+                    end
+                end)
+            end
+        end,
+    })
+
+    autoRebirthSection:AddToggle("AutoRebirthInfinite", {
+        Title = "Auto Rebirth (Infinite)",
+        Description = "Continuously rebirth without stopping",
+        Default = false,
+        Callback = function(enabled)
+            Config.AutoRebirthInfinite = enabled
+            if enabled then
+                task.spawn(function()
+                    while Config.AutoRebirthInfinite do
+                        task.wait(1)
+                        pcall(function()
+                            local rs = game:GetService("ReplicatedStorage")
+                            local rebRemote = rs:FindFirstChild("RebirthRemote") or rs:FindFirstChild("RequestRebirth")
+                            if rebRemote and rebRemote.FireServer then
+                                rebRemote:FireServer()
+                            end
+                        end)
+                    end
+                end)
+            end
+        end,
+    })
+
+    autoRebirthSection:AddToggle("AutoSize1", {
+        Title = "Auto Size 1",
+        Description = "Sets character size to 1 continuously",
+        Default = false,
+        Callback = function(enabled)
+            Config.AutoSize1 = enabled
+            if enabled then
+                task.spawn(function()
+                    while Config.AutoSize1 do
+                        task.wait(0.5)
+                        pcall(function()
+                            if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") then
+                                LocalPlayer.Character.Humanoid.BodyScale.Scale.Value = 1
+                            end
+                        end)
+                    end
+                end)
+            end
+        end,
+    })
+
+    autoRebirthSection:AddToggle("KingTeleport", {
+        Title = "Auto Teleport to King",
+        Description = "Continuously teleport to Muscle King",
+        Default = false,
+        Callback = function(enabled)
+            Config.KingTeleport = enabled
+            if enabled then
+                task.spawn(function()
+                    while Config.KingTeleport do
+                        task.wait(0.4)
+                        pcall(function()
+                            local dest = workspace:FindFirstChild("MuscleKingPosition") or workspace:FindFirstChild("MuscleKing")
+                            if dest and LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+                                LocalPlayer.Character.HumanoidRootPart.CFrame = dest:IsA("BasePart") and dest.CFrame or (dest.Position and CFrame.new(dest.Position))
+                            end
+                        end)
+                    end
+                end)
+            end
+        end,
+    })
+
+    autoRebirthSection:AddToggle("FrameToggle", {
+        Title = "Hide All Frames",
+        Description = "Toggle ON to hide all game frames",
+        Default = false,
+        Callback = function(enabled)
+            Config.FrameToggle = enabled
+            pcall(function()
+                for _, gui in pairs(game:GetService("CoreGui"):GetChildren()) do
+                    if gui:IsA("ScreenGui") then
+                        gui.Enabled = not enabled
+                    end
+                end
+            end)
+        end,
+    })
+end
+
+do
+    local killerTab = tabs.Killer
+    local autoKillSection = killerTab:CreateSection("Auto Kill")
+
+    local killLoops = {}
+    local function startAutoKill(targetPlayer)
+        if not targetPlayer then return end
+        if killLoops[targetPlayer.Name] then return end
+        killLoops[targetPlayer.Name] = true
+        task.spawn(function()
+            while killLoops[targetPlayer.Name] and targetPlayer.Parent do
+                task.wait(0.5)
+                pcall(function()
+                    local remote = workspace:FindFirstChild("AttackRemote") or game:GetService("ReplicatedStorage"):FindFirstChild("AttackRemote")
+                    if remote and remote.FireServer then
+                        remote:FireServer(targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart"))
+                    end
+                end)
+            end
+        end)
+    end
+    local function stopAutoKill(targetPlayer)
+        if targetPlayer and killLoops[targetPlayer.Name] then
+            killLoops[targetPlayer.Name] = nil
+        end
+    end
+
+    autoKillSection:AddToggle("KillV2Player", {
+        Title = "Start Killing",
+        Default = false,
+        Callback = function(enabled)
+            Config.KillV2 = enabled
+            if enabled and Config.SelectedTarget then
+                local target = getPlayerByName(Config.SelectedTarget)
+                if target then startAutoKill(target) end
+            else
+                if Config.SelectedTarget then
+                    local targ = getPlayerByName(Config.SelectedTarget)
+                    if targ then stopAutoKill(targ) end
+                end
+            end
+        end,
+    })
+
+    killerTab:AddDropdown("PlayerList", {
+        Title = "Select Target",
+        Description = "Choose player to target",
+        Values = {},
+        Multi = false,
+        Default = nil,
+        Callback = function(value)
+            Config.SelectedTarget = value
+            if Config.KillV2 then
+                local target = getPlayerByName(value)
+                if target then startAutoKill(target) end
+            end
+        end,
+    })
+
+    local function refreshPlayerList(drop)
+        local players = Players:GetPlayers()
+        local names = {}
+        for _, p in pairs(players) do table.insert(names, p.Name) end
+        drop:SetValues(names)
+    end
+
+    task.spawn(function()
+        for i = 1, 5 do task.wait(0.1) end
+        pcall(function() refreshPlayerList(tabs.Killer.PlayerList or tabs.Killer) end)
+        Players.PlayerAdded:Connect(function() pcall(function() refreshPlayerList(tabs.Killer.PlayerList or tabs.Killer) end) end)
+        Players.PlayerRemoving:Connect(function() pcall(function() refreshPlayerList(tabs.Killer.PlayerList or tabs.Killer) end) end)
+    end)
+end
+
+do
+    local teleportTab = tabs.Teleport
+    local teleButtons = {
+        { Name = "Inferno", Desc = "Teleport to Inferno", Pos = CFrame.new(100, 20, 0) },
+        { Name = "Legend", Desc = "Teleport to Legend", Pos = CFrame.new(200, 20, 0) },
+        { Name = "Muscle King", Desc = "Teleport to Muscle King", Pos = CFrame.new(300, 20, 0) },
+    }
+
+    for _, info in ipairs(teleButtons) do
+        teleportTab:CreateButton({
+            Title = info.Name,
+            Description = info.Desc,
+            Callback = function()
+                pcall(function()
+                    if LocalPlayer and LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+                        LocalPlayer.Character.HumanoidRootPart.CFrame = info.Pos
+                    end
+                end)
+            end,
+        })
+    end
+end
+
+do
+    local statsTab = tabs.Stats
+    statsTab:CreateParagraph("PlayerTracking", {
+        Title = "Player Tracking Stats",
+        Content = "No player selected",
+        TitleAlignment = "Left",
+        ContentAlignment = Enum.TextXAlignment.Left,
+    })
+
+    statsTab:CreateInput("PlayerTracker", {
+        Title = "Track Player Stats",
+        Description = "Enter username or display name",
+        Default = "",
+        Placeholder = "Enter player name...",
+        Finished = true,
+        Callback = function(name)
+            local p = getPlayerByName(name)
+            if not p then
+                statsTab:SetParagraphContent("PlayerTracking", "Player not found")
+                return
+            end
+            local s = {}
+            local ls = p:FindFirstChild("leaderstats")
+            if ls then
+                for _, stat in pairs(ls:GetChildren()) do
+                    table.insert(s, stat.Name .. ": " .. tostring(stat.Value))
+                end
+            end
+            statsTab:SetParagraphContent("PlayerTracking", table.concat(s, "\n"))
+        end,
+    })
+end
+
+do
+    local autoStuffTab = tabs.AutoStuff
+    autoStuffTab:CreateToggle("AutoTrainsToggle", {
+        Title = "Auto Trains",
+        Description = "Auto Trains (per location)",
+        Default = false,
+        Callback = function(enabled)
+            Config.AutoStuff = enabled
+        end,
+    })
+
+    local locations = {
+        "Starter Island", "Legend Beach", "Frost Gym", "Mythical Gym", "Eternal Gym", "Legend Gym", "Muscle King Gym", "Jungle Gym"
+    }
+    for _, loc in ipairs(locations) do
+        local nameKey = ("Auto_%s"):gsub("%s", "")
+        autoStuffTab:AddToggle(loc, {
+            Title = "Farm " .. loc,
+            Description = "Auto Trains " .. loc,
+            Default = false,
+            Callback = function(enabled)
+                Config.AutoFarm[loc] = enabled
+            end,
+        })
+    end
+end
+
+do
+    local settingsTab = tabs.Settings
+    settingsTab:CreateParagraph("SettingsInfo", {
+        Title = "Settings",
+        Content = "Save and load your configuration with the save manager.",
+        TitleAlignment = "Left",
+        ContentAlignment = Enum.TextXAlignment.Left,
+    })
+
+    settingsTab:CreateButton({
+        Title = "Save Config",
+        Callback = function()
+            pcall(function()
+                save_manager:Save("ZenX_Config", Config)
+            end)
+        end,
+    })
+
+    settingsTab:CreateButton({
+        Title = "Load Config",
+        Callback = function()
+            pcall(function()
+                local loaded = save_manager:Load("ZenX_Config") or {}
+                for k, v in pairs(loaded) do Config[k] = v end
+            end)
+        end,
+    })
+end
+
+function gettool()
+    local backpack = LocalPlayer and LocalPlayer:FindFirstChild("Backpack")
+    if backpack then
+        for _, it in pairs(backpack:GetChildren()) do
+            if it:IsA("Tool") then return it end
+        end
+    end
+    if LocalPlayer and LocalPlayer.Character then
+        for _, it in pairs(LocalPlayer.Character:GetChildren()) do
+            if it:IsA("Tool") then return it end
+        end
+    end
+    return nil
+end
+
+task.spawn(function()
+    while true do
+        task.wait(1)
+        pcall(function()
+            if LocalPlayer and LocalPlayer:FindFirstChild("leaderstats") then
+            end
+        end)
+    end
+end)
