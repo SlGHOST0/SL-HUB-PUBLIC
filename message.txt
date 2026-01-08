@@ -1,5 +1,5 @@
 
-local v1 = loadstring(game:HttpGet("https://raw.githubusercontent.com/Moha-space/elerium-v2-ui-library/refs/heads/main/Library", true))():AddWindow("                                    SL HUB PUBLIC | Deobfuscated by TA7_GHOST | PUBLIC ", {
+local v1 = loadstring(game:HttpGet("https://raw.githubusercontent.com/Moha-space/elerium-v2-ui-library/refs/heads/main/Library", true))():AddWindow("                                    SL HUB PUBLIC | MADE by TA7_GHOST |  ", {
     main_color = Color3.fromRGB(139, 0, 0),
     min_size = Vector2.new(615, 685),
     can_resize = false,
@@ -1671,9 +1671,7 @@ settingsTab:AddLabel("\226\149\144\226\149\144\226\149\144\226\149\144 ANTI AFKS
 settingsTab:AddButton("Enable Anti-AFK", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/hassanxzayn-lua/Anti-afk/main/antiafkbyhassanxzyn"))()
 end)
-settingsTab:AddButton("Enable Anti-AFK v2 by TA7_GHOST ", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Moha-space/SPACE-HUB-/refs/heads/main/New%20anti%20afk%20v2"))()
-end)
+
 settingsTab:AddLabel("\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144\226\149\144")
 settingsTab:AddLabel("\226\149\144\226\149\144\226\149\144\226\149\144 WALK ON WATER \226\149\144\226\149\144\226\149\144\226\149\144")
 local vu389 = {}
@@ -1783,4 +1781,5 @@ v409:Add("Day")
 v409:Add("Alora")
 
 v409:Add("2nd Alora Night")
+
 
