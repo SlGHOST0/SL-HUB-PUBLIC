@@ -1,7 +1,5 @@
-Source code
--- Edit this script by changing the code 
--- If you see any comment marks "-- " that means you can edit
--- Tutorial Script Are Here: loadstring(game:HttpGet("https://gist.githubusercontent.com/Angelo-Gitland/c1732ecf40925660d4dceb9cdc0b83e5/raw/bd572b3f9e45427d09ad9b907bf6f5446f614ad3/Key%2520System%2520Gui%2520Tutorials"))()
+repeat task.wait() until game:IsLoaded()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/Angelo-Gitland/c1732ecf40925660d4dceb9cdc0b83e5/raw/bd572b3f9e45427d09ad9b907bf6f5446f614ad3/Key%2520System%2520Gui%2520Tutorials"))()
 
 local player = game.Players.LocalPlayer
 local gui = Instance.new("ScreenGui")
