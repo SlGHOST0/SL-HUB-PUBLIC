@@ -129,7 +129,7 @@ repeat task.wait() until getgenv().KEY_PASSED == true
 
 local v1 = 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Moha-space/elerium-v2-ui-library/refs/heads/main/Library", 
-true))():AddWindow("              SL HUB PUBLIC ||MUSCLE LEGENDS ||WELCOME  " .. DisplayName; ", {
+true))():AddWindow("              SL HUB PUBLIC ||MUSCLE LEGENDS ||WELCOME   .. DisplayName; ", {
     main_color = Color3.fromRGB(0, 0, 0),
     min_size = Vector2.new(615, 685),
     can_resize = false,
@@ -142,7 +142,7 @@ v2:AddLabel("\227\128\142 OWNER OF THIS SCRIPT \227\128\143  TA7 _ GHOST ")
 v2:AddLabel("Script Made By ", {
     TextColor3 = Color3.fromRGB(255, 255, 255)
 })
-local vu3 = v2:AddLabel("                                               TA7 || GHOST")
+local vu3 = v2:AddLabel("                                              [ TA7] GHOST")
 task.spawn(function()
     local v4 = 0
     while true do
