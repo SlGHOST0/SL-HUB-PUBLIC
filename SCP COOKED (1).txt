@@ -1,0 +1,3255 @@
+local var1 = game:HttpGet("https://raw.githubusercontent.com/Moha-space/elerium-v2-ui-library/refs/heads/main/Library", true);
+local var2 = loadstring(var1);
+local Loaded_Var1 = var2();
+local Players = game.Players;
+local LocalPlayer = Players.LocalPlayer;
+local DisplayName = LocalPlayer.DisplayName;
+local var3 = (DisplayName and 12864155); -- 12864155
+local var4 = (var3 or 10223776);
+local var5 = "                             PRIVATE SCRIPT  DADDY -  " .. DisplayName;
+-- "                             PRIVATE SCRIPT  DADDY -  cbEPnPGk"
+local Color3_FromRGB = Color3.fromRGB;
+local Color3_Value = Color3_FromRGB(0, 0, 0);
+local Vector2_New = Vector2.new;
+local Vector2_Value = Vector2_New(555, 715);
+local AddWindow = Loaded_Var1.AddWindow;
+local AddWindow_2 = Loaded_Var1:AddWindow(var5, {
+    min_size = Vector2_Value,
+    can_resize = false,
+    main_color = Color3_Value,
+    scrollable = true,
+});
+local AddTab = AddWindow_2.AddTab;
+local STATS = AddWindow_2:AddTab(" STATS ");
+Env.infoTab1 = STATS;
+local AddLabel = STATS.AddLabel;
+local _ = STATS:AddLabel("══════════════════════════════════════════════════════════════════════════════════════════");
+local AddLabel_2 = STATS.AddLabel;
+local STATS_2 = STATS:AddLabel("『 STATS 』   ");
+STATS_2.TextSize = 20;
+local AddLabel_3 = STATS.AddLabel;
+local var6 = STATS:AddLabel("Time Spent in Server: 0d 0h 0m 0s");
+local var7 = os.time();
+local Spawned = task.spawn(zHbDuGaGRlHafXctmDSqQNhEJnxoWCNy);
+local Players_2 = game.Players;
+local LocalPlayer_2 = Players.LocalPlayer;
+local Leaderstats = LocalPlayer.leaderstats;
+local Rebirths = Leaderstats.Rebirths;
+local Value = Rebirths.Value;
+local AddLabel_4 = STATS.AddLabel;
+local var8 = STATS:AddLabel("Rebirths Gained in Server: 0");
+local Spawned_2 = task.spawn(kTmpeDsNMxUfOIaqSxwamBHHdTXNDJwr);
+local AddLabel_5 = STATS.AddLabel;
+local __2 = STATS:AddLabel("════════════════════════════════════════════════════════════════════════════════════════════════════════════");
+local AddLabel_6 = STATS.AddLabel;
+local PLAYER_STATS = STATS:AddLabel("PLAYER STATS");
+PLAYER_STATS.TextSize = 16;
+local AddLabel_7 = STATS.AddLabel;
+local GAINED = STATS:AddLabel(" GAINED ");
+GAINED.TextSize = 20;
+local AddLabel_8 = STATS.AddLabel;
+local var7 = STATS:AddLabel("Amount of strength gained in this server: 0");
+local AddLabel_9 = STATS.AddLabel;
+local var8 = STATS:AddLabel("Amount of durability gained in this server: 0");
+local AddLabel_10 = STATS.AddLabel;
+local var9 = STATS:AddLabel("Amount of agility gained in this server: 0");
+local AddLabel_11 = STATS.AddLabel;
+local var10 = STATS:AddLabel("Amount of kills gained in this server: 0");
+local AddLabel_12 = STATS.AddLabel;
+local var11 = STATS:AddLabel("Amount of Evil Karma gained in this server: 0");
+local AddLabel_13 = STATS.AddLabel;
+local var12 = STATS:AddLabel("Amount of Good Karma gained in this server: 0");
+local Players_3 = game.Players;
+local LocalPlayer_3 = Players.LocalPlayer;
+local Not_LocalPlayer = not LocalPlayer;
+-- false
+local Leaderstats_2 = LocalPlayer:WaitForChild("leaderstats");
+local Not_Leaderstats_2 = not Leaderstats_2;
+-- false
+local WaitForChild = Leaderstats_2.WaitForChild;
+local Strength = Leaderstats_2:WaitForChild("Strength");
+local Durability = LocalPlayer:WaitForChild("Durability");
+local Agility = LocalPlayer:WaitForChild("Agility");
+local WaitForChild_2 = Leaderstats_2.WaitForChild;
+local Kills = Leaderstats_2:WaitForChild("Kills");
+local EvilKarma = LocalPlayer:WaitForChild("evilKarma");
+local GoodKarma = LocalPlayer:WaitForChild("goodKarma");
+local Value_2 = Strength.Value;
+-- local _ = Value_2 or (unknown_value)
+local Value_3 = Durability.Value;
+-- local _ = Value_3 or (unknown_value)
+local Value_4 = Agility.Value;
+-- local _ = Value_4 or (unknown_value)
+local Value_5 = Kills.Value;
+-- local _ = Value_5 or (unknown_value)
+local Value_6 = EvilKarma.Value;
+-- local _ = Value_6 or (unknown_value)
+local Value_7 = GoodKarma.Value;
+-- local _ = Value_7 or (unknown_value)
+local Changed = Strength.Changed;
+local Connect = Changed.Connect;
+local Connected = Changed:Connect(vZvyahEtJTOuMhqCIcSsyXOshrvnjIdd);
+local Changed_2 = Durability.Changed;
+local Connect_2 = Changed_2.Connect;
+local Connected_2 = Changed_2:Connect(vZvyahEtJTOuMhqCIcSsyXOshrvnjIdd);
+local Changed_3 = Agility.Changed;
+local Connect_3 = Changed_3.Connect;
+local Connected_3 = Changed_3:Connect(vZvyahEtJTOuMhqCIcSsyXOshrvnjIdd);
+local Changed_4 = Kills.Changed;
+local Connect_4 = Changed_4.Connect;
+local Connected_4 = Changed_4:Connect(vZvyahEtJTOuMhqCIcSsyXOshrvnjIdd);
+local Changed_5 = EvilKarma.Changed;
+local Connect_5 = Changed_5.Connect;
+local Connected_5 = Changed_5:Connect(vZvyahEtJTOuMhqCIcSsyXOshrvnjIdd);
+local Changed_6 = GoodKarma.Changed;
+local Connect_6 = Changed_6.Connect;
+local Connected_6 = Changed_6:Connect(vZvyahEtJTOuMhqCIcSsyXOshrvnjIdd);
+local Value_8 = Strength.Value;
+local var19 = Value_8 - Value_2;
+local Value_9 = Durability.Value;
+local var20 = Value_9 - Value_3;
+local Value_10 = Agility.Value;
+local var21 = Value_10 - Value_4;
+local Value_11 = Kills.Value;
+local var22 = Value_11 - Value_5;
+local Value_12 = EvilKarma.Value;
+local var23 = Value_12 - Value_6;
+local Value_13 = GoodKarma.Value;
+local var24 = Value_13 - Value_7;
+local var25 = (var19 >= 1000000000); -- nil
+local var26 = (var19 >= 1000); -- nil
+local var27 = tostring(var19);
+local var28 = "Amount of strength gained in this server: " .. var27;
+-- "Amount of strength gained in this server: var19"
+local var29 = (var20 >= 1000000000); -- nil
+local var30 = (var20 >= 1000); -- nil
+local var31 = tostring(var20);
+local var32 = "Amount of durability gained in this server: " .. var31;
+-- "Amount of durability gained in this server: var20"
+var8.Text = var32;
+local var32 = (var21 >= 1000000000); -- nil
+local var33 = (var21 >= 1000); -- nil
+local var34 = tostring(var21);
+local var35 = "Amount of agility gained in this server: " .. var34;
+-- "Amount of agility gained in this server: var21"
+var9.Text = var35;
+local var35 = (var22 >= 1000000000); -- nil
+local var36 = (var22 >= 1000); -- nil
+local var37 = tostring(var22);
+local var38 = "Amount of kills gained in this server: " .. var37;
+-- "Amount of kills gained in this server: var22"
+var10.Text = var38;
+local var38 = (var23 >= 1000000000); -- nil
+local var39 = (var23 >= 1000); -- nil
+local var40 = tostring(var23);
+local var41 = "Amount of Evil Karma gained in this server: " .. var40;
+-- "Amount of Evil Karma gained in this server: var23"
+var11.Text = var41;
+local var41 = (var24 >= 1000000000); -- nil
+local var42 = (var24 >= 1000); -- nil
+local var43 = tostring(var24);
+local var44 = "Amount of Good Karma gained in this server: " .. var43;
+-- "Amount of Good Karma gained in this server: var24"
+var12.Text = var44;
+local AddLabel_14 = STATS.AddLabel;
+local __3 = STATS:AddLabel("══════════════════════════════════════════════════════════════════════════════════════════");
+local AddLabel_15 = STATS.AddLabel;
+local CURRENT_STATS = STATS:AddLabel(" CURRENT STATS ");
+CURRENT_STATS.TextSize = 20;
+local AddLabel_16 = STATS.AddLabel;
+local Players_4 = game.Players;
+local LocalPlayer_4 = Players.LocalPlayer;
+local Name = LocalPlayer.Name;
+local var43 = "Player: " .. Name;
+-- "Player: UMnrtIAxxzcWW"
+local AddLabel_17 = STATS:AddLabel(var43);
+local AddLabel_18 = STATS.AddLabel;
+local var45 = STATS:AddLabel("Rebirths: 0 / 0");
+local AddLabel_19 = STATS.AddLabel;
+local var46 = STATS:AddLabel("Strength: 0 / 0");
+local AddLabel_20 = STATS.AddLabel;
+local var47 = STATS:AddLabel("Durability: 0 / 0");
+local AddLabel_21 = STATS.AddLabel;
+local var48 = STATS:AddLabel("Agility: 0 / 0");
+local AddLabel_22 = STATS.AddLabel;
+local var49 = STATS:AddLabel("Kills: 0 / 0");
+local AddLabel_23 = STATS.AddLabel;
+local var50 = STATS:AddLabel("Evil Karma: 0 / 0");
+local AddLabel_24 = STATS.AddLabel;
+local var51 = STATS:AddLabel("Good Karma: 0 / 0");
+local AddTextBox = STATS.AddTextBox;
+local USERNAME_Or_DISPLAY_NAME = STATS:AddTextBox(" USERNAME or DISPLAY NAME ", YCQvwZHTRFfkOHNocnnvVzOcEFyAtUlc, {
+    clear = false,
+    placeholder = "Type username or display name...",
+});
+local AddLabel_25 = STATS.AddLabel;
+local str = STATS:AddLabel("EX  username -mohaop just type mo / display name - ZX_BLA BLA just type ZX");
+local AddLabel_26 = STATS.AddLabel;
+local __4 = STATS:AddLabel("══════════════════════════════════════════════════════════════════════════════════════════");
+local Players_5 = game.Players;
+local LocalPlayer_5 = Players.LocalPlayer;
+local Not_LocalPlayer_2 = not LocalPlayer;
+-- false
+local var52 = (Not_LocalPlayer_2 and 14736841);
+local Name_2 = LocalPlayer.Name;
+local DisplayName_2 = LocalPlayer.DisplayName;
+local DisplayName_3 = LocalPlayer.DisplayName;
+local var53 = DisplayName_3 .. ")";
+-- "cbEPnPGk)"
+local var54 = " (" .. var53;
+-- " (cbEPnPGk)"
+local var55 = Name_2 .. var54;
+-- "UMnrtIAxxzcWW (cbEPnPGk)"
+local var56 = "Player: " .. var55;
+-- "Player: UMnrtIAxxzcWW (cbEPnPGk)"
+AddLabel_17.Text = var56;
+local Leaderstats_3 = LocalPlayer:FindFirstChild("leaderstats");
+if not Leaderstats_3 then -- didnt run, expr id 1, has an else.
+else
+    local var56 = (Leaderstats_3 and 16332368); -- 16332368
+    local var57 = (var56 or 15483064);
+end
+local Strength_2 = Leaderstats_3:FindFirstChild("Strength");
+if Strength_2 then -- ran, expr id 2, has an else.
+    if Leaderstats_3 then -- ran, expr id 3, has an else.
+        local Rebirths_2 = Leaderstats_3:FindFirstChild("Rebirths");
+    end
+    if not Rebirths_2 then -- didnt run, expr id 4, has an else.
+    else
+        local var58 = (Leaderstats_3 and 15966307); -- 15966307
+        local var59 = (var58 or 10304240);
+    end
+end
+local Kills_2 = Leaderstats_3:FindFirstChild("Kills");
+if Kills_2 then -- ran, expr id 5, has an else.
+    local Durability_2 = LocalPlayer:FindFirstChild("Durability");
+    if Durability_2 then -- ran, expr id 6, has an else.
+        local Agility_2 = LocalPlayer:FindFirstChild("Agility");
+    end
+    if not Agility_2 then -- didnt run, expr id 7, has an else.
+    else
+        local EvilKarma_2 = LocalPlayer:FindFirstChild("evilKarma");
+        local var60 = (EvilKarma_2 and 11483141); -- 11483141
+        local var61 = (var60 or 11353010);
+    end
+end
+local GoodKarma_2 = LocalPlayer:FindFirstChild("goodKarma");
+if not GoodKarma_2 then -- didnt run, expr id 8, has an else.
+else
+    if not Rebirths_2 then -- didnt run, expr id 9, has an else.
+    else
+        local Value_14 = Rebirths_2.Value;
+    end
+    local Not_Value_14 = not Value_14;
+    -- false
+    local var62 = (Not_Value_14 and 15212840);
+end
+local var63 = (Value_14 >= 1000000000000000); -- nil
+local var64 = (Value_14 >= 1000000000000); -- nil
+local var65 = (Value_14 >= 1000000000); -- nil
+local var66 = (var65 and 13152014);
+local var67 = (Value_14 >= 1000); -- nil
+local var68 = tostring(Value_14);
+local var69 = string.format("%s / %d", var68, Value_14);
+local var70 = "Rebirths: " .. var69;
+var45.Text = var70;
+local Value_15 = Strength_2.Value;
+local Not_Value_15 = not Value_15;
+-- false
+local var70 = (Value_15 >= 1000000000000000); -- nil
+local var71 = (Value_15 >= 1000000000000); -- nil
+local var72 = (Value_15 >= 1000000000); -- nil
+local var73 = (var72 and 13152014);
+local var74 = (Value_15 >= 1000); -- nil
+local var75 = tostring(Value_15);
+local var76 = string.format("%s / %d", var75, Value_15);
+local var77 = "Strength: " .. var76;
+var46.Text = var77;
+local Value_16 = Durability_2.Value;
+local Not_Value_16 = not Value_16;
+-- false
+local var77 = (Value_16 >= 1000000000000000); -- nil
+local var78 = (Value_16 >= 1000000000000); -- nil
+local var79 = (Value_16 >= 1000000000); -- nil
+local var80 = (var79 and 13152014);
+local var81 = (Value_16 >= 1000); -- nil
+local var82 = tostring(Value_16);
+local var83 = string.format("%s / %d", var82, Value_16);
+local var84 = "Durability: " .. var83;
+var47.Text = var84;
+local var84 = (Agility_2 and 11213384); -- 11213384
+local Value_17 = Agility_2.Value;
+local Not_Value_17 = not Value_17;
+-- false
+local var85 = (Value_17 >= 1000000000000000); -- nil
+local var86 = (Value_17 >= 1000000000000); -- nil
+local var87 = (Value_17 >= 1000000000); -- nil
+local var88 = (var87 and 13152014);
+local var89 = (Value_17 >= 1000); -- nil
+local var90 = tostring(Value_17);
+local var91 = string.format("%s / %d", var90, Value_17);
+local var92 = "Agility: " .. var91;
+var48.Text = var92;
+local Value_18 = Kills_2.Value;
+local Not_Value_18 = not Value_18;
+-- false
+local var92 = (Not_Value_18 and 15212840);
+local var93 = (Value_18 >= 1000000000000000); -- nil
+local var94 = (Value_18 >= 1000000000000); -- nil
+local var95 = (Value_18 >= 1000000000); -- nil
+local var96 = (var95 and 13152014);
+local var97 = (Value_18 >= 1000); -- nil
+local var98 = tostring(Value_18);
+local var99 = string.format("%s / %d", var98, Value_18);
+local var100 = "Kills: " .. var99;
+var49.Text = var100;
+local var100 = (EvilKarma_2 and 14751659); -- 14751659
+local Value_19 = EvilKarma_2.Value;
+local Not_Value_19 = not Value_19;
+-- false
+local var101 = (Not_Value_19 and 15212840);
+local var102 = (Value_19 >= 1000000000000000); -- nil
+local var103 = (Value_19 >= 1000000000000); -- nil
+local var104 = (Value_19 >= 1000000000); -- nil
+local var105 = (var104 and 13152014);
+local var106 = (Value_19 >= 1000); -- nil
+local var107 = tostring(Value_19);
+local var108 = string.format("%s / %d", var107, Value_19);
+local var109 = "Evil Karma: " .. var108;
+var50.Text = var109;
+if GoodKarma_2 then -- ran, expr id 10, has an else.
+    local Value_20 = GoodKarma_2.Value;
+end
+local Not_Value_20 = not Value_20;
+-- false
+local var109 = (Not_Value_20 and 15212840);
+local var110 = (Value_20 >= 1000000000000000); -- nil
+local var111 = (Value_20 >= 1000000000000); -- nil
+local var112 = (Value_20 >= 1000000000); -- nil
+local var113 = (var112 and 13152014);
+local var114 = (Value_20 >= 1000); -- nil
+local var115 = tostring(Value_20);
+local var116 = string.format("%s / %d", var115, Value_20);
+local var117 = "Good Karma: " .. var116;
+var51.Text = var117;
+local Not_LocalPlayer_3 = not LocalPlayer;
+-- false
+local Leaderstats_4 = LocalPlayer:FindFirstChild("leaderstats");
+local var117 = (Leaderstats_4 and 10499297); -- 10499297
+local var118 = (var117 or 11121232);
+local FindFirstChild = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local Not_Leaderstats_4 = not Leaderstats_4;
+-- false
+local FindFirstChild_2 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var119 = tick();
+local Not_FindFirstChild_2 = not FindFirstChild_2;
+-- true
+local var120 = tick();
+local var121 = var120 - var119;
+-- 0.010170
+local var122 = (var121 < 3); -- true
+local var123 = (var122 and 11240881); -- 11240881
+local FindFirstChild_3 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var124 = (FindFirstChild_3 and 12925758);
+local Waited_For = task.wait(0.1);
+local Not_FindFirstChild_3 = not FindFirstChild_3;
+-- true
+local var125 = tick();
+local var126 = var125 - var119;
+-- 0.022121
+local var127 = (var126 < 3); -- true
+local var128 = (var127 and 11240881); -- 11240881
+local FindFirstChild_4 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var129 = (FindFirstChild_4 and 12925758);
+local Waited_For_2 = task.wait(0.1);
+local Not_FindFirstChild_4 = not FindFirstChild_4;
+-- true
+local var130 = tick();
+local var131 = var130 - var119;
+-- 0.033062
+local var132 = (var131 < 3); -- true
+local var133 = (var132 and 11240881); -- 11240881
+local FindFirstChild_5 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var134 = (FindFirstChild_5 and 12925758);
+local Waited_For_3 = task.wait(0.1);
+local Not_FindFirstChild_5 = not FindFirstChild_5;
+-- true
+local var135 = tick();
+local var136 = var135 - var119;
+-- 0.043970
+local var137 = (var136 < 3); -- true
+local var138 = (var137 and 11240881); -- 11240881
+local FindFirstChild_6 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var139 = (FindFirstChild_6 and 12925758);
+local Waited_For_4 = task.wait(0.1);
+local Not_FindFirstChild_6 = not FindFirstChild_6;
+-- true
+local var140 = tick();
+local var141 = var140 - var119;
+-- 0.054884
+local var142 = (var141 < 3); -- true
+local var143 = (var142 and 11240881); -- 11240881
+local FindFirstChild_7 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var144 = (FindFirstChild_7 and 12925758);
+local Waited_For_5 = task.wait(0.1);
+local Not_FindFirstChild_7 = not FindFirstChild_7;
+-- true
+local var145 = tick();
+local var146 = var145 - var119;
+-- 0.065810
+local var147 = (var146 < 3); -- true
+local var148 = (var147 and 11240881); -- 11240881
+local FindFirstChild_8 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var149 = (FindFirstChild_8 and 12925758);
+local Waited_For_6 = task.wait(0.1);
+local Not_FindFirstChild_8 = not FindFirstChild_8;
+-- true
+local var150 = tick();
+local var151 = var150 - var119;
+-- 0.076732
+local var152 = (var151 < 3); -- true
+local var153 = (var152 and 11240881); -- 11240881
+local FindFirstChild_9 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var154 = (FindFirstChild_9 and 12925758);
+local Waited_For_7 = task.wait(0.1);
+local Not_FindFirstChild_9 = not FindFirstChild_9;
+-- true
+local var155 = tick();
+local var156 = var155 - var119;
+-- 0.087654
+local var157 = (var156 < 3); -- true
+local var158 = (var157 and 11240881); -- 11240881
+local FindFirstChild_10 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var159 = (FindFirstChild_10 and 12925758);
+local Waited_For_8 = task.wait(0.1);
+local Not_FindFirstChild_10 = not FindFirstChild_10;
+-- true
+local var160 = tick();
+local var161 = var160 - var119;
+-- 0.098581
+local var162 = (var161 < 3); -- true
+local var163 = (var162 and 11240881); -- 11240881
+local FindFirstChild_11 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var164 = (FindFirstChild_11 and 12925758);
+local Waited_For_9 = task.wait(0.1);
+local Not_FindFirstChild_11 = not FindFirstChild_11;
+-- true
+local var165 = tick();
+local var166 = var165 - var119;
+-- 0.109630
+local var167 = (var166 < 3); -- true
+local var168 = (var167 and 11240881); -- 11240881
+local FindFirstChild_12 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var169 = (FindFirstChild_12 and 12925758);
+local Waited_For_10 = task.wait(0.1);
+local Not_FindFirstChild_12 = not FindFirstChild_12;
+-- true
+local var170 = tick();
+local var171 = var170 - var119;
+-- 0.120580
+local var172 = (var171 < 3); -- true
+local var173 = (var172 and 11240881); -- 11240881
+local FindFirstChild_13 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var174 = (FindFirstChild_13 and 12925758);
+local Waited_For_11 = task.wait(0.1);
+local Not_FindFirstChild_13 = not FindFirstChild_13;
+-- true
+local var175 = tick();
+local var176 = var175 - var119;
+-- 0.131486
+local var177 = (var176 < 3); -- true
+local var178 = (var177 and 11240881); -- 11240881
+local FindFirstChild_14 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var179 = (FindFirstChild_14 and 12925758);
+local Waited_For_12 = task.wait(0.1);
+local Not_FindFirstChild_14 = not FindFirstChild_14;
+-- true
+local var180 = tick();
+local var181 = var180 - var119;
+-- 0.142402
+local var182 = (var181 < 3); -- true
+local var183 = (var182 and 11240881); -- 11240881
+local FindFirstChild_15 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var184 = (FindFirstChild_15 and 12925758);
+local Waited_For_13 = task.wait(0.1);
+local Not_FindFirstChild_15 = not FindFirstChild_15;
+-- true
+local var185 = tick();
+local var186 = var185 - var119;
+-- 0.153334
+local var187 = (var186 < 3); -- true
+local var188 = (var187 and 11240881); -- 11240881
+local FindFirstChild_16 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var189 = (FindFirstChild_16 and 12925758);
+local Waited_For_14 = task.wait(0.1);
+local Not_FindFirstChild_16 = not FindFirstChild_16;
+-- true
+local var190 = tick();
+local var191 = var190 - var119;
+-- 0.164281
+local var192 = (var191 < 3); -- true
+local var193 = (var192 and 11240881); -- 11240881
+local FindFirstChild_17 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var194 = (FindFirstChild_17 and 12925758);
+local Waited_For_15 = task.wait(0.1);
+local Not_FindFirstChild_17 = not FindFirstChild_17;
+-- true
+local var195 = tick();
+local var196 = var195 - var119;
+-- 0.175224
+local var197 = (var196 < 3); -- true
+local var198 = (var197 and 11240881); -- 11240881
+local FindFirstChild_18 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var199 = (FindFirstChild_18 and 12925758);
+local Waited_For_16 = task.wait(0.1);
+local Not_FindFirstChild_18 = not FindFirstChild_18;
+-- true
+local var200 = tick();
+local var201 = var200 - var119;
+-- 0.186156
+local var202 = (var201 < 3); -- true
+local var203 = (var202 and 11240881); -- 11240881
+local FindFirstChild_19 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var204 = (FindFirstChild_19 and 12925758);
+local Waited_For_17 = task.wait(0.1);
+local Not_FindFirstChild_19 = not FindFirstChild_19;
+-- true
+local var205 = tick();
+local var206 = var205 - var119;
+-- 0.197172
+local var207 = (var206 < 3); -- true
+local var208 = (var207 and 11240881); -- 11240881
+local FindFirstChild_20 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var209 = (FindFirstChild_20 and 12925758);
+local Waited_For_18 = task.wait(0.1);
+local Not_FindFirstChild_20 = not FindFirstChild_20;
+-- true
+local var210 = tick();
+local var211 = var210 - var119;
+-- 0.208215
+local var212 = (var211 < 3); -- true
+local var213 = (var212 and 11240881); -- 11240881
+local FindFirstChild_21 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var214 = (FindFirstChild_21 and 12925758);
+local Waited_For_19 = task.wait(0.1);
+local Not_FindFirstChild_21 = not FindFirstChild_21;
+-- true
+local var215 = tick();
+local var216 = var215 - var119;
+-- 0.219159
+local var217 = (var216 < 3); -- true
+local var218 = (var217 and 11240881); -- 11240881
+local FindFirstChild_22 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var219 = (FindFirstChild_22 and 12925758);
+local Waited_For_20 = task.wait(0.1);
+local Not_FindFirstChild_22 = not FindFirstChild_22;
+-- true
+local var220 = tick();
+local var221 = var220 - var119;
+-- 0.230097
+local var222 = (var221 < 3); -- true
+local var223 = (var222 and 11240881); -- 11240881
+local FindFirstChild_23 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var224 = (FindFirstChild_23 and 12925758);
+local Waited_For_21 = task.wait(0.1);
+local Not_FindFirstChild_23 = not FindFirstChild_23;
+-- true
+local var225 = tick();
+local var226 = var225 - var119;
+-- 0.241058
+local var227 = (var226 < 3); -- true
+local var228 = (var227 and 11240881); -- 11240881
+local FindFirstChild_24 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var229 = (FindFirstChild_24 and 12925758);
+local Waited_For_22 = task.wait(0.1);
+local Not_FindFirstChild_24 = not FindFirstChild_24;
+-- true
+local var230 = tick();
+local var231 = var230 - var119;
+-- 0.252025
+local var232 = (var231 < 3); -- true
+local var233 = (var232 and 11240881); -- 11240881
+local FindFirstChild_25 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var234 = (FindFirstChild_25 and 12925758);
+local Waited_For_23 = task.wait(0.1);
+local Not_FindFirstChild_25 = not FindFirstChild_25;
+-- true
+local var235 = tick();
+local var236 = var235 - var119;
+-- 0.262969
+local var237 = (var236 < 3); -- true
+local var238 = (var237 and 11240881); -- 11240881
+local FindFirstChild_26 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var239 = (FindFirstChild_26 and 12925758);
+local Waited_For_24 = task.wait(0.1);
+local Not_FindFirstChild_26 = not FindFirstChild_26;
+-- true
+local var240 = tick();
+local var241 = var240 - var119;
+-- 0.274041
+local var242 = (var241 < 3); -- true
+local var243 = (var242 and 11240881); -- 11240881
+local FindFirstChild_27 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var244 = (FindFirstChild_27 and 12925758);
+local Waited_For_25 = task.wait(0.1);
+local Not_FindFirstChild_27 = not FindFirstChild_27;
+-- true
+local var245 = tick();
+local var246 = var245 - var119;
+-- 0.285027
+local var247 = (var246 < 3); -- true
+local var248 = (var247 and 11240881); -- 11240881
+local FindFirstChild_28 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var249 = (FindFirstChild_28 and 12925758);
+local Waited_For_26 = task.wait(0.1);
+local Not_FindFirstChild_28 = not FindFirstChild_28;
+-- true
+local var250 = tick();
+local var251 = var250 - var119;
+-- 0.296010
+local var252 = (var251 < 3); -- true
+local var253 = (var252 and 11240881); -- 11240881
+local FindFirstChild_29 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var254 = (FindFirstChild_29 and 12925758);
+local Waited_For_27 = task.wait(0.1);
+local Not_FindFirstChild_29 = not FindFirstChild_29;
+-- true
+local var255 = tick();
+local var256 = var255 - var119;
+-- 0.307000
+local var257 = (var256 < 3); -- true
+local var258 = (var257 and 11240881); -- 11240881
+local FindFirstChild_30 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var259 = (FindFirstChild_30 and 12925758);
+local Waited_For_28 = task.wait(0.1);
+local Not_FindFirstChild_30 = not FindFirstChild_30;
+-- true
+local var260 = tick();
+local var261 = var260 - var119;
+-- 0.317971
+local var262 = (var261 < 3); -- true
+local var263 = (var262 and 11240881); -- 11240881
+local FindFirstChild_31 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var264 = (FindFirstChild_31 and 12925758);
+local Waited_For_29 = task.wait(0.1);
+local Not_FindFirstChild_31 = not FindFirstChild_31;
+-- true
+local var265 = tick();
+local var266 = var265 - var119;
+-- 0.329022
+local var267 = (var266 < 3); -- true
+local var268 = (var267 and 11240881); -- 11240881
+local FindFirstChild_32 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var269 = (FindFirstChild_32 and 12925758);
+local Waited_For_30 = task.wait(0.1);
+local Not_FindFirstChild_32 = not FindFirstChild_32;
+-- true
+local var270 = tick();
+local var271 = var270 - var119;
+-- 0.340007
+local var272 = (var271 < 3); -- true
+local var273 = (var272 and 11240881); -- 11240881
+local FindFirstChild_33 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var274 = (FindFirstChild_33 and 12925758);
+local Waited_For_31 = task.wait(0.1);
+local Not_FindFirstChild_33 = not FindFirstChild_33;
+-- true
+local var275 = tick();
+local var276 = var275 - var119;
+-- 0.351025
+local var277 = (var276 < 3); -- true
+local var278 = (var277 and 11240881); -- 11240881
+local FindFirstChild_34 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var279 = (FindFirstChild_34 and 12925758);
+local Waited_For_32 = task.wait(0.1);
+local Not_FindFirstChild_34 = not FindFirstChild_34;
+-- true
+local var280 = tick();
+local var281 = var280 - var119;
+-- 0.361982
+local var282 = (var281 < 3); -- true
+local var283 = (var282 and 11240881); -- 11240881
+local FindFirstChild_35 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var284 = (FindFirstChild_35 and 12925758);
+local Waited_For_33 = task.wait(0.1);
+local Not_FindFirstChild_35 = not FindFirstChild_35;
+-- true
+local var285 = tick();
+local var286 = var285 - var119;
+-- 0.372945
+local var287 = (var286 < 3); -- true
+local var288 = (var287 and 11240881); -- 11240881
+local FindFirstChild_36 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var289 = (FindFirstChild_36 and 12925758);
+local Waited_For_34 = task.wait(0.1);
+local Not_FindFirstChild_36 = not FindFirstChild_36;
+-- true
+local var290 = tick();
+local var291 = var290 - var119;
+-- 0.384098
+local var292 = (var291 < 3); -- true
+local var293 = (var292 and 11240881); -- 11240881
+local FindFirstChild_37 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var294 = (FindFirstChild_37 and 12925758);
+local Waited_For_35 = task.wait(0.1);
+local Not_FindFirstChild_37 = not FindFirstChild_37;
+-- true
+local var295 = tick();
+local var296 = var295 - var119;
+-- 0.395153
+local var297 = (var296 < 3); -- true
+local var298 = (var297 and 11240881); -- 11240881
+local FindFirstChild_38 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var299 = (FindFirstChild_38 and 12925758);
+local Waited_For_36 = task.wait(0.1);
+local Not_FindFirstChild_38 = not FindFirstChild_38;
+-- true
+local var300 = tick();
+local var301 = var300 - var119;
+-- 0.406115
+local var302 = (var301 < 3); -- true
+local var303 = (var302 and 11240881); -- 11240881
+local FindFirstChild_39 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var304 = (FindFirstChild_39 and 12925758);
+local Waited_For_37 = task.wait(0.1);
+local Not_FindFirstChild_39 = not FindFirstChild_39;
+-- true
+local var305 = tick();
+local var306 = var305 - var119;
+-- 0.417092
+local var307 = (var306 < 3); -- true
+local var308 = (var307 and 11240881); -- 11240881
+local FindFirstChild_40 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var309 = (FindFirstChild_40 and 12925758);
+local Waited_For_38 = task.wait(0.1);
+local Not_FindFirstChild_40 = not FindFirstChild_40;
+-- true
+local var310 = tick();
+local var311 = var310 - var119;
+-- 0.428199
+local var312 = (var311 < 3); -- true
+local var313 = (var312 and 11240881); -- 11240881
+local FindFirstChild_41 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var314 = (FindFirstChild_41 and 12925758);
+local Waited_For_39 = task.wait(0.1);
+local Not_FindFirstChild_41 = not FindFirstChild_41;
+-- true
+local var315 = tick();
+local var316 = var315 - var119;
+-- 0.439198
+local var317 = (var316 < 3); -- true
+local var318 = (var317 and 11240881); -- 11240881
+local FindFirstChild_42 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var319 = (FindFirstChild_42 and 12925758);
+local Waited_For_40 = task.wait(0.1);
+local Not_FindFirstChild_42 = not FindFirstChild_42;
+-- true
+local var320 = tick();
+local var321 = var320 - var119;
+-- 0.450315
+local var322 = (var321 < 3); -- true
+local var323 = (var322 and 11240881); -- 11240881
+local FindFirstChild_43 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var324 = (FindFirstChild_43 and 12925758);
+local Waited_For_41 = task.wait(0.1);
+local Not_FindFirstChild_43 = not FindFirstChild_43;
+-- true
+local var325 = tick();
+local var326 = var325 - var119;
+-- 0.461343
+local var327 = (var326 < 3); -- true
+local var328 = (var327 and 11240881); -- 11240881
+local FindFirstChild_44 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var329 = (FindFirstChild_44 and 12925758);
+local Waited_For_42 = task.wait(0.1);
+local Not_FindFirstChild_44 = not FindFirstChild_44;
+-- true
+local var330 = tick();
+local var331 = var330 - var119;
+-- 0.472358
+local var332 = (var331 < 3); -- true
+local var333 = (var332 and 11240881); -- 11240881
+local FindFirstChild_45 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var334 = (FindFirstChild_45 and 12925758);
+local Waited_For_43 = task.wait(0.1);
+local Not_FindFirstChild_45 = not FindFirstChild_45;
+-- true
+local var335 = tick();
+local var336 = var335 - var119;
+-- 0.483336
+local var337 = (var336 < 3); -- true
+local var338 = (var337 and 11240881); -- 11240881
+local FindFirstChild_46 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var339 = (FindFirstChild_46 and 12925758);
+local Waited_For_44 = task.wait(0.1);
+local Not_FindFirstChild_46 = not FindFirstChild_46;
+-- true
+local var340 = tick();
+local var341 = var340 - var119;
+-- 0.494316
+local var342 = (var341 < 3); -- true
+local var343 = (var342 and 11240881); -- 11240881
+local FindFirstChild_47 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var344 = (FindFirstChild_47 and 12925758);
+local Waited_For_45 = task.wait(0.1);
+local Not_FindFirstChild_47 = not FindFirstChild_47;
+-- true
+local var345 = tick();
+local var346 = var345 - var119;
+-- 0.505310
+local var347 = (var346 < 3); -- true
+local var348 = (var347 and 11240881); -- 11240881
+local FindFirstChild_48 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var349 = (FindFirstChild_48 and 12925758);
+local Waited_For_46 = task.wait(0.1);
+local Not_FindFirstChild_48 = not FindFirstChild_48;
+-- true
+local var350 = tick();
+local var351 = var350 - var119;
+-- 0.516590
+local var352 = (var351 < 3); -- true
+local var353 = (var352 and 11240881); -- 11240881
+local FindFirstChild_49 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var354 = (FindFirstChild_49 and 12925758);
+local Waited_For_47 = task.wait(0.1);
+local Not_FindFirstChild_49 = not FindFirstChild_49;
+-- true
+local var355 = tick();
+local var356 = var355 - var119;
+-- 0.527627
+local var357 = (var356 < 3); -- true
+local var358 = (var357 and 11240881); -- 11240881
+local FindFirstChild_50 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var359 = (FindFirstChild_50 and 12925758);
+local Waited_For_48 = task.wait(0.1);
+local Not_FindFirstChild_50 = not FindFirstChild_50;
+-- true
+local var360 = tick();
+local var361 = var360 - var119;
+-- 0.538728
+local var362 = (var361 < 3); -- true
+local var363 = (var362 and 11240881); -- 11240881
+local FindFirstChild_51 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var364 = (FindFirstChild_51 and 12925758);
+local Waited_For_49 = task.wait(0.1);
+local Not_FindFirstChild_51 = not FindFirstChild_51;
+-- true
+local var365 = tick();
+local var366 = var365 - var119;
+-- 0.549911
+local var367 = (var366 < 3); -- true
+local var368 = (var367 and 11240881); -- 11240881
+local FindFirstChild_52 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var369 = (FindFirstChild_52 and 12925758);
+local Waited_For_50 = task.wait(0.1);
+local Not_FindFirstChild_52 = not FindFirstChild_52;
+-- true
+local var370 = tick();
+local var371 = var370 - var119;
+-- 0.561273
+local var372 = (var371 < 3); -- true
+local var373 = (var372 and 11240881); -- 11240881
+local FindFirstChild_53 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var374 = (FindFirstChild_53 and 12925758);
+local Waited_For_51 = task.wait(0.1);
+local Not_FindFirstChild_53 = not FindFirstChild_53;
+-- true
+local var375 = tick();
+local var376 = var375 - var119;
+-- 0.572357
+local var377 = (var376 < 3); -- true
+local var378 = (var377 and 11240881); -- 11240881
+local FindFirstChild_54 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var379 = (FindFirstChild_54 and 12925758);
+local Waited_For_52 = task.wait(0.1);
+local Not_FindFirstChild_54 = not FindFirstChild_54;
+-- true
+local var380 = tick();
+local var381 = var380 - var119;
+-- 0.583651
+local var382 = (var381 < 3); -- true
+local var383 = (var382 and 11240881); -- 11240881
+local FindFirstChild_55 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var384 = (FindFirstChild_55 and 12925758);
+local Waited_For_53 = task.wait(0.1);
+local Not_FindFirstChild_55 = not FindFirstChild_55;
+-- true
+local var385 = tick();
+local var386 = var385 - var119;
+-- 0.594604
+local var387 = (var386 < 3); -- true
+local var388 = (var387 and 11240881); -- 11240881
+local FindFirstChild_56 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var389 = (FindFirstChild_56 and 12925758);
+local Waited_For_54 = task.wait(0.1);
+local Not_FindFirstChild_56 = not FindFirstChild_56;
+-- true
+local var390 = tick();
+local var391 = var390 - var119;
+-- 0.605746
+local var392 = (var391 < 3); -- true
+local var393 = (var392 and 11240881); -- 11240881
+local FindFirstChild_57 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var394 = (FindFirstChild_57 and 12925758);
+local Waited_For_55 = task.wait(0.1);
+local Not_FindFirstChild_57 = not FindFirstChild_57;
+-- true
+local var395 = tick();
+local var396 = var395 - var119;
+-- 0.616655
+local var397 = (var396 < 3); -- true
+local var398 = (var397 and 11240881); -- 11240881
+local FindFirstChild_58 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var399 = (FindFirstChild_58 and 12925758);
+local Waited_For_56 = task.wait(0.1);
+local Not_FindFirstChild_58 = not FindFirstChild_58;
+-- true
+local var400 = tick();
+local var401 = var400 - var119;
+-- 0.627618
+local var402 = (var401 < 3); -- true
+local var403 = (var402 and 11240881); -- 11240881
+local FindFirstChild_59 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var404 = (FindFirstChild_59 and 12925758);
+local Waited_For_57 = task.wait(0.1);
+local Not_FindFirstChild_59 = not FindFirstChild_59;
+-- true
+local var405 = tick();
+local var406 = var405 - var119;
+-- 0.638524
+local var407 = (var406 < 3); -- true
+local var408 = (var407 and 11240881); -- 11240881
+local FindFirstChild_60 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var409 = (FindFirstChild_60 and 12925758);
+local Waited_For_58 = task.wait(0.1);
+local Not_FindFirstChild_60 = not FindFirstChild_60;
+-- true
+local var410 = tick();
+local var411 = var410 - var119;
+-- 0.649394
+local var412 = (var411 < 3); -- true
+local var413 = (var412 and 11240881); -- 11240881
+local FindFirstChild_61 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var414 = (FindFirstChild_61 and 12925758);
+local Waited_For_59 = task.wait(0.1);
+local Not_FindFirstChild_61 = not FindFirstChild_61;
+-- true
+local var415 = tick();
+local var416 = var415 - var119;
+-- 0.660267
+local var417 = (var416 < 3); -- true
+local var418 = (var417 and 11240881); -- 11240881
+local FindFirstChild_62 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var419 = (FindFirstChild_62 and 12925758);
+local Waited_For_60 = task.wait(0.1);
+local Not_FindFirstChild_62 = not FindFirstChild_62;
+-- true
+local var420 = tick();
+local var421 = var420 - var119;
+-- 0.671147
+local var422 = (var421 < 3); -- true
+local var423 = (var422 and 11240881); -- 11240881
+local FindFirstChild_63 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var424 = (FindFirstChild_63 and 12925758);
+local Waited_For_61 = task.wait(0.1);
+local Not_FindFirstChild_63 = not FindFirstChild_63;
+-- true
+local var425 = tick();
+local var426 = var425 - var119;
+-- 0.682054
+local var427 = (var426 < 3); -- true
+local var428 = (var427 and 11240881); -- 11240881
+local FindFirstChild_64 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var429 = (FindFirstChild_64 and 12925758);
+local Waited_For_62 = task.wait(0.1);
+local Not_FindFirstChild_64 = not FindFirstChild_64;
+-- true
+local var430 = tick();
+local var431 = var430 - var119;
+-- 0.692958
+local var432 = (var431 < 3); -- true
+local var433 = (var432 and 11240881); -- 11240881
+local FindFirstChild_65 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var434 = (FindFirstChild_65 and 12925758);
+local Waited_For_63 = task.wait(0.1);
+local Not_FindFirstChild_65 = not FindFirstChild_65;
+-- true
+local var435 = tick();
+local var436 = var435 - var119;
+-- 0.703886
+local var437 = (var436 < 3); -- true
+local var438 = (var437 and 11240881); -- 11240881
+local FindFirstChild_66 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var439 = (FindFirstChild_66 and 12925758);
+local Waited_For_64 = task.wait(0.1);
+local Not_FindFirstChild_66 = not FindFirstChild_66;
+-- true
+local var440 = tick();
+local var441 = var440 - var119;
+-- 0.714852
+local var442 = (var441 < 3); -- true
+local var443 = (var442 and 11240881); -- 11240881
+local FindFirstChild_67 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var444 = (FindFirstChild_67 and 12925758);
+local Waited_For_65 = task.wait(0.1);
+local Not_FindFirstChild_67 = not FindFirstChild_67;
+-- true
+local var445 = tick();
+local var446 = var445 - var119;
+-- 0.725780
+local var447 = (var446 < 3); -- true
+local var448 = (var447 and 11240881); -- 11240881
+local FindFirstChild_68 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var449 = (FindFirstChild_68 and 12925758);
+local Waited_For_66 = task.wait(0.1);
+local Not_FindFirstChild_68 = not FindFirstChild_68;
+-- true
+local var450 = tick();
+local var451 = var450 - var119;
+-- 0.736661
+local var452 = (var451 < 3); -- true
+local var453 = (var452 and 11240881); -- 11240881
+local FindFirstChild_69 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var454 = (FindFirstChild_69 and 12925758);
+local Waited_For_67 = task.wait(0.1);
+local Not_FindFirstChild_69 = not FindFirstChild_69;
+-- true
+local var455 = tick();
+local var456 = var455 - var119;
+-- 0.747671
+local var457 = (var456 < 3); -- true
+local var458 = (var457 and 11240881); -- 11240881
+local FindFirstChild_70 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var459 = (FindFirstChild_70 and 12925758);
+local Waited_For_68 = task.wait(0.1);
+local Not_FindFirstChild_70 = not FindFirstChild_70;
+-- true
+local var460 = tick();
+local var461 = var460 - var119;
+-- 0.758416
+local var462 = (var461 < 3); -- true
+local var463 = (var462 and 11240881); -- 11240881
+local FindFirstChild_71 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var464 = (FindFirstChild_71 and 12925758);
+local Waited_For_69 = task.wait(0.1);
+local Not_FindFirstChild_71 = not FindFirstChild_71;
+-- true
+local var465 = tick();
+local var466 = var465 - var119;
+-- 0.769162
+local var467 = (var466 < 3); -- true
+local var468 = (var467 and 11240881); -- 11240881
+local FindFirstChild_72 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var469 = (FindFirstChild_72 and 12925758);
+local Waited_For_70 = task.wait(0.1);
+local Not_FindFirstChild_72 = not FindFirstChild_72;
+-- true
+local var470 = tick();
+local var471 = var470 - var119;
+-- 0.779934
+local var472 = (var471 < 3); -- true
+local var473 = (var472 and 11240881); -- 11240881
+local FindFirstChild_73 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var474 = (FindFirstChild_73 and 12925758);
+local Waited_For_71 = task.wait(0.1);
+local Not_FindFirstChild_73 = not FindFirstChild_73;
+-- true
+local var475 = tick();
+local var476 = var475 - var119;
+-- 0.790679
+local var477 = (var476 < 3); -- true
+local var478 = (var477 and 11240881); -- 11240881
+local FindFirstChild_74 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var479 = (FindFirstChild_74 and 12925758);
+local Waited_For_72 = task.wait(0.1);
+local Not_FindFirstChild_74 = not FindFirstChild_74;
+-- true
+local var480 = tick();
+local var481 = var480 - var119;
+-- 0.801408
+local var482 = (var481 < 3); -- true
+local var483 = (var482 and 11240881); -- 11240881
+local FindFirstChild_75 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var484 = (FindFirstChild_75 and 12925758);
+local Waited_For_73 = task.wait(0.1);
+local Not_FindFirstChild_75 = not FindFirstChild_75;
+-- true
+local var485 = tick();
+local var486 = var485 - var119;
+-- 0.812137
+local var487 = (var486 < 3); -- true
+local var488 = (var487 and 11240881); -- 11240881
+local FindFirstChild_76 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var489 = (FindFirstChild_76 and 12925758);
+local Waited_For_74 = task.wait(0.1);
+local Not_FindFirstChild_76 = not FindFirstChild_76;
+-- true
+local var490 = tick();
+local var491 = var490 - var119;
+-- 0.822910
+local var492 = (var491 < 3); -- true
+local var493 = (var492 and 11240881); -- 11240881
+local FindFirstChild_77 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var494 = (FindFirstChild_77 and 12925758);
+local Waited_For_75 = task.wait(0.1);
+local Not_FindFirstChild_77 = not FindFirstChild_77;
+-- true
+local var495 = tick();
+local var496 = var495 - var119;
+-- 0.833703
+local var497 = (var496 < 3); -- true
+local var498 = (var497 and 11240881); -- 11240881
+local FindFirstChild_78 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var499 = (FindFirstChild_78 and 12925758);
+local Waited_For_76 = task.wait(0.1);
+local Not_FindFirstChild_78 = not FindFirstChild_78;
+-- true
+local var500 = tick();
+local var501 = var500 - var119;
+-- 0.844478
+local var502 = (var501 < 3); -- true
+local var503 = (var502 and 11240881); -- 11240881
+local FindFirstChild_79 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var504 = (FindFirstChild_79 and 12925758);
+local Waited_For_77 = task.wait(0.1);
+local Not_FindFirstChild_79 = not FindFirstChild_79;
+-- true
+local var505 = tick();
+local var506 = var505 - var119;
+-- 0.855218
+local var507 = (var506 < 3); -- true
+local var508 = (var507 and 11240881); -- 11240881
+local FindFirstChild_80 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var509 = (FindFirstChild_80 and 12925758);
+local Waited_For_78 = task.wait(0.1);
+local Not_FindFirstChild_80 = not FindFirstChild_80;
+-- true
+local var510 = tick();
+local var511 = var510 - var119;
+-- 0.865961
+local var512 = (var511 < 3); -- true
+local var513 = (var512 and 11240881); -- 11240881
+local FindFirstChild_81 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var514 = (FindFirstChild_81 and 12925758);
+local Waited_For_79 = task.wait(0.1);
+local Not_FindFirstChild_81 = not FindFirstChild_81;
+-- true
+local var515 = tick();
+local var516 = var515 - var119;
+-- 0.876757
+local var517 = (var516 < 3); -- true
+local var518 = (var517 and 11240881); -- 11240881
+local FindFirstChild_82 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var519 = (FindFirstChild_82 and 12925758);
+local Waited_For_80 = task.wait(0.1);
+local Not_FindFirstChild_82 = not FindFirstChild_82;
+-- true
+local var520 = tick();
+local var521 = var520 - var119;
+-- 0.887541
+local var522 = (var521 < 3); -- true
+local var523 = (var522 and 11240881); -- 11240881
+local FindFirstChild_83 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var524 = (FindFirstChild_83 and 12925758);
+local Waited_For_81 = task.wait(0.1);
+local Not_FindFirstChild_83 = not FindFirstChild_83;
+-- true
+local var525 = tick();
+local var526 = var525 - var119;
+-- 0.898319
+local var527 = (var526 < 3); -- true
+local var528 = (var527 and 11240881); -- 11240881
+local FindFirstChild_84 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var529 = (FindFirstChild_84 and 12925758);
+local Waited_For_82 = task.wait(0.1);
+local Not_FindFirstChild_84 = not FindFirstChild_84;
+-- true
+local var530 = tick();
+local var531 = var530 - var119;
+-- 0.909087
+local var532 = (var531 < 3); -- true
+local var533 = (var532 and 11240881); -- 11240881
+local FindFirstChild_85 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var534 = (FindFirstChild_85 and 12925758);
+local Waited_For_83 = task.wait(0.1);
+local Not_FindFirstChild_85 = not FindFirstChild_85;
+-- true
+local var535 = tick();
+local var536 = var535 - var119;
+-- 0.919845
+local var537 = (var536 < 3); -- true
+local var538 = (var537 and 11240881); -- 11240881
+local FindFirstChild_86 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var539 = (FindFirstChild_86 and 12925758);
+local Waited_For_84 = task.wait(0.1);
+local Not_FindFirstChild_86 = not FindFirstChild_86;
+-- true
+local var540 = tick();
+local var541 = var540 - var119;
+-- 0.930644
+local var542 = (var541 < 3); -- true
+local var543 = (var542 and 11240881); -- 11240881
+local FindFirstChild_87 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var544 = (FindFirstChild_87 and 12925758);
+local Waited_For_85 = task.wait(0.1);
+local Not_FindFirstChild_87 = not FindFirstChild_87;
+-- true
+local var545 = tick();
+local var546 = var545 - var119;
+-- 0.941416
+local var547 = (var546 < 3); -- true
+local var548 = (var547 and 11240881); -- 11240881
+local FindFirstChild_88 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var549 = (FindFirstChild_88 and 12925758);
+local Waited_For_86 = task.wait(0.1);
+local Not_FindFirstChild_88 = not FindFirstChild_88;
+-- true
+local var550 = tick();
+local var551 = var550 - var119;
+-- 0.952198
+local var552 = (var551 < 3); -- true
+local var553 = (var552 and 11240881); -- 11240881
+local FindFirstChild_89 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var554 = (FindFirstChild_89 and 12925758);
+local Waited_For_87 = task.wait(0.1);
+local Not_FindFirstChild_89 = not FindFirstChild_89;
+-- true
+local var555 = tick();
+local var556 = var555 - var119;
+-- 0.962945
+local var557 = (var556 < 3); -- true
+local var558 = (var557 and 11240881); -- 11240881
+local FindFirstChild_90 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var559 = (FindFirstChild_90 and 12925758);
+local Waited_For_88 = task.wait(0.1);
+local Not_FindFirstChild_90 = not FindFirstChild_90;
+-- true
+local var560 = tick();
+local var561 = var560 - var119;
+-- 0.973843
+local var562 = (var561 < 3); -- true
+local var563 = (var562 and 11240881); -- 11240881
+local FindFirstChild_91 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var564 = (FindFirstChild_91 and 12925758);
+local Waited_For_89 = task.wait(0.1);
+local Not_FindFirstChild_91 = not FindFirstChild_91;
+-- true
+local var565 = tick();
+local var566 = var565 - var119;
+-- 0.984613
+local var567 = (var566 < 3); -- true
+local var568 = (var567 and 11240881); -- 11240881
+local FindFirstChild_92 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var569 = (FindFirstChild_92 and 12925758);
+local Waited_For_90 = task.wait(0.1);
+local Not_FindFirstChild_92 = not FindFirstChild_92;
+-- true
+local var570 = tick();
+local var571 = var570 - var119;
+-- 0.995377
+local var572 = (var571 < 3); -- true
+local var573 = (var572 and 11240881); -- 11240881
+local FindFirstChild_93 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var574 = (FindFirstChild_93 and 12925758);
+local Waited_For_91 = task.wait(0.1);
+local Not_FindFirstChild_93 = not FindFirstChild_93;
+-- true
+local var575 = tick();
+local var576 = var575 - var119;
+-- 1.006175
+local var577 = (var576 < 3); -- true
+local var578 = (var577 and 11240881); -- 11240881
+local FindFirstChild_94 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var579 = (FindFirstChild_94 and 12925758);
+local Waited_For_92 = task.wait(0.1);
+local Not_FindFirstChild_94 = not FindFirstChild_94;
+-- true
+local var580 = tick();
+local var581 = var580 - var119;
+-- 1.016929
+local var582 = (var581 < 3); -- true
+local var583 = (var582 and 11240881); -- 11240881
+local FindFirstChild_95 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var584 = (FindFirstChild_95 and 12925758);
+local Waited_For_93 = task.wait(0.1);
+local Not_FindFirstChild_95 = not FindFirstChild_95;
+-- true
+local var585 = tick();
+local var586 = var585 - var119;
+-- 1.027686
+local var587 = (var586 < 3); -- true
+local var588 = (var587 and 11240881); -- 11240881
+local FindFirstChild_96 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var589 = (FindFirstChild_96 and 12925758);
+local Waited_For_94 = task.wait(0.1);
+local Not_FindFirstChild_96 = not FindFirstChild_96;
+-- true
+local var590 = tick();
+local var591 = var590 - var119;
+-- 1.038447
+local var592 = (var591 < 3); -- true
+local var593 = (var592 and 11240881); -- 11240881
+local FindFirstChild_97 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var594 = (FindFirstChild_97 and 12925758);
+local Waited_For_95 = task.wait(0.1);
+local Not_FindFirstChild_97 = not FindFirstChild_97;
+-- true
+local var595 = tick();
+local var596 = var595 - var119;
+-- 1.049359
+local var597 = (var596 < 3); -- true
+local var598 = (var597 and 11240881); -- 11240881
+local FindFirstChild_98 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var599 = (FindFirstChild_98 and 12925758);
+local Waited_For_96 = task.wait(0.1);
+local Not_FindFirstChild_98 = not FindFirstChild_98;
+-- true
+local var600 = tick();
+local var601 = var600 - var119;
+-- 1.060144
+local var602 = (var601 < 3); -- true
+local var603 = (var602 and 11240881); -- 11240881
+local FindFirstChild_99 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var604 = (FindFirstChild_99 and 12925758);
+local Waited_For_97 = task.wait(0.1);
+local Not_FindFirstChild_99 = not FindFirstChild_99;
+-- true
+local var605 = tick();
+local var606 = var605 - var119;
+-- 1.070895
+local var607 = (var606 < 3); -- true
+local var608 = (var607 and 11240881); -- 11240881
+local FindFirstChild_100 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var609 = (FindFirstChild_100 and 12925758);
+local Waited_For_98 = task.wait(0.1);
+local Not_FindFirstChild_100 = not FindFirstChild_100;
+-- true
+local var610 = tick();
+local var611 = var610 - var119;
+-- 1.081634
+local var612 = (var611 < 3); -- true
+local var613 = (var612 and 11240881); -- 11240881
+local FindFirstChild_101 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var614 = (FindFirstChild_101 and 12925758);
+local Waited_For_99 = task.wait(0.1);
+local Not_FindFirstChild_101 = not FindFirstChild_101;
+-- true
+local var615 = tick();
+local var616 = var615 - var119;
+-- 1.092386
+local var617 = (var616 < 3); -- true
+local var618 = (var617 and 11240881); -- 11240881
+local FindFirstChild_102 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var619 = (FindFirstChild_102 and 12925758);
+local Waited_For_100 = task.wait(0.1);
+local Not_FindFirstChild_102 = not FindFirstChild_102;
+-- true
+local var620 = tick();
+local var621 = var620 - var119;
+-- 1.103147
+local var622 = (var621 < 3); -- true
+local var623 = (var622 and 11240881); -- 11240881
+local FindFirstChild_103 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var624 = (FindFirstChild_103 and 12925758);
+local Waited_For_101 = task.wait(0.1);
+local Not_FindFirstChild_103 = not FindFirstChild_103;
+-- true
+local var625 = tick();
+local var626 = var625 - var119;
+-- 1.113926
+local var627 = (var626 < 3); -- true
+local var628 = (var627 and 11240881); -- 11240881
+local FindFirstChild_104 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var629 = (FindFirstChild_104 and 12925758);
+local Waited_For_102 = task.wait(0.1);
+local Not_FindFirstChild_104 = not FindFirstChild_104;
+-- true
+local var630 = tick();
+local var631 = var630 - var119;
+-- 1.124677
+local var632 = (var631 < 3); -- true
+local var633 = (var632 and 11240881); -- 11240881
+local FindFirstChild_105 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var634 = (FindFirstChild_105 and 12925758);
+local Waited_For_103 = task.wait(0.1);
+local Not_FindFirstChild_105 = not FindFirstChild_105;
+-- true
+local var635 = tick();
+local var636 = var635 - var119;
+-- 1.135428
+local var637 = (var636 < 3); -- true
+local var638 = (var637 and 11240881); -- 11240881
+local FindFirstChild_106 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var639 = (FindFirstChild_106 and 12925758);
+local Waited_For_104 = task.wait(0.1);
+local Not_FindFirstChild_106 = not FindFirstChild_106;
+-- true
+local var640 = tick();
+local var641 = var640 - var119;
+-- 1.146224
+local var642 = (var641 < 3); -- true
+local var643 = (var642 and 11240881); -- 11240881
+local FindFirstChild_107 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var644 = (FindFirstChild_107 and 12925758);
+local Waited_For_105 = task.wait(0.1);
+local Not_FindFirstChild_107 = not FindFirstChild_107;
+-- true
+local var645 = tick();
+local var646 = var645 - var119;
+-- 1.157000
+local var647 = (var646 < 3); -- true
+local var648 = (var647 and 11240881); -- 11240881
+local FindFirstChild_108 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var649 = (FindFirstChild_108 and 12925758);
+local Waited_For_106 = task.wait(0.1);
+local Not_FindFirstChild_108 = not FindFirstChild_108;
+-- true
+local var650 = tick();
+local var651 = var650 - var119;
+-- 1.167774
+local var652 = (var651 < 3); -- true
+local var653 = (var652 and 11240881); -- 11240881
+local FindFirstChild_109 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var654 = (FindFirstChild_109 and 12925758);
+local Waited_For_107 = task.wait(0.1);
+local Not_FindFirstChild_109 = not FindFirstChild_109;
+-- true
+local var655 = tick();
+local var656 = var655 - var119;
+-- 1.178534
+local var657 = (var656 < 3); -- true
+local var658 = (var657 and 11240881); -- 11240881
+local FindFirstChild_110 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var659 = (FindFirstChild_110 and 12925758);
+local Waited_For_108 = task.wait(0.1);
+local Not_FindFirstChild_110 = not FindFirstChild_110;
+-- true
+local var660 = tick();
+local var661 = var660 - var119;
+-- 1.189534
+local var662 = (var661 < 3); -- true
+local var663 = (var662 and 11240881); -- 11240881
+local FindFirstChild_111 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var664 = (FindFirstChild_111 and 12925758);
+local Waited_For_109 = task.wait(0.1);
+local Not_FindFirstChild_111 = not FindFirstChild_111;
+-- true
+local var665 = tick();
+local var666 = var665 - var119;
+-- 1.200298
+local var667 = (var666 < 3); -- true
+local var668 = (var667 and 11240881); -- 11240881
+local FindFirstChild_112 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var669 = (FindFirstChild_112 and 12925758);
+local Waited_For_110 = task.wait(0.1);
+local Not_FindFirstChild_112 = not FindFirstChild_112;
+-- true
+local var670 = tick();
+local var671 = var670 - var119;
+-- 1.211053
+local var672 = (var671 < 3); -- true
+local var673 = (var672 and 11240881); -- 11240881
+local FindFirstChild_113 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var674 = (FindFirstChild_113 and 12925758);
+local Waited_For_111 = task.wait(0.1);
+local Not_FindFirstChild_113 = not FindFirstChild_113;
+-- true
+local var675 = tick();
+local var676 = var675 - var119;
+-- 1.221960
+local var677 = (var676 < 3); -- true
+local var678 = (var677 and 11240881); -- 11240881
+local FindFirstChild_114 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var679 = (FindFirstChild_114 and 12925758);
+local Waited_For_112 = task.wait(0.1);
+local Not_FindFirstChild_114 = not FindFirstChild_114;
+-- true
+local var680 = tick();
+local var681 = var680 - var119;
+-- 1.232720
+local var682 = (var681 < 3); -- true
+local var683 = (var682 and 11240881); -- 11240881
+local FindFirstChild_115 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var684 = (FindFirstChild_115 and 12925758);
+local Waited_For_113 = task.wait(0.1);
+local Not_FindFirstChild_115 = not FindFirstChild_115;
+-- true
+local var685 = tick();
+local var686 = var685 - var119;
+-- 1.243471
+local var687 = (var686 < 3); -- true
+local var688 = (var687 and 11240881); -- 11240881
+local FindFirstChild_116 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var689 = (FindFirstChild_116 and 12925758);
+local Waited_For_114 = task.wait(0.1);
+local Not_FindFirstChild_116 = not FindFirstChild_116;
+-- true
+local var690 = tick();
+local var691 = var690 - var119;
+-- 1.254230
+local var692 = (var691 < 3); -- true
+local var693 = (var692 and 11240881); -- 11240881
+local FindFirstChild_117 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var694 = (FindFirstChild_117 and 12925758);
+local Waited_For_115 = task.wait(0.1);
+local Not_FindFirstChild_117 = not FindFirstChild_117;
+-- true
+local var695 = tick();
+local var696 = var695 - var119;
+-- 1.265003
+local var697 = (var696 < 3); -- true
+local var698 = (var697 and 11240881); -- 11240881
+local FindFirstChild_118 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var699 = (FindFirstChild_118 and 12925758);
+local Waited_For_116 = task.wait(0.1);
+local Not_FindFirstChild_118 = not FindFirstChild_118;
+-- true
+local var700 = tick();
+local var701 = var700 - var119;
+-- 1.275799
+local var702 = (var701 < 3); -- true
+local var703 = (var702 and 11240881); -- 11240881
+local FindFirstChild_119 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var704 = (FindFirstChild_119 and 12925758);
+local Waited_For_117 = task.wait(0.1);
+local Not_FindFirstChild_119 = not FindFirstChild_119;
+-- true
+local var705 = tick();
+local var706 = var705 - var119;
+-- 1.286560
+local var707 = (var706 < 3); -- true
+local var708 = (var707 and 11240881); -- 11240881
+local FindFirstChild_120 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var709 = (FindFirstChild_120 and 12925758);
+local Waited_For_118 = task.wait(0.1);
+local Not_FindFirstChild_120 = not FindFirstChild_120;
+-- true
+local var710 = tick();
+local var711 = var710 - var119;
+-- 1.297309
+local var712 = (var711 < 3); -- true
+local var713 = (var712 and 11240881); -- 11240881
+local FindFirstChild_121 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var714 = (FindFirstChild_121 and 12925758);
+local Waited_For_119 = task.wait(0.1);
+local Not_FindFirstChild_121 = not FindFirstChild_121;
+-- true
+local var715 = tick();
+local var716 = var715 - var119;
+-- 1.308070
+local var717 = (var716 < 3); -- true
+local var718 = (var717 and 11240881); -- 11240881
+local FindFirstChild_122 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var719 = (FindFirstChild_122 and 12925758);
+local Waited_For_120 = task.wait(0.1);
+local Not_FindFirstChild_122 = not FindFirstChild_122;
+-- true
+local var720 = tick();
+local var721 = var720 - var119;
+-- 1.318846
+local var722 = (var721 < 3); -- true
+local var723 = (var722 and 11240881); -- 11240881
+local FindFirstChild_123 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var724 = (FindFirstChild_123 and 12925758);
+local Waited_For_121 = task.wait(0.1);
+local Not_FindFirstChild_123 = not FindFirstChild_123;
+-- true
+local var725 = tick();
+local var726 = var725 - var119;
+-- 1.329647
+local var727 = (var726 < 3); -- true
+local var728 = (var727 and 11240881); -- 11240881
+local FindFirstChild_124 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var729 = (FindFirstChild_124 and 12925758);
+local Waited_For_122 = task.wait(0.1);
+local Not_FindFirstChild_124 = not FindFirstChild_124;
+-- true
+local var730 = tick();
+local var731 = var730 - var119;
+-- 1.340411
+local var732 = (var731 < 3); -- true
+local var733 = (var732 and 11240881); -- 11240881
+local FindFirstChild_125 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var734 = (FindFirstChild_125 and 12925758);
+local Waited_For_123 = task.wait(0.1);
+local Not_FindFirstChild_125 = not FindFirstChild_125;
+-- true
+local var735 = tick();
+local var736 = var735 - var119;
+-- 1.351167
+local var737 = (var736 < 3); -- true
+local var738 = (var737 and 11240881); -- 11240881
+local FindFirstChild_126 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var739 = (FindFirstChild_126 and 12925758);
+local Waited_For_124 = task.wait(0.1);
+local Not_FindFirstChild_126 = not FindFirstChild_126;
+-- true
+local var740 = tick();
+local var741 = var740 - var119;
+-- 1.362004
+local var742 = (var741 < 3); -- true
+local var743 = (var742 and 11240881); -- 11240881
+local FindFirstChild_127 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var744 = (FindFirstChild_127 and 12925758);
+local Waited_For_125 = task.wait(0.1);
+local Not_FindFirstChild_127 = not FindFirstChild_127;
+-- true
+local var745 = tick();
+local var746 = var745 - var119;
+-- 1.372794
+local var747 = (var746 < 3); -- true
+local var748 = (var747 and 11240881); -- 11240881
+local FindFirstChild_128 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var749 = (FindFirstChild_128 and 12925758);
+local Waited_For_126 = task.wait(0.1);
+local Not_FindFirstChild_128 = not FindFirstChild_128;
+-- true
+local var750 = tick();
+local var751 = var750 - var119;
+-- 1.383584
+local var752 = (var751 < 3); -- true
+local var753 = (var752 and 11240881); -- 11240881
+local FindFirstChild_129 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var754 = (FindFirstChild_129 and 12925758);
+local Waited_For_127 = task.wait(0.1);
+local Not_FindFirstChild_129 = not FindFirstChild_129;
+-- true
+local var755 = tick();
+local var756 = var755 - var119;
+-- 1.394625
+local var757 = (var756 < 3); -- true
+local var758 = (var757 and 11240881); -- 11240881
+local FindFirstChild_130 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var759 = (FindFirstChild_130 and 12925758);
+local Waited_For_128 = task.wait(0.1);
+local Not_FindFirstChild_130 = not FindFirstChild_130;
+-- true
+local var760 = tick();
+local var761 = var760 - var119;
+-- 1.405383
+local var762 = (var761 < 3); -- true
+local var763 = (var762 and 11240881); -- 11240881
+local FindFirstChild_131 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var764 = (FindFirstChild_131 and 12925758);
+local Waited_For_129 = task.wait(0.1);
+local Not_FindFirstChild_131 = not FindFirstChild_131;
+-- true
+local var765 = tick();
+local var766 = var765 - var119;
+-- 1.416329
+local var767 = (var766 < 3); -- true
+local var768 = (var767 and 11240881); -- 11240881
+local FindFirstChild_132 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var769 = (FindFirstChild_132 and 12925758);
+local Waited_For_130 = task.wait(0.1);
+local Not_FindFirstChild_132 = not FindFirstChild_132;
+-- true
+local var770 = tick();
+local var771 = var770 - var119;
+-- 1.427118
+local var772 = (var771 < 3); -- true
+local var773 = (var772 and 11240881); -- 11240881
+local FindFirstChild_133 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var774 = (FindFirstChild_133 and 12925758);
+local Waited_For_131 = task.wait(0.1);
+local Not_FindFirstChild_133 = not FindFirstChild_133;
+-- true
+local var775 = tick();
+local var776 = var775 - var119;
+-- 1.437909
+local var777 = (var776 < 3); -- true
+local var778 = (var777 and 11240881); -- 11240881
+local FindFirstChild_134 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var779 = (FindFirstChild_134 and 12925758);
+local Waited_For_132 = task.wait(0.1);
+local Not_FindFirstChild_134 = not FindFirstChild_134;
+-- true
+local var780 = tick();
+local var781 = var780 - var119;
+-- 1.448674
+local var782 = (var781 < 3); -- true
+local var783 = (var782 and 11240881); -- 11240881
+local FindFirstChild_135 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var784 = (FindFirstChild_135 and 12925758);
+local Waited_For_133 = task.wait(0.1);
+local Not_FindFirstChild_135 = not FindFirstChild_135;
+-- true
+local var785 = tick();
+local var786 = var785 - var119;
+-- 1.459463
+local var787 = (var786 < 3); -- true
+local var788 = (var787 and 11240881); -- 11240881
+local FindFirstChild_136 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var789 = (FindFirstChild_136 and 12925758);
+local Waited_For_134 = task.wait(0.1);
+local Not_FindFirstChild_136 = not FindFirstChild_136;
+-- true
+local var790 = tick();
+local var791 = var790 - var119;
+-- 1.470236
+local var792 = (var791 < 3); -- true
+local var793 = (var792 and 11240881); -- 11240881
+local FindFirstChild_137 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var794 = (FindFirstChild_137 and 12925758);
+local Waited_For_135 = task.wait(0.1);
+local Not_FindFirstChild_137 = not FindFirstChild_137;
+-- true
+local var795 = tick();
+local var796 = var795 - var119;
+-- 1.481025
+local var797 = (var796 < 3); -- true
+local var798 = (var797 and 11240881); -- 11240881
+local FindFirstChild_138 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var799 = (FindFirstChild_138 and 12925758);
+local Waited_For_136 = task.wait(0.1);
+local Not_FindFirstChild_138 = not FindFirstChild_138;
+-- true
+local var800 = tick();
+local var801 = var800 - var119;
+-- 1.491836
+local var802 = (var801 < 3); -- true
+local var803 = (var802 and 11240881); -- 11240881
+local FindFirstChild_139 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var804 = (FindFirstChild_139 and 12925758);
+local Waited_For_137 = task.wait(0.1);
+local Not_FindFirstChild_139 = not FindFirstChild_139;
+-- true
+local var805 = tick();
+local var806 = var805 - var119;
+-- 1.502597
+local var807 = (var806 < 3); -- true
+local var808 = (var807 and 11240881); -- 11240881
+local FindFirstChild_140 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var809 = (FindFirstChild_140 and 12925758);
+local Waited_For_138 = task.wait(0.1);
+local Not_FindFirstChild_140 = not FindFirstChild_140;
+-- true
+local var810 = tick();
+local var811 = var810 - var119;
+-- 1.513398
+local var812 = (var811 < 3); -- true
+local var813 = (var812 and 11240881); -- 11240881
+local FindFirstChild_141 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var814 = (FindFirstChild_141 and 12925758);
+local Waited_For_139 = task.wait(0.1);
+local Not_FindFirstChild_141 = not FindFirstChild_141;
+-- true
+local var815 = tick();
+local var816 = var815 - var119;
+-- 1.524185
+local var817 = (var816 < 3); -- true
+local var818 = (var817 and 11240881); -- 11240881
+local FindFirstChild_142 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var819 = (FindFirstChild_142 and 12925758);
+local Waited_For_140 = task.wait(0.1);
+local Not_FindFirstChild_142 = not FindFirstChild_142;
+-- true
+local var820 = tick();
+local var821 = var820 - var119;
+-- 1.534974
+local var822 = (var821 < 3); -- true
+local var823 = (var822 and 11240881); -- 11240881
+local FindFirstChild_143 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var824 = (FindFirstChild_143 and 12925758);
+local Waited_For_141 = task.wait(0.1);
+local Not_FindFirstChild_143 = not FindFirstChild_143;
+-- true
+local var825 = tick();
+local var826 = var825 - var119;
+-- 1.545767
+local var827 = (var826 < 3); -- true
+local var828 = (var827 and 11240881); -- 11240881
+local FindFirstChild_144 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var829 = (FindFirstChild_144 and 12925758);
+local Waited_For_142 = task.wait(0.1);
+local Not_FindFirstChild_144 = not FindFirstChild_144;
+-- true
+local var830 = tick();
+local var831 = var830 - var119;
+-- 1.556563
+local var832 = (var831 < 3); -- true
+local var833 = (var832 and 11240881); -- 11240881
+local FindFirstChild_145 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var834 = (FindFirstChild_145 and 12925758);
+local Waited_For_143 = task.wait(0.1);
+local Not_FindFirstChild_145 = not FindFirstChild_145;
+-- true
+local var835 = tick();
+local var836 = var835 - var119;
+-- 1.567353
+local var837 = (var836 < 3); -- true
+local var838 = (var837 and 11240881); -- 11240881
+local FindFirstChild_146 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var839 = (FindFirstChild_146 and 12925758);
+local Waited_For_144 = task.wait(0.1);
+local Not_FindFirstChild_146 = not FindFirstChild_146;
+-- true
+local var840 = tick();
+local var841 = var840 - var119;
+-- 1.578122
+local var842 = (var841 < 3); -- true
+local var843 = (var842 and 11240881); -- 11240881
+local FindFirstChild_147 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var844 = (FindFirstChild_147 and 12925758);
+local Waited_For_145 = task.wait(0.1);
+local Not_FindFirstChild_147 = not FindFirstChild_147;
+-- true
+local var845 = tick();
+local var846 = var845 - var119;
+-- 1.588897
+local var847 = (var846 < 3); -- true
+local var848 = (var847 and 11240881); -- 11240881
+local FindFirstChild_148 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var849 = (FindFirstChild_148 and 12925758);
+local Waited_For_146 = task.wait(0.1);
+local Not_FindFirstChild_148 = not FindFirstChild_148;
+-- true
+local var850 = tick();
+local var851 = var850 - var119;
+-- 1.599702
+local var852 = (var851 < 3); -- true
+local var853 = (var852 and 11240881); -- 11240881
+local FindFirstChild_149 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var854 = (FindFirstChild_149 and 12925758);
+local Waited_For_147 = task.wait(0.1);
+local Not_FindFirstChild_149 = not FindFirstChild_149;
+-- true
+local var855 = tick();
+local var856 = var855 - var119;
+-- 1.610475
+local var857 = (var856 < 3); -- true
+local var858 = (var857 and 11240881); -- 11240881
+local FindFirstChild_150 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var859 = (FindFirstChild_150 and 12925758);
+local Waited_For_148 = task.wait(0.1);
+local Not_FindFirstChild_150 = not FindFirstChild_150;
+-- true
+local var860 = tick();
+local var861 = var860 - var119;
+-- 1.621488
+local var862 = (var861 < 3); -- true
+local var863 = (var862 and 11240881); -- 11240881
+local FindFirstChild_151 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var864 = (FindFirstChild_151 and 12925758);
+local Waited_For_149 = task.wait(0.1);
+local Not_FindFirstChild_151 = not FindFirstChild_151;
+-- true
+local var865 = tick();
+local var866 = var865 - var119;
+-- 1.632278
+local var867 = (var866 < 3); -- true
+local var868 = (var867 and 11240881); -- 11240881
+local FindFirstChild_152 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var869 = (FindFirstChild_152 and 12925758);
+local Waited_For_150 = task.wait(0.1);
+local Not_FindFirstChild_152 = not FindFirstChild_152;
+-- true
+local var870 = tick();
+local var871 = var870 - var119;
+-- 1.643055
+local var872 = (var871 < 3); -- true
+local var873 = (var872 and 11240881); -- 11240881
+local FindFirstChild_153 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var874 = (FindFirstChild_153 and 12925758);
+local Waited_For_151 = task.wait(0.1);
+local Not_FindFirstChild_153 = not FindFirstChild_153;
+-- true
+local var875 = tick();
+local var876 = var875 - var119;
+-- 1.653867
+local var877 = (var876 < 3); -- true
+local var878 = (var877 and 11240881); -- 11240881
+local FindFirstChild_154 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var879 = (FindFirstChild_154 and 12925758);
+local Waited_For_152 = task.wait(0.1);
+local Not_FindFirstChild_154 = not FindFirstChild_154;
+-- true
+local var880 = tick();
+local var881 = var880 - var119;
+-- 1.664643
+local var882 = (var881 < 3); -- true
+local var883 = (var882 and 11240881); -- 11240881
+local FindFirstChild_155 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var884 = (FindFirstChild_155 and 12925758);
+local Waited_For_153 = task.wait(0.1);
+local Not_FindFirstChild_155 = not FindFirstChild_155;
+-- true
+local var885 = tick();
+local var886 = var885 - var119;
+-- 1.675641
+local var887 = (var886 < 3); -- true
+local var888 = (var887 and 11240881); -- 11240881
+local FindFirstChild_156 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var889 = (FindFirstChild_156 and 12925758);
+local Waited_For_154 = task.wait(0.1);
+local Not_FindFirstChild_156 = not FindFirstChild_156;
+-- true
+local var890 = tick();
+local var891 = var890 - var119;
+-- 1.686419
+local var892 = (var891 < 3); -- true
+local var893 = (var892 and 11240881); -- 11240881
+local FindFirstChild_157 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var894 = (FindFirstChild_157 and 12925758);
+local Waited_For_155 = task.wait(0.1);
+local Not_FindFirstChild_157 = not FindFirstChild_157;
+-- true
+local var895 = tick();
+local var896 = var895 - var119;
+-- 1.697693
+local var897 = (var896 < 3); -- true
+local var898 = (var897 and 11240881); -- 11240881
+local FindFirstChild_158 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var899 = (FindFirstChild_158 and 12925758);
+local Waited_For_156 = task.wait(0.1);
+local Not_FindFirstChild_158 = not FindFirstChild_158;
+-- true
+local var900 = tick();
+local var901 = var900 - var119;
+-- 1.708483
+local var902 = (var901 < 3); -- true
+local var903 = (var902 and 11240881); -- 11240881
+local FindFirstChild_159 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var904 = (FindFirstChild_159 and 12925758);
+local Waited_For_157 = task.wait(0.1);
+local Not_FindFirstChild_159 = not FindFirstChild_159;
+-- true
+local var905 = tick();
+local var906 = var905 - var119;
+-- 1.719258
+local var907 = (var906 < 3); -- true
+local var908 = (var907 and 11240881); -- 11240881
+local FindFirstChild_160 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var909 = (FindFirstChild_160 and 12925758);
+local Waited_For_158 = task.wait(0.1);
+local Not_FindFirstChild_160 = not FindFirstChild_160;
+-- true
+local var910 = tick();
+local var911 = var910 - var119;
+-- 1.730032
+local var912 = (var911 < 3); -- true
+local var913 = (var912 and 11240881); -- 11240881
+local FindFirstChild_161 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var914 = (FindFirstChild_161 and 12925758);
+local Waited_For_159 = task.wait(0.1);
+local Not_FindFirstChild_161 = not FindFirstChild_161;
+-- true
+local var915 = tick();
+local var916 = var915 - var119;
+-- 1.740828
+local var917 = (var916 < 3); -- true
+local var918 = (var917 and 11240881); -- 11240881
+local FindFirstChild_162 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var919 = (FindFirstChild_162 and 12925758);
+local Waited_For_160 = task.wait(0.1);
+local Not_FindFirstChild_162 = not FindFirstChild_162;
+-- true
+local var920 = tick();
+local var921 = var920 - var119;
+-- 1.751631
+local var922 = (var921 < 3); -- true
+local var923 = (var922 and 11240881); -- 11240881
+local FindFirstChild_163 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var924 = (FindFirstChild_163 and 12925758);
+local Waited_For_161 = task.wait(0.1);
+local Not_FindFirstChild_163 = not FindFirstChild_163;
+-- true
+local var925 = tick();
+local var926 = var925 - var119;
+-- 1.762417
+local var927 = (var926 < 3); -- true
+local var928 = (var927 and 11240881); -- 11240881
+local FindFirstChild_164 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var929 = (FindFirstChild_164 and 12925758);
+local Waited_For_162 = task.wait(0.1);
+local Not_FindFirstChild_164 = not FindFirstChild_164;
+-- true
+local var930 = tick();
+local var931 = var930 - var119;
+-- 1.773236
+local var932 = (var931 < 3); -- true
+local var933 = (var932 and 11240881); -- 11240881
+local FindFirstChild_165 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var934 = (FindFirstChild_165 and 12925758);
+local Waited_For_163 = task.wait(0.1);
+local Not_FindFirstChild_165 = not FindFirstChild_165;
+-- true
+local var935 = tick();
+local var936 = var935 - var119;
+-- 1.784050
+local var937 = (var936 < 3); -- true
+local var938 = (var937 and 11240881); -- 11240881
+local FindFirstChild_166 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var939 = (FindFirstChild_166 and 12925758);
+local Waited_For_164 = task.wait(0.1);
+local Not_FindFirstChild_166 = not FindFirstChild_166;
+-- true
+local var940 = tick();
+local var941 = var940 - var119;
+-- 1.794874
+local var942 = (var941 < 3); -- true
+local var943 = (var942 and 11240881); -- 11240881
+local FindFirstChild_167 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var944 = (FindFirstChild_167 and 12925758);
+local Waited_For_165 = task.wait(0.1);
+local Not_FindFirstChild_167 = not FindFirstChild_167;
+-- true
+local var945 = tick();
+local var946 = var945 - var119;
+-- 1.805694
+local var947 = (var946 < 3); -- true
+local var948 = (var947 and 11240881); -- 11240881
+local FindFirstChild_168 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var949 = (FindFirstChild_168 and 12925758);
+local Waited_For_166 = task.wait(0.1);
+local Not_FindFirstChild_168 = not FindFirstChild_168;
+-- true
+local var950 = tick();
+local var951 = var950 - var119;
+-- 1.816506
+local var952 = (var951 < 3); -- true
+local var953 = (var952 and 11240881); -- 11240881
+local FindFirstChild_169 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var954 = (FindFirstChild_169 and 12925758);
+local Waited_For_167 = task.wait(0.1);
+local Not_FindFirstChild_169 = not FindFirstChild_169;
+-- true
+local var955 = tick();
+local var956 = var955 - var119;
+-- 1.827298
+local var957 = (var956 < 3); -- true
+local var958 = (var957 and 11240881); -- 11240881
+local FindFirstChild_170 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var959 = (FindFirstChild_170 and 12925758);
+local Waited_For_168 = task.wait(0.1);
+local Not_FindFirstChild_170 = not FindFirstChild_170;
+-- true
+local var960 = tick();
+local var961 = var960 - var119;
+-- 1.838090
+local var962 = (var961 < 3); -- true
+local var963 = (var962 and 11240881); -- 11240881
+local FindFirstChild_171 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var964 = (FindFirstChild_171 and 12925758);
+local Waited_For_169 = task.wait(0.1);
+local Not_FindFirstChild_171 = not FindFirstChild_171;
+-- true
+local var965 = tick();
+local var966 = var965 - var119;
+-- 1.848907
+local var967 = (var966 < 3); -- true
+local var968 = (var967 and 11240881); -- 11240881
+local FindFirstChild_172 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var969 = (FindFirstChild_172 and 12925758);
+local Waited_For_170 = task.wait(0.1);
+local Not_FindFirstChild_172 = not FindFirstChild_172;
+-- true
+local var970 = tick();
+local var971 = var970 - var119;
+-- 1.859743
+local var972 = (var971 < 3); -- true
+local var973 = (var972 and 11240881); -- 11240881
+local FindFirstChild_173 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var974 = (FindFirstChild_173 and 12925758);
+local Waited_For_171 = task.wait(0.1);
+local Not_FindFirstChild_173 = not FindFirstChild_173;
+-- true
+local var975 = tick();
+local var976 = var975 - var119;
+-- 1.870593
+local var977 = (var976 < 3); -- true
+local var978 = (var977 and 11240881); -- 11240881
+local FindFirstChild_174 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var979 = (FindFirstChild_174 and 12925758);
+local Waited_For_172 = task.wait(0.1);
+local Not_FindFirstChild_174 = not FindFirstChild_174;
+-- true
+local var980 = tick();
+local var981 = var980 - var119;
+-- 1.881430
+local var982 = (var981 < 3); -- true
+local var983 = (var982 and 11240881); -- 11240881
+local FindFirstChild_175 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var984 = (FindFirstChild_175 and 12925758);
+local Waited_For_173 = task.wait(0.1);
+local Not_FindFirstChild_175 = not FindFirstChild_175;
+-- true
+local var985 = tick();
+local var986 = var985 - var119;
+-- 1.892242
+local var987 = (var986 < 3); -- true
+local var988 = (var987 and 11240881); -- 11240881
+local FindFirstChild_176 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var989 = (FindFirstChild_176 and 12925758);
+local Waited_For_174 = task.wait(0.1);
+local Not_FindFirstChild_176 = not FindFirstChild_176;
+-- true
+local var990 = tick();
+local var991 = var990 - var119;
+-- 1.903068
+local var992 = (var991 < 3); -- true
+local var993 = (var992 and 11240881); -- 11240881
+local FindFirstChild_177 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var994 = (FindFirstChild_177 and 12925758);
+local Waited_For_175 = task.wait(0.1);
+local Not_FindFirstChild_177 = not FindFirstChild_177;
+-- true
+local var995 = tick();
+local var996 = var995 - var119;
+-- 1.913916
+local var997 = (var996 < 3); -- true
+local var998 = (var997 and 11240881); -- 11240881
+local FindFirstChild_178 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var999 = (FindFirstChild_178 and 12925758);
+local Waited_For_176 = task.wait(0.1);
+local Not_FindFirstChild_178 = not FindFirstChild_178;
+-- true
+local var1000 = tick();
+local var1001 = var1000 - var119;
+-- 1.924717
+local var1002 = (var1001 < 3); -- true
+local var1003 = (var1002 and 11240881); -- 11240881
+local FindFirstChild_179 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1004 = (FindFirstChild_179 and 12925758);
+local Waited_For_177 = task.wait(0.1);
+local Not_FindFirstChild_179 = not FindFirstChild_179;
+-- true
+local var1005 = tick();
+local var1006 = var1005 - var119;
+-- 1.935549
+local var1007 = (var1006 < 3); -- true
+local var1008 = (var1007 and 11240881); -- 11240881
+local FindFirstChild_180 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1009 = (FindFirstChild_180 and 12925758);
+local Waited_For_178 = task.wait(0.1);
+local Not_FindFirstChild_180 = not FindFirstChild_180;
+-- true
+local var1010 = tick();
+local var1011 = var1010 - var119;
+-- 1.946387
+local var1012 = (var1011 < 3); -- true
+local var1013 = (var1012 and 11240881); -- 11240881
+local FindFirstChild_181 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1014 = (FindFirstChild_181 and 12925758);
+local Waited_For_179 = task.wait(0.1);
+local Not_FindFirstChild_181 = not FindFirstChild_181;
+-- true
+local var1015 = tick();
+local var1016 = var1015 - var119;
+-- 1.957219
+local var1017 = (var1016 < 3); -- true
+local var1018 = (var1017 and 11240881); -- 11240881
+local FindFirstChild_182 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1019 = (FindFirstChild_182 and 12925758);
+local Waited_For_180 = task.wait(0.1);
+local Not_FindFirstChild_182 = not FindFirstChild_182;
+-- true
+local var1020 = tick();
+local var1021 = var1020 - var119;
+-- 1.968062
+local var1022 = (var1021 < 3); -- true
+local var1023 = (var1022 and 11240881); -- 11240881
+local FindFirstChild_183 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1024 = (FindFirstChild_183 and 12925758);
+local Waited_For_181 = task.wait(0.1);
+local Not_FindFirstChild_183 = not FindFirstChild_183;
+-- true
+local var1025 = tick();
+local var1026 = var1025 - var119;
+-- 1.978913
+local var1027 = (var1026 < 3); -- true
+local var1028 = (var1027 and 11240881); -- 11240881
+local FindFirstChild_184 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1029 = (FindFirstChild_184 and 12925758);
+local Waited_For_182 = task.wait(0.1);
+local Not_FindFirstChild_184 = not FindFirstChild_184;
+-- true
+local var1030 = tick();
+local var1031 = var1030 - var119;
+-- 1.989733
+local var1032 = (var1031 < 3); -- true
+local var1033 = (var1032 and 11240881); -- 11240881
+local FindFirstChild_185 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1034 = (FindFirstChild_185 and 12925758);
+local Waited_For_183 = task.wait(0.1);
+local Not_FindFirstChild_185 = not FindFirstChild_185;
+-- true
+local var1035 = tick();
+local var1036 = var1035 - var119;
+-- 2.000599
+local var1037 = (var1036 < 3); -- true
+local var1038 = (var1037 and 11240881); -- 11240881
+local FindFirstChild_186 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1039 = (FindFirstChild_186 and 12925758);
+local Waited_For_184 = task.wait(0.1);
+local Not_FindFirstChild_186 = not FindFirstChild_186;
+-- true
+local var1040 = tick();
+local var1041 = var1040 - var119;
+-- 2.011448
+local var1042 = (var1041 < 3); -- true
+local var1043 = (var1042 and 11240881); -- 11240881
+local FindFirstChild_187 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1044 = (FindFirstChild_187 and 12925758);
+local Waited_For_185 = task.wait(0.1);
+local Not_FindFirstChild_187 = not FindFirstChild_187;
+-- true
+local var1045 = tick();
+local var1046 = var1045 - var119;
+-- 2.022291
+local var1047 = (var1046 < 3); -- true
+local var1048 = (var1047 and 11240881); -- 11240881
+local FindFirstChild_188 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1049 = (FindFirstChild_188 and 12925758);
+local Waited_For_186 = task.wait(0.1);
+local Not_FindFirstChild_188 = not FindFirstChild_188;
+-- true
+local var1050 = tick();
+local var1051 = var1050 - var119;
+-- 2.033116
+local var1052 = (var1051 < 3); -- true
+local var1053 = (var1052 and 11240881); -- 11240881
+local FindFirstChild_189 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1054 = (FindFirstChild_189 and 12925758);
+local Waited_For_187 = task.wait(0.1);
+local Not_FindFirstChild_189 = not FindFirstChild_189;
+-- true
+local var1055 = tick();
+local var1056 = var1055 - var119;
+-- 2.043961
+local var1057 = (var1056 < 3); -- true
+local var1058 = (var1057 and 11240881); -- 11240881
+local FindFirstChild_190 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1059 = (FindFirstChild_190 and 12925758);
+local Waited_For_188 = task.wait(0.1);
+local Not_FindFirstChild_190 = not FindFirstChild_190;
+-- true
+local var1060 = tick();
+local var1061 = var1060 - var119;
+-- 2.054813
+local var1062 = (var1061 < 3); -- true
+local var1063 = (var1062 and 11240881); -- 11240881
+local FindFirstChild_191 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1064 = (FindFirstChild_191 and 12925758);
+local Waited_For_189 = task.wait(0.1);
+local Not_FindFirstChild_191 = not FindFirstChild_191;
+-- true
+local var1065 = tick();
+local var1066 = var1065 - var119;
+-- 2.065690
+local var1067 = (var1066 < 3); -- true
+local var1068 = (var1067 and 11240881); -- 11240881
+local FindFirstChild_192 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1069 = (FindFirstChild_192 and 12925758);
+local Waited_For_190 = task.wait(0.1);
+local Not_FindFirstChild_192 = not FindFirstChild_192;
+-- true
+local var1070 = tick();
+local var1071 = var1070 - var119;
+-- 2.076536
+local var1072 = (var1071 < 3); -- true
+local var1073 = (var1072 and 11240881); -- 11240881
+local FindFirstChild_193 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1074 = (FindFirstChild_193 and 12925758);
+local Waited_For_191 = task.wait(0.1);
+local Not_FindFirstChild_193 = not FindFirstChild_193;
+-- true
+local var1075 = tick();
+local var1076 = var1075 - var119;
+-- 2.087370
+local var1077 = (var1076 < 3); -- true
+local var1078 = (var1077 and 11240881); -- 11240881
+local FindFirstChild_194 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1079 = (FindFirstChild_194 and 12925758);
+local Waited_For_192 = task.wait(0.1);
+local Not_FindFirstChild_194 = not FindFirstChild_194;
+-- true
+local var1080 = tick();
+local var1081 = var1080 - var119;
+-- 2.098209
+local var1082 = (var1081 < 3); -- true
+local var1083 = (var1082 and 11240881); -- 11240881
+local FindFirstChild_195 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1084 = (FindFirstChild_195 and 12925758);
+local Waited_For_193 = task.wait(0.1);
+local Not_FindFirstChild_195 = not FindFirstChild_195;
+-- true
+local var1085 = tick();
+local var1086 = var1085 - var119;
+-- 2.109070
+local var1087 = (var1086 < 3); -- true
+local var1088 = (var1087 and 11240881); -- 11240881
+local FindFirstChild_196 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1089 = (FindFirstChild_196 and 12925758);
+local Waited_For_194 = task.wait(0.1);
+local Not_FindFirstChild_196 = not FindFirstChild_196;
+-- true
+local var1090 = tick();
+local var1091 = var1090 - var119;
+-- 2.119948
+local var1092 = (var1091 < 3); -- true
+local var1093 = (var1092 and 11240881); -- 11240881
+local FindFirstChild_197 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1094 = (FindFirstChild_197 and 12925758);
+local Waited_For_195 = task.wait(0.1);
+local Not_FindFirstChild_197 = not FindFirstChild_197;
+-- true
+local var1095 = tick();
+local var1096 = var1095 - var119;
+-- 2.130794
+local var1097 = (var1096 < 3); -- true
+local var1098 = (var1097 and 11240881); -- 11240881
+local FindFirstChild_198 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1099 = (FindFirstChild_198 and 12925758);
+local Waited_For_196 = task.wait(0.1);
+local Not_FindFirstChild_198 = not FindFirstChild_198;
+-- true
+local var1100 = tick();
+local var1101 = var1100 - var119;
+-- 2.141637
+local var1102 = (var1101 < 3); -- true
+local var1103 = (var1102 and 11240881); -- 11240881
+local FindFirstChild_199 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1104 = (FindFirstChild_199 and 12925758);
+local Waited_For_197 = task.wait(0.1);
+local Not_FindFirstChild_199 = not FindFirstChild_199;
+-- true
+local var1105 = tick();
+local var1106 = var1105 - var119;
+-- 2.152502
+local var1107 = (var1106 < 3); -- true
+local var1108 = (var1107 and 11240881); -- 11240881
+local FindFirstChild_200 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1109 = (FindFirstChild_200 and 12925758);
+local Waited_For_198 = task.wait(0.1);
+local Not_FindFirstChild_200 = not FindFirstChild_200;
+-- true
+local var1110 = tick();
+local var1111 = var1110 - var119;
+-- 2.163367
+local var1112 = (var1111 < 3); -- true
+local var1113 = (var1112 and 11240881); -- 11240881
+local FindFirstChild_201 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1114 = (FindFirstChild_201 and 12925758);
+local Waited_For_199 = task.wait(0.1);
+local Not_FindFirstChild_201 = not FindFirstChild_201;
+-- true
+local var1115 = tick();
+local var1116 = var1115 - var119;
+-- 2.174282
+local var1117 = (var1116 < 3); -- true
+local var1118 = (var1117 and 11240881); -- 11240881
+local FindFirstChild_202 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1119 = (FindFirstChild_202 and 12925758);
+local Waited_For_200 = task.wait(0.1);
+local Not_FindFirstChild_202 = not FindFirstChild_202;
+-- true
+local var1120 = tick();
+local var1121 = var1120 - var119;
+-- 2.185143
+local var1122 = (var1121 < 3); -- true
+local var1123 = (var1122 and 11240881); -- 11240881
+local FindFirstChild_203 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1124 = (FindFirstChild_203 and 12925758);
+local Waited_For_201 = task.wait(0.1);
+local Not_FindFirstChild_203 = not FindFirstChild_203;
+-- true
+local var1125 = tick();
+local var1126 = var1125 - var119;
+-- 2.196001
+local var1127 = (var1126 < 3); -- true
+local var1128 = (var1127 and 11240881); -- 11240881
+local FindFirstChild_204 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1129 = (FindFirstChild_204 and 12925758);
+local Waited_For_202 = task.wait(0.1);
+local Not_FindFirstChild_204 = not FindFirstChild_204;
+-- true
+local var1130 = tick();
+local var1131 = var1130 - var119;
+-- 2.206876
+local var1132 = (var1131 < 3); -- true
+local var1133 = (var1132 and 11240881); -- 11240881
+local FindFirstChild_205 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1134 = (FindFirstChild_205 and 12925758);
+local Waited_For_203 = task.wait(0.1);
+local Not_FindFirstChild_205 = not FindFirstChild_205;
+-- true
+local var1135 = tick();
+local var1136 = var1135 - var119;
+-- 2.217768
+local var1137 = (var1136 < 3); -- true
+local var1138 = (var1137 and 11240881); -- 11240881
+local FindFirstChild_206 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1139 = (FindFirstChild_206 and 12925758);
+local Waited_For_204 = task.wait(0.1);
+local Not_FindFirstChild_206 = not FindFirstChild_206;
+-- true
+local var1140 = tick();
+local var1141 = var1140 - var119;
+-- 2.228638
+local var1142 = (var1141 < 3); -- true
+local var1143 = (var1142 and 11240881); -- 11240881
+local FindFirstChild_207 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1144 = (FindFirstChild_207 and 12925758);
+local Waited_For_205 = task.wait(0.1);
+local Not_FindFirstChild_207 = not FindFirstChild_207;
+-- true
+local var1145 = tick();
+local var1146 = var1145 - var119;
+-- 2.239507
+local var1147 = (var1146 < 3); -- true
+local var1148 = (var1147 and 11240881); -- 11240881
+local FindFirstChild_208 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1149 = (FindFirstChild_208 and 12925758);
+local Waited_For_206 = task.wait(0.1);
+local Not_FindFirstChild_208 = not FindFirstChild_208;
+-- true
+local var1150 = tick();
+local var1151 = var1150 - var119;
+-- 2.250376
+local var1152 = (var1151 < 3); -- true
+local var1153 = (var1152 and 11240881); -- 11240881
+local FindFirstChild_209 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1154 = (FindFirstChild_209 and 12925758);
+local Waited_For_207 = task.wait(0.1);
+local Not_FindFirstChild_209 = not FindFirstChild_209;
+-- true
+local var1155 = tick();
+local var1156 = var1155 - var119;
+-- 2.261305
+local var1157 = (var1156 < 3); -- true
+local var1158 = (var1157 and 11240881); -- 11240881
+local FindFirstChild_210 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1159 = (FindFirstChild_210 and 12925758);
+local Waited_For_208 = task.wait(0.1);
+local Not_FindFirstChild_210 = not FindFirstChild_210;
+-- true
+local var1160 = tick();
+local var1161 = var1160 - var119;
+-- 2.272213
+local var1162 = (var1161 < 3); -- true
+local var1163 = (var1162 and 11240881); -- 11240881
+local FindFirstChild_211 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1164 = (FindFirstChild_211 and 12925758);
+local Waited_For_209 = task.wait(0.1);
+local Not_FindFirstChild_211 = not FindFirstChild_211;
+-- true
+local var1165 = tick();
+local var1166 = var1165 - var119;
+-- 2.283080
+local var1167 = (var1166 < 3); -- true
+local var1168 = (var1167 and 11240881); -- 11240881
+local FindFirstChild_212 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1169 = (FindFirstChild_212 and 12925758);
+local Waited_For_210 = task.wait(0.1);
+local Not_FindFirstChild_212 = not FindFirstChild_212;
+-- true
+local var1170 = tick();
+local var1171 = var1170 - var119;
+-- 2.293957
+local var1172 = (var1171 < 3); -- true
+local var1173 = (var1172 and 11240881); -- 11240881
+local FindFirstChild_213 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1174 = (FindFirstChild_213 and 12925758);
+local Waited_For_211 = task.wait(0.1);
+local Not_FindFirstChild_213 = not FindFirstChild_213;
+-- true
+local var1175 = tick();
+local var1176 = var1175 - var119;
+-- 2.304859
+local var1177 = (var1176 < 3); -- true
+local var1178 = (var1177 and 11240881); -- 11240881
+local FindFirstChild_214 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1179 = (FindFirstChild_214 and 12925758);
+local Waited_For_212 = task.wait(0.1);
+local Not_FindFirstChild_214 = not FindFirstChild_214;
+-- true
+local var1180 = tick();
+local var1181 = var1180 - var119;
+-- 2.315774
+local var1182 = (var1181 < 3); -- true
+local var1183 = (var1182 and 11240881); -- 11240881
+local FindFirstChild_215 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1184 = (FindFirstChild_215 and 12925758);
+local Waited_For_213 = task.wait(0.1);
+local Not_FindFirstChild_215 = not FindFirstChild_215;
+-- true
+local var1185 = tick();
+local var1186 = var1185 - var119;
+-- 2.327134
+local var1187 = (var1186 < 3); -- true
+local var1188 = (var1187 and 11240881); -- 11240881
+local FindFirstChild_216 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1189 = (FindFirstChild_216 and 12925758);
+local Waited_For_214 = task.wait(0.1);
+local Not_FindFirstChild_216 = not FindFirstChild_216;
+-- true
+local var1190 = tick();
+local var1191 = var1190 - var119;
+-- 2.337932
+local var1192 = (var1191 < 3); -- true
+local var1193 = (var1192 and 11240881); -- 11240881
+local FindFirstChild_217 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1194 = (FindFirstChild_217 and 12925758);
+local Waited_For_215 = task.wait(0.1);
+local Not_FindFirstChild_217 = not FindFirstChild_217;
+-- true
+local var1195 = tick();
+local var1196 = var1195 - var119;
+-- 2.348696
+local var1197 = (var1196 < 3); -- true
+local var1198 = (var1197 and 11240881); -- 11240881
+local FindFirstChild_218 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1199 = (FindFirstChild_218 and 12925758);
+local Waited_For_216 = task.wait(0.1);
+local Not_FindFirstChild_218 = not FindFirstChild_218;
+-- true
+local var1200 = tick();
+local var1201 = var1200 - var119;
+-- 2.359833
+local var1202 = (var1201 < 3); -- true
+local var1203 = (var1202 and 11240881); -- 11240881
+local FindFirstChild_219 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1204 = (FindFirstChild_219 and 12925758);
+local Waited_For_217 = task.wait(0.1);
+local Not_FindFirstChild_219 = not FindFirstChild_219;
+-- true
+local var1205 = tick();
+local var1206 = var1205 - var119;
+-- 2.370605
+local var1207 = (var1206 < 3); -- true
+local var1208 = (var1207 and 11240881); -- 11240881
+local FindFirstChild_220 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1209 = (FindFirstChild_220 and 12925758);
+local Waited_For_218 = task.wait(0.1);
+local Not_FindFirstChild_220 = not FindFirstChild_220;
+-- true
+local var1210 = tick();
+local var1211 = var1210 - var119;
+-- 2.381348
+local var1212 = (var1211 < 3); -- true
+local var1213 = (var1212 and 11240881); -- 11240881
+local FindFirstChild_221 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1214 = (FindFirstChild_221 and 12925758);
+local Waited_For_219 = task.wait(0.1);
+local Not_FindFirstChild_221 = not FindFirstChild_221;
+-- true
+local var1215 = tick();
+local var1216 = var1215 - var119;
+-- 2.392085
+local var1217 = (var1216 < 3); -- true
+local var1218 = (var1217 and 11240881); -- 11240881
+local FindFirstChild_222 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1219 = (FindFirstChild_222 and 12925758);
+local Waited_For_220 = task.wait(0.1);
+local Not_FindFirstChild_222 = not FindFirstChild_222;
+-- true
+local var1220 = tick();
+local var1221 = var1220 - var119;
+-- 2.402831
+local var1222 = (var1221 < 3); -- true
+local var1223 = (var1222 and 11240881); -- 11240881
+local FindFirstChild_223 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1224 = (FindFirstChild_223 and 12925758);
+local Waited_For_221 = task.wait(0.1);
+local Not_FindFirstChild_223 = not FindFirstChild_223;
+-- true
+local var1225 = tick();
+local var1226 = var1225 - var119;
+-- 2.413604
+local var1227 = (var1226 < 3); -- true
+local var1228 = (var1227 and 11240881); -- 11240881
+local FindFirstChild_224 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1229 = (FindFirstChild_224 and 12925758);
+local Waited_For_222 = task.wait(0.1);
+local Not_FindFirstChild_224 = not FindFirstChild_224;
+-- true
+local var1230 = tick();
+local var1231 = var1230 - var119;
+-- 2.424396
+local var1232 = (var1231 < 3); -- true
+local var1233 = (var1232 and 11240881); -- 11240881
+local FindFirstChild_225 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1234 = (FindFirstChild_225 and 12925758);
+local Waited_For_223 = task.wait(0.1);
+local Not_FindFirstChild_225 = not FindFirstChild_225;
+-- true
+local var1235 = tick();
+local var1236 = var1235 - var119;
+-- 2.435471
+local var1237 = (var1236 < 3); -- true
+local var1238 = (var1237 and 11240881); -- 11240881
+local FindFirstChild_226 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1239 = (FindFirstChild_226 and 12925758);
+local Waited_For_224 = task.wait(0.1);
+local Not_FindFirstChild_226 = not FindFirstChild_226;
+-- true
+local var1240 = tick();
+local var1241 = var1240 - var119;
+-- 2.446263
+local var1242 = (var1241 < 3); -- true
+local var1243 = (var1242 and 11240881); -- 11240881
+local FindFirstChild_227 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1244 = (FindFirstChild_227 and 12925758);
+local Waited_For_225 = task.wait(0.1);
+local Not_FindFirstChild_227 = not FindFirstChild_227;
+-- true
+local var1245 = tick();
+local var1246 = var1245 - var119;
+-- 2.457061
+local var1247 = (var1246 < 3); -- true
+local var1248 = (var1247 and 11240881); -- 11240881
+local FindFirstChild_228 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1249 = (FindFirstChild_228 and 12925758);
+local Waited_For_226 = task.wait(0.1);
+local Not_FindFirstChild_228 = not FindFirstChild_228;
+-- true
+local var1250 = tick();
+local var1251 = var1250 - var119;
+-- 2.467865
+local var1252 = (var1251 < 3); -- true
+local var1253 = (var1252 and 11240881); -- 11240881
+local FindFirstChild_229 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1254 = (FindFirstChild_229 and 12925758);
+local Waited_For_227 = task.wait(0.1);
+local Not_FindFirstChild_229 = not FindFirstChild_229;
+-- true
+local var1255 = tick();
+local var1256 = var1255 - var119;
+-- 2.478644
+local var1257 = (var1256 < 3); -- true
+local var1258 = (var1257 and 11240881); -- 11240881
+local FindFirstChild_230 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1259 = (FindFirstChild_230 and 12925758);
+local Waited_For_228 = task.wait(0.1);
+local Not_FindFirstChild_230 = not FindFirstChild_230;
+-- true
+local var1260 = tick();
+local var1261 = var1260 - var119;
+-- 2.489416
+local var1262 = (var1261 < 3); -- true
+local var1263 = (var1262 and 11240881); -- 11240881
+local FindFirstChild_231 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1264 = (FindFirstChild_231 and 12925758);
+local Waited_For_229 = task.wait(0.1);
+local Not_FindFirstChild_231 = not FindFirstChild_231;
+-- true
+local var1265 = tick();
+local var1266 = var1265 - var119;
+-- 2.500207
+local var1267 = (var1266 < 3); -- true
+local var1268 = (var1267 and 11240881); -- 11240881
+local FindFirstChild_232 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1269 = (FindFirstChild_232 and 12925758);
+local Waited_For_230 = task.wait(0.1);
+local Not_FindFirstChild_232 = not FindFirstChild_232;
+-- true
+local var1270 = tick();
+local var1271 = var1270 - var119;
+-- 2.510988
+local var1272 = (var1271 < 3); -- true
+local var1273 = (var1272 and 11240881); -- 11240881
+local FindFirstChild_233 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1274 = (FindFirstChild_233 and 12925758);
+local Waited_For_231 = task.wait(0.1);
+local Not_FindFirstChild_233 = not FindFirstChild_233;
+-- true
+local var1275 = tick();
+local var1276 = var1275 - var119;
+-- 2.521791
+local var1277 = (var1276 < 3); -- true
+local var1278 = (var1277 and 11240881); -- 11240881
+local FindFirstChild_234 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1279 = (FindFirstChild_234 and 12925758);
+local Waited_For_232 = task.wait(0.1);
+local Not_FindFirstChild_234 = not FindFirstChild_234;
+-- true
+local var1280 = tick();
+local var1281 = var1280 - var119;
+-- 2.532561
+local var1282 = (var1281 < 3); -- true
+local var1283 = (var1282 and 11240881); -- 11240881
+local FindFirstChild_235 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1284 = (FindFirstChild_235 and 12925758);
+local Waited_For_233 = task.wait(0.1);
+local Not_FindFirstChild_235 = not FindFirstChild_235;
+-- true
+local var1285 = tick();
+local var1286 = var1285 - var119;
+-- 2.543334
+local var1287 = (var1286 < 3); -- true
+local var1288 = (var1287 and 11240881); -- 11240881
+local FindFirstChild_236 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1289 = (FindFirstChild_236 and 12925758);
+local Waited_For_234 = task.wait(0.1);
+local Not_FindFirstChild_236 = not FindFirstChild_236;
+-- true
+local var1290 = tick();
+local var1291 = var1290 - var119;
+-- 2.554104
+local var1292 = (var1291 < 3); -- true
+local var1293 = (var1292 and 11240881); -- 11240881
+local FindFirstChild_237 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1294 = (FindFirstChild_237 and 12925758);
+local Waited_For_235 = task.wait(0.1);
+local Not_FindFirstChild_237 = not FindFirstChild_237;
+-- true
+local var1295 = tick();
+local var1296 = var1295 - var119;
+-- 2.564931
+local var1297 = (var1296 < 3); -- true
+local var1298 = (var1297 and 11240881); -- 11240881
+local FindFirstChild_238 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1299 = (FindFirstChild_238 and 12925758);
+local Waited_For_236 = task.wait(0.1);
+local Not_FindFirstChild_238 = not FindFirstChild_238;
+-- true
+local var1300 = tick();
+local var1301 = var1300 - var119;
+-- 2.576164
+local var1302 = (var1301 < 3); -- true
+local var1303 = (var1302 and 11240881); -- 11240881
+local FindFirstChild_239 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1304 = (FindFirstChild_239 and 12925758);
+local Waited_For_237 = task.wait(0.1);
+local Not_FindFirstChild_239 = not FindFirstChild_239;
+-- true
+local var1305 = tick();
+local var1306 = var1305 - var119;
+-- 2.587162
+local var1307 = (var1306 < 3); -- true
+local var1308 = (var1307 and 11240881); -- 11240881
+local FindFirstChild_240 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1309 = (FindFirstChild_240 and 12925758);
+local Waited_For_238 = task.wait(0.1);
+local Not_FindFirstChild_240 = not FindFirstChild_240;
+-- true
+local var1310 = tick();
+local var1311 = var1310 - var119;
+-- 2.598097
+local var1312 = (var1311 < 3); -- true
+local var1313 = (var1312 and 11240881); -- 11240881
+local FindFirstChild_241 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1314 = (FindFirstChild_241 and 12925758);
+local Waited_For_239 = task.wait(0.1);
+local Not_FindFirstChild_241 = not FindFirstChild_241;
+-- true
+local var1315 = tick();
+local var1316 = var1315 - var119;
+-- 2.608932
+local var1317 = (var1316 < 3); -- true
+local var1318 = (var1317 and 11240881); -- 11240881
+local FindFirstChild_242 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1319 = (FindFirstChild_242 and 12925758);
+local Waited_For_240 = task.wait(0.1);
+local Not_FindFirstChild_242 = not FindFirstChild_242;
+-- true
+local var1320 = tick();
+local var1321 = var1320 - var119;
+-- 2.619915
+local var1322 = (var1321 < 3); -- true
+local var1323 = (var1322 and 11240881); -- 11240881
+local FindFirstChild_243 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1324 = (FindFirstChild_243 and 12925758);
+local Waited_For_241 = task.wait(0.1);
+local Not_FindFirstChild_243 = not FindFirstChild_243;
+-- true
+local var1325 = tick();
+local var1326 = var1325 - var119;
+-- 2.630807
+local var1327 = (var1326 < 3); -- true
+local var1328 = (var1327 and 11240881); -- 11240881
+local FindFirstChild_244 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1329 = (FindFirstChild_244 and 12925758);
+local Waited_For_242 = task.wait(0.1);
+local Not_FindFirstChild_244 = not FindFirstChild_244;
+-- true
+local var1330 = tick();
+local var1331 = var1330 - var119;
+-- 2.641628
+local var1332 = (var1331 < 3); -- true
+local var1333 = (var1332 and 11240881); -- 11240881
+local FindFirstChild_245 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1334 = (FindFirstChild_245 and 12925758);
+local Waited_For_243 = task.wait(0.1);
+local Not_FindFirstChild_245 = not FindFirstChild_245;
+-- true
+local var1335 = tick();
+local var1336 = var1335 - var119;
+-- 2.652341
+local var1337 = (var1336 < 3); -- true
+local var1338 = (var1337 and 11240881); -- 11240881
+local FindFirstChild_246 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1339 = (FindFirstChild_246 and 12925758);
+local Waited_For_244 = task.wait(0.1);
+local Not_FindFirstChild_246 = not FindFirstChild_246;
+-- true
+local var1340 = tick();
+local var1341 = var1340 - var119;
+-- 2.663046
+local var1342 = (var1341 < 3); -- true
+local var1343 = (var1342 and 11240881); -- 11240881
+local FindFirstChild_247 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1344 = (FindFirstChild_247 and 12925758);
+local Waited_For_245 = task.wait(0.1);
+local Not_FindFirstChild_247 = not FindFirstChild_247;
+-- true
+local var1345 = tick();
+local var1346 = var1345 - var119;
+-- 2.674076
+local var1347 = (var1346 < 3); -- true
+local var1348 = (var1347 and 11240881); -- 11240881
+local FindFirstChild_248 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1349 = (FindFirstChild_248 and 12925758);
+local Waited_For_246 = task.wait(0.1);
+local Not_FindFirstChild_248 = not FindFirstChild_248;
+-- true
+local var1350 = tick();
+local var1351 = var1350 - var119;
+-- 2.684922
+local var1352 = (var1351 < 3); -- true
+local var1353 = (var1352 and 11240881); -- 11240881
+local FindFirstChild_249 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1354 = (FindFirstChild_249 and 12925758);
+local Waited_For_247 = task.wait(0.1);
+local Not_FindFirstChild_249 = not FindFirstChild_249;
+-- true
+local var1355 = tick();
+local var1356 = var1355 - var119;
+-- 2.696112
+local var1357 = (var1356 < 3); -- true
+local var1358 = (var1357 and 11240881); -- 11240881
+local FindFirstChild_250 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1359 = (FindFirstChild_250 and 12925758);
+local Waited_For_248 = task.wait(0.1);
+local Not_FindFirstChild_250 = not FindFirstChild_250;
+-- true
+local var1360 = tick();
+local var1361 = var1360 - var119;
+-- 2.707134
+local var1362 = (var1361 < 3); -- true
+local var1363 = (var1362 and 11240881); -- 11240881
+local FindFirstChild_251 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1364 = (FindFirstChild_251 and 12925758);
+local Waited_For_249 = task.wait(0.1);
+local Not_FindFirstChild_251 = not FindFirstChild_251;
+-- true
+local var1365 = tick();
+local var1366 = var1365 - var119;
+-- 2.718205
+local var1367 = (var1366 < 3); -- true
+local var1368 = (var1367 and 11240881); -- 11240881
+local FindFirstChild_252 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1369 = (FindFirstChild_252 and 12925758);
+local Waited_For_250 = task.wait(0.1);
+local Not_FindFirstChild_252 = not FindFirstChild_252;
+-- true
+local var1370 = tick();
+local var1371 = var1370 - var119;
+-- 2.729236
+local var1372 = (var1371 < 3); -- true
+local var1373 = (var1372 and 11240881); -- 11240881
+local FindFirstChild_253 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1374 = (FindFirstChild_253 and 12925758);
+local Waited_For_251 = task.wait(0.1);
+local Not_FindFirstChild_253 = not FindFirstChild_253;
+-- true
+local var1375 = tick();
+local var1376 = var1375 - var119;
+-- 2.740289
+local var1377 = (var1376 < 3); -- true
+local var1378 = (var1377 and 11240881); -- 11240881
+local FindFirstChild_254 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1379 = (FindFirstChild_254 and 12925758);
+local Waited_For_252 = task.wait(0.1);
+local Not_FindFirstChild_254 = not FindFirstChild_254;
+-- true
+local var1380 = tick();
+local var1381 = var1380 - var119;
+-- 2.751375
+local var1382 = (var1381 < 3); -- true
+local var1383 = (var1382 and 11240881); -- 11240881
+local FindFirstChild_255 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1384 = (FindFirstChild_255 and 12925758);
+local Waited_For_253 = task.wait(0.1);
+local Not_FindFirstChild_255 = not FindFirstChild_255;
+-- true
+local var1385 = tick();
+local var1386 = var1385 - var119;
+-- 2.762428
+local var1387 = (var1386 < 3); -- true
+local var1388 = (var1387 and 11240881); -- 11240881
+local FindFirstChild_256 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1389 = (FindFirstChild_256 and 12925758);
+local Waited_For_254 = task.wait(0.1);
+local Not_FindFirstChild_256 = not FindFirstChild_256;
+-- true
+local var1390 = tick();
+local var1391 = var1390 - var119;
+-- 2.774102
+local var1392 = (var1391 < 3); -- true
+local var1393 = (var1392 and 11240881); -- 11240881
+local FindFirstChild_257 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1394 = (FindFirstChild_257 and 12925758);
+local Waited_For_255 = task.wait(0.1);
+local Not_FindFirstChild_257 = not FindFirstChild_257;
+-- true
+local var1395 = tick();
+local var1396 = var1395 - var119;
+-- 2.785132
+local var1397 = (var1396 < 3); -- true
+local var1398 = (var1397 and 11240881); -- 11240881
+local FindFirstChild_258 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1399 = (FindFirstChild_258 and 12925758);
+local Waited_For_256 = task.wait(0.1);
+local Not_FindFirstChild_258 = not FindFirstChild_258;
+-- true
+local var1400 = tick();
+local var1401 = var1400 - var119;
+-- 2.796197
+local var1402 = (var1401 < 3); -- true
+local var1403 = (var1402 and 11240881); -- 11240881
+local FindFirstChild_259 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1404 = (FindFirstChild_259 and 12925758);
+local Waited_For_257 = task.wait(0.1);
+local Not_FindFirstChild_259 = not FindFirstChild_259;
+-- true
+local var1405 = tick();
+local var1406 = var1405 - var119;
+-- 2.807694
+local var1407 = (var1406 < 3); -- true
+local var1408 = (var1407 and 11240881); -- 11240881
+local FindFirstChild_260 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1409 = (FindFirstChild_260 and 12925758);
+local Waited_For_258 = task.wait(0.1);
+local Not_FindFirstChild_260 = not FindFirstChild_260;
+-- true
+local var1410 = tick();
+local var1411 = var1410 - var119;
+-- 2.818720
+local var1412 = (var1411 < 3); -- true
+local var1413 = (var1412 and 11240881); -- 11240881
+local FindFirstChild_261 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1414 = (FindFirstChild_261 and 12925758);
+local Waited_For_259 = task.wait(0.1);
+local Not_FindFirstChild_261 = not FindFirstChild_261;
+-- true
+local var1415 = tick();
+local var1416 = var1415 - var119;
+-- 2.829750
+local var1417 = (var1416 < 3); -- true
+local var1418 = (var1417 and 11240881); -- 11240881
+local FindFirstChild_262 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1419 = (FindFirstChild_262 and 12925758);
+local Waited_For_260 = task.wait(0.1);
+local Not_FindFirstChild_262 = not FindFirstChild_262;
+-- true
+local var1420 = tick();
+local var1421 = var1420 - var119;
+-- 2.840767
+local var1422 = (var1421 < 3); -- true
+local var1423 = (var1422 and 11240881); -- 11240881
+local FindFirstChild_263 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1424 = (FindFirstChild_263 and 12925758);
+local Waited_For_261 = task.wait(0.1);
+local Not_FindFirstChild_263 = not FindFirstChild_263;
+-- true
+local var1425 = tick();
+local var1426 = var1425 - var119;
+-- 2.851761
+local var1427 = (var1426 < 3); -- true
+local var1428 = (var1427 and 11240881); -- 11240881
+local FindFirstChild_264 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1429 = (FindFirstChild_264 and 12925758);
+local Waited_For_262 = task.wait(0.1);
+local Not_FindFirstChild_264 = not FindFirstChild_264;
+-- true
+local var1430 = tick();
+local var1431 = var1430 - var119;
+-- 2.862778
+local var1432 = (var1431 < 3); -- true
+local var1433 = (var1432 and 11240881); -- 11240881
+local FindFirstChild_265 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1434 = (FindFirstChild_265 and 12925758);
+local Waited_For_263 = task.wait(0.1);
+local Not_FindFirstChild_265 = not FindFirstChild_265;
+-- true
+local var1435 = tick();
+local var1436 = var1435 - var119;
+-- 2.873824
+local var1437 = (var1436 < 3); -- true
+local var1438 = (var1437 and 11240881); -- 11240881
+local FindFirstChild_266 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1439 = (FindFirstChild_266 and 12925758);
+local Waited_For_264 = task.wait(0.1);
+local Not_FindFirstChild_266 = not FindFirstChild_266;
+-- true
+local var1440 = tick();
+local var1441 = var1440 - var119;
+-- 2.884837
+local var1442 = (var1441 < 3); -- true
+local var1443 = (var1442 and 11240881); -- 11240881
+local FindFirstChild_267 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1444 = (FindFirstChild_267 and 12925758);
+local Waited_For_265 = task.wait(0.1);
+local Not_FindFirstChild_267 = not FindFirstChild_267;
+-- true
+local var1445 = tick();
+local var1446 = var1445 - var119;
+-- 2.895842
+local var1447 = (var1446 < 3); -- true
+local var1448 = (var1447 and 11240881); -- 11240881
+local FindFirstChild_268 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1449 = (FindFirstChild_268 and 12925758);
+local Waited_For_266 = task.wait(0.1);
+local Not_FindFirstChild_268 = not FindFirstChild_268;
+-- true
+local var1450 = tick();
+local var1451 = var1450 - var119;
+-- 2.906910
+local var1452 = (var1451 < 3); -- true
+local var1453 = (var1452 and 11240881); -- 11240881
+local FindFirstChild_269 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1454 = (FindFirstChild_269 and 12925758);
+local Waited_For_267 = task.wait(0.1);
+local Not_FindFirstChild_269 = not FindFirstChild_269;
+-- true
+local var1455 = tick();
+local var1456 = var1455 - var119;
+-- 2.917974
+local var1457 = (var1456 < 3); -- true
+local var1458 = (var1457 and 11240881); -- 11240881
+local FindFirstChild_270 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1459 = (FindFirstChild_270 and 12925758);
+local Waited_For_268 = task.wait(0.1);
+local Not_FindFirstChild_270 = not FindFirstChild_270;
+-- true
+local var1460 = tick();
+local var1461 = var1460 - var119;
+-- 2.928993
+local var1462 = (var1461 < 3); -- true
+local var1463 = (var1462 and 11240881); -- 11240881
+local FindFirstChild_271 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1464 = (FindFirstChild_271 and 12925758);
+local Waited_For_269 = task.wait(0.1);
+local Not_FindFirstChild_271 = not FindFirstChild_271;
+-- true
+local var1465 = tick();
+local var1466 = var1465 - var119;
+-- 2.940001
+local var1467 = (var1466 < 3); -- true
+local var1468 = (var1467 and 11240881); -- 11240881
+local FindFirstChild_272 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1469 = (FindFirstChild_272 and 12925758);
+local Waited_For_270 = task.wait(0.1);
+local Not_FindFirstChild_272 = not FindFirstChild_272;
+-- true
+local var1470 = tick();
+local var1471 = var1470 - var119;
+-- 2.951029
+local var1472 = (var1471 < 3); -- true
+local var1473 = (var1472 and 11240881); -- 11240881
+local FindFirstChild_273 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1474 = (FindFirstChild_273 and 12925758);
+local Waited_For_271 = task.wait(0.1);
+local Not_FindFirstChild_273 = not FindFirstChild_273;
+-- true
+local var1475 = tick();
+local var1476 = var1475 - var119;
+-- 2.962091
+local var1477 = (var1476 < 3); -- true
+local var1478 = (var1477 and 11240881); -- 11240881
+local FindFirstChild_274 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1479 = (FindFirstChild_274 and 12925758);
+local Waited_For_272 = task.wait(0.1);
+local Not_FindFirstChild_274 = not FindFirstChild_274;
+-- true
+local var1480 = tick();
+local var1481 = var1480 - var119;
+-- 2.973176
+local var1482 = (var1481 < 3); -- true
+local var1483 = (var1482 and 11240881); -- 11240881
+local FindFirstChild_275 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1484 = (FindFirstChild_275 and 12925758);
+local Waited_For_273 = task.wait(0.1);
+local Not_FindFirstChild_275 = not FindFirstChild_275;
+-- true
+local var1485 = tick();
+local var1486 = var1485 - var119;
+-- 2.984864
+local var1487 = (var1486 < 3); -- true
+local var1488 = (var1487 and 11240881); -- 11240881
+local FindFirstChild_276 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1489 = (FindFirstChild_276 and 12925758);
+local Waited_For_274 = task.wait(0.1);
+local Not_FindFirstChild_276 = not FindFirstChild_276;
+-- true
+local var1490 = tick();
+local var1491 = var1490 - var119;
+-- 2.995940
+local var1492 = (var1491 < 3); -- true
+local var1493 = (var1492 and 11240881); -- 11240881
+local FindFirstChild_277 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Strength");
+local var1494 = (FindFirstChild_277 and 12925758);
+local Waited_For_275 = task.wait(0.1);
+local Not_FindFirstChild_277 = not FindFirstChild_277;
+-- true
+local var1495 = tick();
+local var1496 = var1495 - var119;
+-- 3.006974
+local var1497 = (var1496 < 3); -- false
+local var1498 = (var1497 and 11240881);
+local FindFirstChild_278 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Rebirths");
+if not Rebirths_2 then -- didnt run, expr id 11, has an else.
+else
+    if not Rebirths_2 then -- didnt run, expr id 12, has an else.
+    else
+        local Connection;
+        Connection = Rebirths_2.Changed:Connect(uGreXTkDRtdZydgcLVkAQypcunutCGVS);
+    end
+    local FindFirstChild_279 = Leaderstats_3.FindFirstChild(Leaderstats_4, "Kills");
+    local var1499 = (FindFirstChild_279 and 11998707); -- 11998707
+    local var1500 = (var1499 or 11937728);
+    local Connection_2;
+    Connection_2 = Kills_2.Changed:Connect(uaKBCWNNvSWeHpdswtwcAAyxIjJmYEkY);
+    local Durability_3 = LocalPlayer:FindFirstChild("Durability");
+    local Connection_3;
+    Connection_3 = Durability_2.Changed:Connect(jRVFAfeVjkzSGoNQqPxMdiyYtAtgLQja);
+    local Agility_3 = LocalPlayer:FindFirstChild("Agility");
+    if Agility_2 then -- ran, expr id 13, has an else.
+        local Connection_4;
+        Connection_4 = Agility_2.Changed:Connect(HOAAzGhxZMAqwnElheaEWGpySUvCXyay);
+    end
+    local EvilKarma_3 = LocalPlayer:FindFirstChild("evilKarma");
+    if EvilKarma_2 then -- ran, expr id 14, has an else.
+        local Connection_5;
+        Connection_5 = EvilKarma_2.Changed:Connect(fLystowdjrxJmiUnXlMbQVakQlcOMKae);
+    end
+    local GoodKarma_3 = LocalPlayer:FindFirstChild("goodKarma");
+    local var1501 = (GoodKarma_3 and 13664296); -- 13664296
+    local Connection_6;
+    Connection_6 = GoodKarma_2.Changed:Connect(JQoajiGQfEDYkuFuIKdBpuqsVQWqtNeY);
+    local AddTab_2 = AddWindow_2.AddTab;
+    local STATS_TRACKING = AddWindow_2:AddTab("STATS TRACKING");
+    local AddLabel_27 = STATS_TRACKING.AddLabel;
+    local STATS_TRACKING_2 = STATS_TRACKING:AddLabel("══════════════ STATS TRACKING ══════════════");
+    STATS_TRACKING_2.TextSize = 30;
+    local Players_6 = game:GetService("Players");
+    local LocalPlayer_6 = Players.LocalPlayer;
+    local Leaderstats_5 = LocalPlayer:WaitForChild("leaderstats");
+    local FindFirstChild_280 = Leaderstats_5.FindFirstChild;
+    local Rebirths_3 = Leaderstats_5:FindFirstChild("Rebirths");
+    local FindFirstChild_281 = Leaderstats_5.FindFirstChild;
+    local Strength_3 = Leaderstats_5:FindFirstChild("Strength");
+    if Rebirths_3 then -- ran, expr id 15, has an else.
+        local Value_21 = Rebirths_3.Value;
+    end
+    -- local _ = Value_21 or (unknown_value)
+    if Strength_3 then -- ran, expr id 16, has an else.
+        local Value_22 = Strength_3.Value;
+    end
+    -- local _ = Value_22 or (unknown_value)
+    local var1501 = tick();
+    local AddLabel_28 = STATS_TRACKING.AddLabel;
+    local Rebirths_4 = STATS_TRACKING:AddLabel("════ Rebirths ════");
+    Rebirths_4.TextSize = 20;
+    local AddLabel_29 = STATS_TRACKING.AddLabel;
+    local var1501 = STATS_TRACKING:AddLabel("Rebirths Per Minute: ...");
+    local AddLabel_30 = STATS_TRACKING.AddLabel;
+    local var1502 = STATS_TRACKING:AddLabel("Rebirths Per Hour: ...");
+    local AddLabel_31 = STATS_TRACKING.AddLabel;
+    local var1503 = STATS_TRACKING:AddLabel("Rebirths Per Day: ...");
+    local AddLabel_32 = STATS_TRACKING.AddLabel;
+    local var1504 = STATS_TRACKING:AddLabel("Rebirths Per Week: ...");
+    local AddLabel_33 = STATS_TRACKING.AddLabel;
+    local var1505 = STATS_TRACKING:AddLabel("Rebirths Per Month: ...");
+    local AddLabel_34 = STATS_TRACKING.AddLabel;
+    local Strength_4 = STATS_TRACKING:AddLabel("════ Strength ════");
+    Strength_4.TextSize = 20;
+    local AddLabel_35 = STATS_TRACKING.AddLabel;
+    local var1505 = STATS_TRACKING:AddLabel("Strength Per Minute: ...");
+    local AddLabel_36 = STATS_TRACKING.AddLabel;
+    local var1506 = STATS_TRACKING:AddLabel("Strength Per Hour: ...");
+    local AddLabel_37 = STATS_TRACKING.AddLabel;
+    local var1507 = STATS_TRACKING:AddLabel("Strength Per Day: ...");
+    local AddLabel_38 = STATS_TRACKING.AddLabel;
+    local var1508 = STATS_TRACKING:AddLabel("Strength Per Week: ...");
+    local AddLabel_39 = STATS_TRACKING.AddLabel;
+    local var1509 = STATS_TRACKING:AddLabel("Strength Per Month: ...");
+    local Spawned_3 = task.spawn(OUcEpTjBzKhqpglshNuTrfoUrXBciHKk);
+    local AddTab_3 = AddWindow_2.AddTab;
+    local PACK_FARM = AddWindow_2:AddTab("PACK FARM ");
+    Env.rebirthTab = PACK_FARM;
+    local AddLabel_40 = PACK_FARM.AddLabel;
+    local AUTO_SIZE_2 = PACK_FARM:AddLabel("═══AUTO SIZE 2═══");
+    local AddSwitch = PACK_FARM.AddSwitch;
+    local Auto_Size_2 = PACK_FARM:AddSwitch("Auto Size 2", IBInfzPaIpueFmPRktDxQKbIgnYRKQwe);
+    local AddLabel_41 = PACK_FARM.AddLabel;
+    local HIDE_FRAMES = PACK_FARM:AddLabel("═══HIDE FRAMES═══");
+    local AddSwitch_2 = PACK_FARM.AddSwitch;
+    local Hide_All_Frames = PACK_FARM:AddSwitch("Hide All Frames", CYHNuwAkkUWfAEJmPZgRQgWoPDXnspiz);
+    local AddLabel_42 = PACK_FARM.AddLabel;
+    local str_2 = PACK_FARM:AddLabel("═══LOCK POSITION [ ON THIS WHEN U USE PACK REBS ] ═══");
+    local AddSwitch_3 = PACK_FARM.AddSwitch;
+    local Lock_Position = PACK_FARM:AddSwitch("Lock Position", LwYNyWhYqGovPSJkjCDcYxVhSvVUUotc);
+    local AddSwitch_4 = PACK_FARM.AddSwitch;
+    local Auto_Eat_Eggs = PACK_FARM:AddSwitch("Auto Eat Eggs", hmUVxeyEtbvXaKUnnuGKnJakBcIOeJaq);
+    local AddLabel_43 = PACK_FARM.AddLabel;
+    local PACK_REBS = PACK_FARM:AddLabel("PACK REBS");
+    PACK_REBS.TextSize = 19;
+    local AddLabel_44 = PACK_FARM.AddLabel;
+    local str_3 = PACK_FARM:AddLabel("Don't ON FAST REBITH IT WILL AUTOMATICALLY REBIRTH U ");
+    local AddSwitch_5 = PACK_FARM.AddSwitch;
+    local Fast_Rebirth_Auto_Rebs = PACK_FARM:AddSwitch("Fast Rebirth [auto rebs]", lsYDevQGadciRRNwnXKvypRmmQLhcwpg);
+    local AddLabel_45 = PACK_FARM.AddLabel;
+    local __5 = PACK_FARM:AddLabel("══════════════════════════════════════════════════════════════════════════════");
+    local AddLabel_46 = PACK_FARM.AddLabel;
+    local STRENGTH_FARMS_FROM_HERE = PACK_FARM:AddLabel(" STRENGTH FARMS FROM HERE ");
+    STRENGTH_FARMS_FROM_HERE.TextSize = 19;
+    local AddSwitch_6 = PACK_FARM.AddSwitch;
+    local str_4 = PACK_FARM:AddSwitch("FAST GAINS ( mostly for i phone )  ", aJJDnhuZsTPhKybnuZEOuyddzCQIWTWk);
+    local AddSwitch_7 = PACK_FARM.AddSwitch;
+    local str_5 = PACK_FARM:AddSwitch("FAST GAINS ( less laggy , same mostly for i phone  )  ", ljEHWnGjQrFokANIdZTUDjAfKlBYrZKi);
+    local AddLabel_47 = PACK_FARM.AddLabel;
+    local __6 = PACK_FARM:AddLabel("══════════════════════════════════════════════════════════════════════════════");
+    local AddSwitch_8 = PACK_FARM.AddSwitch;
+    local FAST_GAINS_V1 = PACK_FARM:AddSwitch("FAST GAINS V1   ", XIVwxtDukYBVRDfqByRfeMRibZOeoJTd);
+    local AddSwitch_9 = PACK_FARM.AddSwitch;
+    local FAST_GAINS_V2 = PACK_FARM:AddSwitch("FAST GAINS  V2   ", VyeWTmaGcqawHVyTpCVFCfkzkIgMyAhi);
+    local AddSwitch_10 = PACK_FARM.AddSwitch;
+    local FAST_GAINS_V3 = PACK_FARM:AddSwitch("FAST GAINS  V3   ", RvRVhvuFmtxdNdbOcFXUWGMGYzVtPZOg);
+    local AddLabel_48 = PACK_FARM.AddLabel;
+    local __7 = PACK_FARM:AddLabel("══════════════════════════════════════════════════════════════════════════════");
+    local AddSwitch_11 = PACK_FARM.AddSwitch;
+    local str_6 = PACK_FARM:AddSwitch("FAST GAINS  ( SAFE FARM NO LAGGY )  ", TYXUTVJiJYgkaBcbCdirSywmaqwRqXjS);
+    local AddLabel_49 = PACK_FARM.AddLabel;
+    local __8 = PACK_FARM:AddLabel("══════════════════════════════════════════════════════════════════════════════");
+    local AddLabel_50 = PACK_FARM.AddLabel;
+    local Fast_Gains = PACK_FARM:AddLabel("══════Fast Gains══════");
+    Fast_Gains.TextSize = 19;
+    local AddDropdown = PACK_FARM.AddDropdown;
+    local Select_Gains_Speed = PACK_FARM:AddDropdown("Select Gains Speed", lpNeGyJseBYpXjsHUWyMDtmfrwnEKrsN);
+    local Add = Select_Gains_Speed.Add;
+    local FAST = Select_Gains_Speed:Add("FAST");
+    local Add_2 = Select_Gains_Speed.Add;
+    local SLOW = Select_Gains_Speed:Add("SLOW");
+    local Add_3 = Select_Gains_Speed.Add;
+    local MEDIUM = Select_Gains_Speed:Add("MEDIUM");
+    local Add_4 = Select_Gains_Speed.Add;
+    local SUPER_FAST = Select_Gains_Speed:Add(" SUPER FAST ");
+    local AddSwitch_12 = PACK_FARM.AddSwitch;
+    local Start_Gains = PACK_FARM:AddSwitch("Start Gains ", qEYdOfAeITcmlHBfTelphAjUfVFTTYeR);
+    local AddLabel_51 = PACK_FARM.AddLabel;
+    local __9 = PACK_FARM:AddLabel("════════════════════════════════════════════════════════════════════");
+    local AddTab_4 = AddWindow_2.AddTab;
+    local SETTINGS = AddWindow_2:AddTab("SETTINGS");
+    Env.settingsTab = SETTINGS;
+    local AddLabel_52 = SETTINGS.AddLabel;
+    local __10 = SETTINGS:AddLabel("══════════════════════════════════════════════════════════════════════════════════════════════════════");
+    local AddLabel_53 = SETTINGS.AddLabel;
+    local GRAPHICS = SETTINGS:AddLabel("════ GRAPHICS ════");
+    local AddSwitch_13 = SETTINGS.AddSwitch;
+    local Low_Graphics = SETTINGS:AddSwitch("Low Graphics", amsVHxKqrGOYcaaFZgVKofvmzbHAEbxW);
+    local AddLabel_54 = SETTINGS.AddLabel;
+    local __11 = SETTINGS:AddLabel("══════════════════════════════════════════════════════════════════════════════════════════════════════");
+    local AddLabel_55 = SETTINGS.AddLabel;
