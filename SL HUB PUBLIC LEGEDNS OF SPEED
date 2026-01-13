@@ -1,6 +1,6 @@
 local WindUI = (loadstring(game:HttpGet("https://relzhub.farrelghibran.com/lib/lib.lua")))();
 local Window = WindUI:CreateWindow({
-	Title = "SL Hub",
+	Title = "RU CLAN",
 	Author = "Legends Of Speed",
 	Folder = "RU CLAN",
 	Icon = "rbxassetid://106616069796379",
