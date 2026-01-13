@@ -90,7 +90,7 @@ local InviteCode = "dGd8gsSqGp";
 DiscordLinkButton = Tabs.InfoTab:Button({
 	Title = "Discord Server",
 	Callback = function()
-		setclipboard("https://discord.gg/".. InviteCode);
+		setclipboard("https://discord.gg/CCZrwYxajh".. InviteCode);
 	end
 });
 Tabs.InfoTab:Divider();
