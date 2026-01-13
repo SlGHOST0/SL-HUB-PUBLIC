@@ -29,7 +29,7 @@ local Tabs = {
 	}),
 	MainTab = Window:Tab({
 		Title = "Main",
-		Icon = "rbxassetid://10723407389",
+		Icon = "rbxassetid://106616069796379",
 		ShowTabTitle = false
 	}),
 	ShopTab = Window:Tab({
