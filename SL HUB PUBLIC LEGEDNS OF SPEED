@@ -200,7 +200,7 @@ Window:CreateTopbarButton("Save Config", "save", function()
 	WindUI:Notify({
 		Title = "Config Saved!",
 		Content = "Config automatically loads when the script is run",
-		Icon = "rbxassetid://10723407389",
+		Icon = "rbxassetid://78704487974306",
 		Duration = 5
 	});
 end, 990);
@@ -210,7 +210,7 @@ Window:CreateTopbarButton("Reset Config", "trash-2", function()
 		WindUI:Notify({
 			Title = "Config Deleted!",
 			Content = "Config reset to default",
-			Icon = "rbxassetid://10723407389",
+			Icon = "rbxassetid://78704487974306",
 			Duration = 5
 		});
 	end;
