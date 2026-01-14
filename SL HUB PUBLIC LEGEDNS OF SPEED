@@ -194,14 +194,6 @@ local Tabs = {
 };
 	});
 end, 990);
-Window:CreateTopbarButton("Reset Config", "trash-2", function()
-	if isfile("WindUI/Relz Hub/config/Grow a Garden Config.json") then
-		delfile("WindUI/Relz Hub/config/Grow a Garden Config.json");
-		WindUI:Notify({
-			Title = "Config Deleted!",
-			Content = "Config reset to default",
-			Icon = "rbxassetid://82438681868116",
-			Duration = 5
 		});
 	end;
 end, 989);
