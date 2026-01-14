@@ -2,8 +2,8 @@ local WindUI = (loadstring(game:HttpGet("https://relzhub.farrelghibran.com/lib/s
 local Window = WindUI:CreateWindow({
 	Title = "SL HUB",
 	Author = "Grow a Garden",
-	Folder = "Relz Hub",
-	Icon = "rbxassetid://90888007617640",
+	Folder = "SL HUB",
+	Icon = "rbxassetid://106616069796379",
 	Background = "rbxassetid://114411419357961",
 	Size = UDim2.fromOffset(300, 200),
 	Transparent = false,
@@ -13,7 +13,7 @@ local Window = WindUI:CreateWindow({
 	ScrollBarEnabled = false
 });
 Window:EditOpenButton({
-	Icon = "rbxassetid://90888007617640",
+	Icon = "rbxassetid://106616069796379",
 	CornerRadius = UDim.new(0, 10),
 	Position = UDim2.new(0, 75, 0, 100),
 	OnlyMobile = false,
@@ -27,7 +27,7 @@ Window:CreateTopbarButton("Save Config", "save", function()
 	WindUI:Notify({
 		Title = "Config Saved!",
 		Content = "Config automatically loads when the script is run",
-		Icon = "rbxassetid://90888007617642",
+		Icon = "rbxassetid://106616069796379",
 		Duration = 5
 	});
 end, 990);
