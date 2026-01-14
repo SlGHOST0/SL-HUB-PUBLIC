@@ -1,0 +1,5 @@
+loadstring(game:HttpGet("https://relzhub.farrelghibran.com/games/LegendsOfSpeed.lua"))()
+elseif id == 126884695634066 then
+
+loadstring(game:HttpGet("https://junk-code-security--seyxn.replit.app/raw/8xzjgpcwc6ytqr598f78zf"))() 
+elseif id ==3623096087
