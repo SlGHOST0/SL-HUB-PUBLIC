@@ -192,16 +192,6 @@ local Tabs = {
 		ShowTabTitle = false
 	})
 };
-Window:SelectTab(1);
-local ConfigManager = Window.ConfigManager;
-local Config = ConfigManager:CreateConfig("Legends Of Speed Config");
-Window:CreateTopbarButton("Save Config", "save", function()
-	Config:Save();
-	WindUI:Notify({
-		Title = "Config Saved!",
-		Content = "Config automatically loads when the script is run",
-		Icon = "rbxassetid://82438681868116",
-		Duration = 5
 	});
 end, 990);
 Window:CreateTopbarButton("Reset Config", "trash-2", function()
