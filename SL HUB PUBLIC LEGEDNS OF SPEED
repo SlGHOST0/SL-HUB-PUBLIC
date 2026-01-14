@@ -143,8 +143,7 @@ local Window = WindUI:CreateWindow({
 	ScrollBarEnabled = false
 });
 Window:EditOpenButton({
-	Icon = "Icon = "rbxassetid://ID_PNG",
-Background = nil,82438681868116",
+	Icon = "rbxassetid://78704487974306"
 	CornerRadius = UDim.new(0, 10),
 	Position = UDim2.new(0, 75, 0, 100),
 	OnlyMobile = false,
