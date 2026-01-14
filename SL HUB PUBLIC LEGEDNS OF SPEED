@@ -110,7 +110,7 @@ Verify.MouseButton1Click:Connect(function()
             end
         end
 
-        task.wait(2)
+        task.wait(2.5)
         Gui:Destroy()
     else
         Box.Text = ""
