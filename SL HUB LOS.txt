@@ -127,7 +127,7 @@ end)
 
 repeat task.wait() until getgenv().KEY_PASSED == true
 
-local WindUI = (loadstring(game:HttpGet('https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/GUI.txt'))()a")))();
+local WindUI = (loadstring(game:HttpGet('https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/GUI.txt")))();
 local Window = WindUI:CreateWindow({
 	Title = "SL HUB",
 	Author = "Legends Of Speed",
