@@ -215,7 +215,7 @@ Window:CreateTopbarButton("Reset Config", "trash-2", function()
 		});
 	end;
 end, 989);
-local InviteCode = "dGd8gsSqGp";
+local InviteCode = "https://discord.gg/mQP3qCxZZ9";
 DiscordLinkButton = Tabs.InfoTab:Button({
 	Title = "Discord Server",
 	Callback = function()
