@@ -129,9 +129,9 @@ repeat task.wait() until getgenv().KEY_PASSED == true
 
 local WindUI = (loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/GUI.txt")))();
 local Window = WindUI:CreateWindow({
-	Title = "SL HUB BY [TA7]_GHOST👻",
+	Title = "SL HUB",
 	Author = "Legends Of Speed",
-	Folder = "SL HUB",
+	Folder = "SL HUB BY [TA7]_GHOST👻"",
 	Icon = "rbxassetid://78704487974306",
 	Background = "rbxassetid://94846344741255",
 	Size = UDim2.fromOffset(450, 300),
@@ -219,7 +219,7 @@ local InviteCode = "dGd8gsSqGp";
 DiscordLinkButton = Tabs.InfoTab:Button({
 	Title = "Discord Server",
 	Callback = function()
-		setclipboard("https://discord.gg/CCZrwYxajh".. InviteCode);
+		setclipboard("https://discord.gg/mQP3qCxZZ9".. InviteCode);
 	end
 });
 Tabs.InfoTab:Divider();
@@ -839,4 +839,3 @@ JoinJobIdServerButton = ServerSection:Button({
 	end
 });
 Config:Save();
-
