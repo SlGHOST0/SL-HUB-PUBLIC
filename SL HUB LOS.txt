@@ -129,9 +129,9 @@ repeat task.wait() until getgenv().KEY_PASSED == true
 
 local WindUI = (loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/GUI.txt")))();
 local Window = WindUI:CreateWindow({
-	Title = "SL HUB",
+	Title = "SL HUB BY [TA7]_GHOST👻",
 	Author = "Legends Of Speed",
-	Folder = "SL HUB BY [TA7]_GHOST👻"",
+	Folder = "SL HUB",
 	Icon = "rbxassetid://78704487974306",
 	Background = "rbxassetid://94846344741255",
 	Size = UDim2.fromOffset(450, 300),
@@ -143,7 +143,7 @@ local Window = WindUI:CreateWindow({
 	ScrollBarEnabled = false
 });
 Window:EditOpenButton({
-	Icon = "rbxassetid://78704487974306",
+	Icon = "rbxassetid://82438681868116",
 	CornerRadius = UDim.new(0, 10),
 	Position = UDim2.new(0, 75, 0, 100),
 	OnlyMobile = false,
@@ -215,11 +215,11 @@ Window:CreateTopbarButton("Reset Config", "trash-2", function()
 		});
 	end;
 end, 989);
-local InviteCode = "https://discord.gg/mQP3qCxZZ9dGd8gsSqGp";
+local InviteCode = "dGd8gsSqGp";
 DiscordLinkButton = Tabs.InfoTab:Button({
 	Title = "Discord Server",
 	Callback = function()
-		setclipboard("mQP3qCxZZ9dGd8gsSqGp".. InviteCode);
+		setclipboard("https://discord.gg/CCZrwYxajh".. InviteCode);
 	end
 });
 Tabs.InfoTab:Divider();
@@ -675,9 +675,9 @@ SelectedPlayerDropdown = TeleportPlayerSection:Dropdown({
 	Value = nil,
 	Callback = function(Player)
 		_G.SelectedPlayer = Player;
-	end
+	endu
 });
-TeleportToPlayerButton = TeleportPlayerSection:Button({
+TeleportToPlayerButton = TeleportPlayerSection:Button(y.{
 	Title = "Teleport To Player",
 	Callback = function()
 		HumanoidRootPart.CFrame = Players[_G.SelectedPlayer].Character.HumanoidRootPart.CFrame;
