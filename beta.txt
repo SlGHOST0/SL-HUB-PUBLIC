@@ -412,7 +412,7 @@ FarmSpeedSlider = FarmSection:Slider({
 	Step = 1,
 	Value = {
 		Min = 1,
-		Max = 70,
+		Max = 100,
 		Default = 30
 	},
 	Callback = function(value)
