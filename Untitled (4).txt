@@ -413,7 +413,7 @@ FarmSpeedSlider = FarmSection:Slider({
 	Value = {
 		Min = 1,
 		Max = 100,
-		Default = 20
+		Default = 30
 	},
 	Callback = function(value)
 		_G.FarmMultiplier = value;
