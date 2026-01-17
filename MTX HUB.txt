@@ -5,7 +5,7 @@ local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 local LocalPlayer = Players.LocalPlayer
 
-local CORRECT_KEY = "MTXENCH"
+local CORRECT_KEY = "PARADOX ON TOP"
 local GET_KEY_LINK = "https://discord.gg/d8j9WEXp"
 
 getgenv().KEY_PASSED = false
@@ -36,7 +36,7 @@ end)
 local Title = Instance.new("TextLabel", Main)
 Title.Size = UDim2.new(1,0,0,50)
 Title.BackgroundTransparency = 1
-Title.Text = "🔒 MTX HUB KEY SYSTEM"
+Title.Text = "🔒 PARADOX HUB KEY SYSTEM"
 Title.Font = Enum.Font.GothamBold
 Title.TextSize = 20
 Title.TextColor3 = Color3.fromRGB(255,255,255)
@@ -127,7 +127,7 @@ end)
 
 repeat task.wait() until getgenv().KEY_PASSED == true
 
-local v1 = loadstring(game:HttpGet("https://raw.githubusercontent.com/Moha-space/elerium-v2-ui-library/refs/heads/main/Library", true))():AddWindow("                                    MTX HUB PUBLIC | MUSCLE LEGENDS |  ", {
+local v1 = loadstring(game:HttpGet("https://raw.githubusercontent.com/Moha-space/elerium-v2-ui-library/refs/heads/main/Library", true))():AddWindow("                                    PARADOX HUB PUBLIC | MUSCLE LEGENDS |  ", {
     main_color = Color3.fromRGB(139, 0, 0),
     min_size = Vector2.new(615, 685),
     can_resize = false,
