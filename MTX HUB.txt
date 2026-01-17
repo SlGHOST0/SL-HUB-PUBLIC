@@ -137,7 +137,7 @@ local v2 = v1:AddTab("I N F  \226\140\172")
 v2:AddLabel("\227\128\142 INFO \227\128\143\226\159\161\227\128\142 ABOUT \227\128\143\226\159\161\227\128\142 THE \227\128\143\226\159\161\227\128\142 SCRIPT \227\128\143")
 v2:AddLabel("WELCOME TO MTX HUB  \226\152\132\239\184\143")
 v2:AddLabel("\227\128\142 OWNER OF THIS SCRIPT \227\128\143  EPIC  DEV ")
-v2:AddLabel("Script Made By |", {
+v2:AddLabel("Script Made By. |", {
     TextColor3 = Color3.fromRGB(255, 255, 255)
 })
 local vu3 = v2:AddLabel("                                               EPIC|| DEV")
