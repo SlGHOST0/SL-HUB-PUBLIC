@@ -1,34 +1,39 @@
--- ===== SINGLE KEY SYSTEM (3 LOADERS) =====
-if getgenv().SL_KEY_SYSTEM_LOADED then return end
-getgenv().SL_KEY_SYSTEM_LOADED = true
+-- ===== ONE KEY SYSTEM ONLY (ANTI DUPLICATE) =====
+if getgenv().SL_SINGLE_KEY then return end
+getgenv().SL_SINGLE_KEY = true
 
 repeat task.wait() until game:IsLoaded()
 
+local TweenService = game:GetService("TweenService")
+
 -- ===== KEYS =====
-local NORMAL_KEY = "SLONTOP"
-local PAID_KEY   = "PremiumSFG1"
-local GHOST_KEY  = "SLXGHOST"
+local NORMAL_KEY = "SLONTOP_FREE"
+local PAID_KEY   = "SLONTOP_VIP"
+local GHOST_KEY  = "SLXGHOST"  -- المفتاح الجديد
 
 -- ===== LOADERS =====
 local NORMAL_LOADER = "https://junk-code-security--seyxn.replit.app/raw/8xzjgpcwc6ytqr598f78zf"
 local PAID_LOADER   = "https://junk-code-security--seyxn.replit.app/raw/azye54zw4ih9htrr147dfb"
-local GHOST_LOADER  = "https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/beta.txt"
+local GHOST_LOADER  = "https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/beta.txt" -- اللودر الثالث
 
-getgenv().KEY_RESULT = nil
+local GET_KEY_LINK = "https://discord.gg/Pv89sBheF"
+
+getgenv().KEY_TYPE = nil
 
 -- ===== GUI =====
-local Gui = Instance.new("ScreenGui", game.CoreGui)
+local Gui = Instance.new("ScreenGui")
 Gui.Name = "SL_KEY_SYSTEM"
+Gui.Parent = game.CoreGui
 Gui.ResetOnSpawn = false
 
 local Main = Instance.new("Frame", Gui)
-Main.Size = UDim2.new(0, 360, 0, 210)
-Main.Position = UDim2.new(0.5, -180, 0.5, -105)
-Main.BackgroundColor3 = Color3.fromRGB(20,20,20)
+Main.Size = UDim2.new(0, 360, 0, 220)
+Main.Position = UDim2.new(0.5, -180, 0.5, -110)
+Main.BackgroundColor3 = Color3.fromRGB(15,15,15)
 Main.BorderSizePixel = 0
 Main.Active = true
 Main.Draggable = true
-Instance.new("UICorner", Main)
+Instance.new("UICorner", Main).CornerRadius = UDim.new(0, 12)
 
 local Title = Instance.new("TextLabel", Main)
 Title.Size = UDim2.new(1,0,0,45)
@@ -42,43 +47,63 @@ local Box = Instance.new("TextBox", Main)
 Box.Size = UDim2.new(0.85,0,0,40)
 Box.Position = UDim2.new(0.075,0,0.35,0)
 Box.PlaceholderText = "ENTER KEY"
+Box.Text = ""
 Box.ClearTextOnFocus = false
 Box.Font = Enum.Font.Gotham
 Box.TextSize = 14
-Box.BackgroundColor3 = Color3.fromRGB(35,35,35)
+Box.BackgroundColor3 = Color3.fromRGB(30,30,30)
 Box.TextColor3 = Color3.new(1,1,1)
-Instance.new("UICorner", Box)
+Instance.new("UICorner", Box).CornerRadius = UDim.new(0,8)
 
 local Verify = Instance.new("TextButton", Main)
-Verify.Size = UDim2.new(0.85,0,0,38)
+Verify.Size = UDim2.new(0.4,0,0,36)
 Verify.Position = UDim2.new(0.075,0,0.65,0)
 Verify.Text = "VERIFY"
 Verify.Font = Enum.Font.GothamBold
 Verify.TextSize = 14
 Verify.TextColor3 = Color3.new(1,1,1)
-Verify.BackgroundColor3 = Color3.fromRGB(45,45,45)
-Instance.new("UICorner", Verify)
+Verify.BackgroundColor3 = Color3.fromRGB(40,40,40)
+Instance.new("UICorner", Verify).CornerRadius = UDim.new(0,8)
+
+local GetKey = Instance.new("TextButton", Main)
+GetKey.Size = UDim2.new(0.4,0,0,36)
+GetKey.Position = UDim2.new(0.525,0,0.65,0)
+GetKey.Text = "GET KEY"
+GetKey.Font = Enum.Font.GothamBold
+GetKey.TextSize = 14
+GetKey.TextColor3 = Color3.new(1,1,1)
+GetKey.BackgroundColor3 = Color3.fromRGB(40,40,40)
+Instance.new("UICorner", GetKey).CornerRadius = UDim.new(0,8)
 
 Verify.MouseButton1Click:Connect(function()
     local key = string.upper(string.gsub(Box.Text, "%s+", ""))
 
     if key == NORMAL_KEY or key == PAID_KEY or key == GHOST_KEY then
-        getgenv().KEY_RESULT = key
+        getgenv().KEY_TYPE = key
         Gui:Destroy()
     else
         Box.Text = ""
-        Box.PlaceholderText = "WRONG KEY"
+        Box.PlaceholderText = "WRONG KEY!"
+        TweenService:Create(Main, TweenInfo.new(0.1), {Position = Main.Position + UDim2.new(0,6,0,0)}):Play()
+        task.wait(0.1)
+        TweenService:Create(Main, TweenInfo.new(0.1), {Position = Main.Position}):Play()
+    end
+end)
+
+GetKey.MouseButton1Click:Connect(function()
+    if setclipboard then
+        setclipboard(GET_KEY_LINK)
     end
 end)
 
 -- ===== WAIT FOR KEY =====
-repeat task.wait() until getgenv().KEY_RESULT ~= nil
+repeat task.wait() until getgenv().KEY_TYPE ~= nil
 
--- ===== LOAD BY KEY =====
-if getgenv().KEY_RESULT == NORMAL_KEY then
+-- ===== LOAD VERSION =====
+if getgenv().KEY_TYPE == NORMAL_KEY then
     loadstring(game:HttpGet(NORMAL_LOADER))()
-elseif getgenv().KEY_RESULT == PAID_KEY then
+elseif getgenv().KEY_TYPE == PAID_KEY then
     loadstring(game:HttpGet(PAID_LOADER))()
-elseif getgenv().KEY_RESULT == GHOST_KEY then
+elseif getgenv().KEY_TYPE == GHOST_KEY then
     loadstring(game:HttpGet(GHOST_LOADER))()
 end
