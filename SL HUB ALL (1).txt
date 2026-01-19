@@ -5,8 +5,8 @@ getgenv().SL_KEY_SYSTEM_LOADED = true
 repeat task.wait() until game:IsLoaded()
 
 -- ===== KEYS =====
-local NORMAL_KEY = "SLONTOP_FREE"
-local PAID_KEY   = "SLONTOP_VIP"
+local NORMAL_KEY = "SLONTOP"
+local PAID_KEY   = "PremiumSFG1"
 local GHOST_KEY  = "SLXGHOST"
 
 -- ===== LOADERS =====
