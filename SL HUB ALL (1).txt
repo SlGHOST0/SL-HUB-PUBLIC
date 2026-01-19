@@ -3,7 +3,15 @@ if getgenv().SL_SINGLE_KEY then return end
 getgenv().SL_SINGLE_KEY = true
 
 repeat task.wait() until game:IsLoaded()
+pcall(function()
+    settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+    settings().Rendering.MeshPartDetailLevel = Enum.MeshPartDetailLevel.Level01
+    settings().Rendering.EagerBulkExecution = false
+end)
 
+pcall(function()
+    game:GetService("Workspace").StreamingEnabled = true
+end)
 -- ===== SERVICES =====
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
