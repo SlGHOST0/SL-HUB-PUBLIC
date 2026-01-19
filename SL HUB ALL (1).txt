@@ -1,19 +1,27 @@
--- ===== RGB BUTTON KEY SYSTEM =====
-if getgenv().SL_KEY_SYSTEM_LOADED then return end
-getgenv().SL_KEY_SYSTEM_LOADED = true
+-- ===== ONE KEY SYSTEM ONLY (ANTI DUPLICATE) =====
+if getgenv().SL_SINGLE_KEY then return end
+getgenv().SL_SINGLE_KEY = true
 
 repeat task.wait() until game:IsLoaded()
-local RunService = game:GetService("RunService")
 
--- ===== KEYS & LOADERS =====
-local Keys = {
-    {Name="SLONTOP", Loader="https://junk-code-security--seyxn.replit.app/raw/8xzjgpcwc6ytqr598f78zf"},
-    {Name="Premium2012",  Loader="https://junk-code-security--seyxn.replit.app/raw/azye54zw4ih9htrr147dfb"},
-    {Name="SLXGHOST",     Loader="https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/beta.txt"}
-}
+-- ===== SERVICES =====
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
+
+-- ===== KEYS =====
+local NORMAL_KEY = "SLONTOP"
+local PAID_KEY   = "Premium2025"
+local GHOST_KEY  = "SLXGHOST"
+
+-- ===== LOADERS =====
+local NORMAL_LOADER = "https://junk-code-security--seyxn.replit.app/raw/8xzjgpcwc6ytqr598f78zf"
+local PAID_LOADER   = "https://junk-code-security--seyxn.replit.app/raw/azye54zw4ih9htrr147dfb"
+local GHOST_LOADER  = "https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/beta.txt"
 
 local GET_KEY_LINK = "https://discord.gg/5hYUFxKnPa"
-getgenv().KEY_RESULT = nil
+getgenv().KEY_TYPE = nil
 
 -- ===== GUI =====
 local Gui = Instance.new("ScreenGui", game.CoreGui)
@@ -21,73 +29,107 @@ Gui.Name = "SL_KEY_SYSTEM"
 Gui.ResetOnSpawn = false
 
 local Main = Instance.new("Frame", Gui)
-Main.Size = UDim2.new(0, 360, 0, 300)
-Main.Position = UDim2.new(0.5, -180, 0.5, -150)
-Main.BackgroundColor3 = Color3.fromRGB(20,20,20)
+Main.Size = UDim2.new(0,360,0,230)
+Main.Position = UDim2.new(0.5,-180,0.5,-115)
+Main.BackgroundColor3 = Color3.fromRGB(15,15,15)
 Main.BorderSizePixel = 0
 Main.Active = true
 Main.Draggable = true
 Instance.new("UICorner", Main)
 
+local Stroke = Instance.new("UIStroke", Main)
+Stroke.Thickness = 2
+
+-- ===== RGB EFFECT =====
+local hue = 0
+RunService.RenderStepped:Connect(function()
+	hue = (hue + 0.002) % 1
+	local rgb = Color3.fromHSV(hue,1,1)
+	Stroke.Color = rgb
+end)
+
+-- ===== TITLE =====
 local Title = Instance.new("TextLabel", Main)
-Title.Size = UDim2.new(1,0,0,50)
+Title.Size = UDim2.new(1,0,0,45)
 Title.BackgroundTransparency = 1
-Title.Text = "🔒SL HUB KEY SYSTEM"
+Title.Text = "SL HUB KEY SYSTEM"
 Title.Font = Enum.Font.GothamBold
 Title.TextSize = 18
-Title.TextColor3 = Color3.new(1,1,1)
 
--- ===== CREATE BUTTONS FOR EACH KEY (RGB) =====
-for i,keyData in ipairs(Keys) do
-    local btn = Instance.new("TextButton", Main)
-    btn.Size = UDim2.new(0.8,0,0,36)
-    btn.Position = UDim2.new(0.1,0,0.15 + (i-1)*0.12,0)
-    btn.Text = keyData.Name
-    btn.Font = Enum.Font.GothamBold
-    btn.TextSize = 16
-    btn.BackgroundColor3 = Color3.fromRGB(45,45,45)
-    btn.TextColor3 = Color3.new(1,1,1)
-    Instance.new("UICorner", btn)
+RunService.RenderStepped:Connect(function()
+	Title.TextColor3 = Color3.fromHSV(hue,1,1)
+end)
 
-    -- RGB Text
-    local h = 0
-    RunService.RenderStepped:Connect(function()
-        h = (h + 0.01) % 1
-        btn.TextColor3 = Color3.fromHSV(h,1,1)
-    end)
+-- ===== TEXTBOX =====
+local Box = Instance.new("TextBox", Main)
+Box.Size = UDim2.new(0.85,0,0,40)
+Box.Position = UDim2.new(0.075,0,0.35,0)
+Box.PlaceholderText = "ENTER KEY"
+Box.Text = ""
+Box.Font = Enum.Font.Gotham
+Box.TextSize = 14
+Box.BackgroundColor3 = Color3.fromRGB(25,25,25)
+Instance.new("UICorner", Box)
 
-    btn.MouseButton1Click:Connect(function()
-        getgenv().KEY_RESULT = keyData
-        Gui:Destroy()
-    end)
+RunService.RenderStepped:Connect(function()
+	Box.TextColor3 = Color3.fromHSV(hue,1,1)
+end)
+
+-- ===== BUTTON CREATOR =====
+local function RGBButton(text,pos)
+	local btn = Instance.new("TextButton", Main)
+	btn.Size = UDim2.new(0.4,0,0,36)
+	btn.Position = pos
+	btn.Text = text
+	btn.Font = Enum.Font.GothamBold
+	btn.TextSize = 14
+	btn.BackgroundColor3 = Color3.fromRGB(30,30,30)
+	Instance.new("UICorner", btn)
+
+	RunService.RenderStepped:Connect(function()
+		btn.TextColor3 = Color3.fromHSV(hue,1,1)
+	end)
+
+	return btn
 end
 
--- ===== GET KEY BUTTON =====
-local GetKeyBtn = Instance.new("TextButton", Main)
-GetKeyBtn.Size = UDim2.new(0.8,0,0,36)
-GetKeyBtn.Position = UDim2.new(0.1,0,0.65,0)
-GetKeyBtn.Text = "GET KEY"
-GetKeyBtn.Font = Enum.Font.GothamBold
-GetKeyBtn.TextSize = 14
-GetKeyBtn.BackgroundColor3 = Color3.fromRGB(45,45,45)
-GetKeyBtn.TextColor3 = Color3.new(1,1,1)
-Instance.new("UICorner", GetKeyBtn)
+local Verify = RGBButton("VERIFY", UDim2.new(0.075,0,0.65,0))
+local GetKey = RGBButton("GET KEY", UDim2.new(0.525,0,0.65,0))
 
--- RGB for GET KEY
-local h2 = 0
-RunService.RenderStepped:Connect(function()
-    h2 = (h2 + 0.01) % 1
-    GetKeyBtn.TextColor3 = Color3.fromHSV(h2,1,1)
+-- ===== BUTTON LOGIC =====
+Verify.MouseButton1Click:Connect(function()
+	local key = string.upper(string.gsub(Box.Text,"%s+",""))
+
+	if key == NORMAL_KEY or key == PAID_KEY or key == GHOST_KEY then
+		getgenv().KEY_TYPE = key
+		Gui:Destroy()
+	else
+		Box.Text = ""
+		Box.PlaceholderText = "WRONG KEY!"
+		TweenService:Create(Main,TweenInfo.new(0.1),{
+			Position = Main.Position + UDim2.new(0,6,0,0)
+		}):Play()
+		task.wait(0.1)
+		TweenService:Create(Main,TweenInfo.new(0.1),{
+			Position = Main.Position
+		}):Play()
+	end
 end)
 
-GetKeyBtn.MouseButton1Click:Connect(function()
-    if setclipboard then
-        setclipboard(GET_KEY_LINK)
-    end
+GetKey.MouseButton1Click:Connect(function()
+	if setclipboard then
+		setclipboard(GET_KEY_LINK)
+	end
 end)
 
--- ===== WAIT FOR KEY BUTTON CLICK =====
-repeat task.wait() until getgenv().KEY_RESULT ~= nil
+-- ===== WAIT FOR KEY =====
+repeat task.wait() until getgenv().KEY_TYPE
 
--- ===== LOAD SELECTED LOADER =====
-loadstring(game:HttpGet(getgenv().KEY_RESULT.Loader))()
+-- ===== LOAD =====
+if getgenv().KEY_TYPE == NORMAL_KEY then
+	loadstring(game:HttpGet(NORMAL_LOADER))()
+elseif getgenv().KEY_TYPE == PAID_KEY then
+	loadstring(game:HttpGet(PAID_LOADER))()
+elseif getgenv().KEY_TYPE == GHOST_KEY then
+	loadstring(game:HttpGet(GHOST_LOADER))()
+end
