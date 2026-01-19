@@ -1,13 +1,16 @@
+-- ===== ONE KEY SYSTEM ONLY (ANTI DUPLICATE) =====
+if getgenv().SL_SINGLE_KEY then return end
+getgenv().SL_SINGLE_KEY = true
+
 repeat task.wait() until game:IsLoaded()
 
-local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
 
--- KEYS
+-- ===== KEYS =====
 local NORMAL_KEY = "SLONTOP_FREE"
 local PAID_KEY   = "SLONTOP_VIP"
 
--- LOADERS
+-- ===== LOADERS =====
 local NORMAL_LOADER = "https://junk-code-security--seyxn.replit.app/raw/8xzjgpcwc6ytqr598f78zf"
 local PAID_LOADER   = "https://junk-code-security--seyxn.replit.app/raw/azye54zw4ih9htrr147dfb"
 
@@ -15,8 +18,9 @@ local GET_KEY_LINK = "https://discord.gg/Pv89sBheF"
 
 getgenv().KEY_TYPE = nil
 
--- GUI
+-- ===== GUI =====
 local Gui = Instance.new("ScreenGui")
+Gui.Name = "SL_KEY_SYSTEM"
 Gui.Parent = game.CoreGui
 Gui.ResetOnSpawn = false
 
@@ -78,6 +82,9 @@ Verify.MouseButton1Click:Connect(function()
     else
         Box.Text = ""
         Box.PlaceholderText = "WRONG KEY!"
+        TweenService:Create(Main, TweenInfo.new(0.1), {Position = Main.Position + UDim2.new(0,6,0,0)}):Play()
+        task.wait(0.1)
+        TweenService:Create(Main, TweenInfo.new(0.1), {Position = Main.Position}):Play()
     end
 end)
 
@@ -87,10 +94,10 @@ GetKey.MouseButton1Click:Connect(function()
     end
 end)
 
--- WAIT FOR KEY
+-- ===== WAIT FOR KEY =====
 repeat task.wait() until getgenv().KEY_TYPE ~= nil
 
--- LOAD VERSION
+-- ===== LOAD VERSION =====
 if getgenv().KEY_TYPE == NORMAL_KEY then
     loadstring(game:HttpGet("https://junk-code-security--seyxn.replit.app/raw/8xzjgpcwc6ytqr598f78zf"))()
 elseif getgenv().KEY_TYPE == PAID_KEY then
