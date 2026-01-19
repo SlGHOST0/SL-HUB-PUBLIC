@@ -7,8 +7,8 @@ repeat task.wait() until game:IsLoaded()
 local TweenService = game:GetService("TweenService")
 
 -- ===== KEYS =====
-local NORMAL_KEY = "SLONTOP_FREE"
-local PAID_KEY   = "SLONTOP_VIP"
+local NORMAL_KEY = "SLONTOP"
+local PAID_KEY   = "PAID31"
 
 -- ===== LOADERS =====
 local NORMAL_LOADER = "https://junk-code-security--seyxn.replit.app/raw/8xzjgpcwc6ytqr598f78zf"
@@ -93,4 +93,12 @@ GetKey.MouseButton1Click:Connect(function()
         setclipboard(GET_KEY_LINK)
     end
 end)
+repeat task.wait() until getgenv().KEY_PASSED == true
 
+-- LOAD CORRECT VERSION
+if getgenv().KEY_TYPE == NORMAL_KEY then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20PUBLIC%20(4)%20(1)%20(1).txt"))()
+
+elseif getgenv().KEY_TYPE == PAID_KEY then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20PAID%20(8)%20(1).txt"))()
+end
