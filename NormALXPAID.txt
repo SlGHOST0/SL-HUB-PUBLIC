@@ -94,12 +94,3 @@ GetKey.MouseButton1Click:Connect(function()
     end
 end)
 
--- ===== WAIT FOR KEY =====
-repeat task.wait() until getgenv().KEY_TYPE ~= nil
-
--- ===== LOAD VERSION =====
-if getgenv().KEY_TYPE == NORMAL_KEY then
-    loadstring(game:HttpGet("https://junk-code-security--seyxn.replit.app/raw/8xzjgpcwc6ytqr598f78zf"))()
-elseif getgenv().KEY_TYPE == PAID_KEY then
-    loadstring(game:HttpGet("https://junk-code-security--seyxn.replit.app/raw/azye54zw4ih9htrr147dfb"))()
-end
