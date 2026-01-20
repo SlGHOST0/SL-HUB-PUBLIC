@@ -135,9 +135,9 @@ repeat task.wait() until getgenv().KEY_TYPE
 
 -- ===== LOAD =====
 if getgenv().KEY_TYPE == NORMAL_KEY then
-	loadstring(game:HttpGet(NORMAL_LOADER))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20PUBLIC%20(4)%20(1)%20(1).txt"))()
 elseif getgenv().KEY_TYPE == PAID_KEY then
-	loadstring(game:HttpGet(PAID_LOADER))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PAID/refs/heads/main/SL%20HUB%20PAID"))()
 elseif getgenv().KEY_TYPE == GHOST_KEY then
-	loadstring(game:HttpGet(GHOST_LOADER))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/beta.txt"))()
 end
