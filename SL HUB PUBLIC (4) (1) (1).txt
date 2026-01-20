@@ -1,7 +1,7 @@
 
 local v1 = 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Moha-space/elerium-v2-ui-library/refs/heads/main/Library", 
-true))():AddWindow("              SL HUB PUBLIC ||MUSCLE LEGENDS || "WELCOME ..LocalPlayer.DisplayName", {
+true))():AddWindow("              SL HUB PUBLIC ||MUSCLE LEGENDS ||WELCOME TO SL HUB ", {
     main_color = Color3.fromRGB(0, 0, 0),
     min_size = Vector2.new(615, 685),
     can_resize = false,
@@ -10,11 +10,11 @@ true))():AddWindow("              SL HUB PUBLIC ||MUSCLE LEGENDS || "WELCOME ..L
 local v2 = v1:AddTab("I N F  \226\140\172")
 v2:AddLabel("\227\128\142 INFO \227\128\143\226\159\161\227\128\142 ABOUT \227\128\143\226\159\161\227\128\142 THE \227\128\143\226\159\161\227\128\142 SCRIPT \227\128\143")
 v2:AddLabel("WELCOME TO SL HUB  \226\152\132\239\184\143")
-v2:AddLabel("\227\128\142 OWNER OF THIS SCRIPT \227\128\143  [BSW] _ GHOST ")
+v2:AddLabel("\227\128\142 OWNER OF THIS SCRIPT \227\128\143  [BSW] GHOST ")
 v2:AddLabel("Script Made By ", {
     TextColor3 = Color3.fromRGB(255, 255, 255)
 })
-local vu3 = v2:AddLabel("                                              [ BSW] GHOST||key system by halis 🏴‍☠️")
+local vu3 = v2:AddLabel("                                              [ BSW]GHOST||key system by halis 🏴‍☠️")
 task.spawn(function()
     local v4 = 0
     while true do
