@@ -1,7 +1,0 @@
-lseif id == 3101667897 or id == 3232996272 or id == 3276265788 then
-
-loadstring(game:HttpGet('https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20PUBLIC%20LEGEDNS%20OF%20SPEED'))()
-
-elseif id == 3623096087 or id == 3931413175 or id == 4331005702 then
-
-loadstring(game:HttpGet("https://junk-code-security--seyxn.replit.app/raw/8xzjgpcwc6ytqr598f78zf"))() 
