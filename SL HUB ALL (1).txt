@@ -20,7 +20,7 @@ local LocalPlayer = Players.LocalPlayer
 
 -- ===== KEYS =====
 local NORMAL_KEY = "SLONTOP"
-local PAID_KEY   = "Premium2025"
+local PAID_KEY   = "Premium2026"
 local GHOST_KEY  = "SLXGHOST"
 
 -- ===== LOADERS =====
