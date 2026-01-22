@@ -2053,7 +2053,7 @@ end)
 
 local Credits = window:AddTab("Credits")
 
-Credits:AddLabel("SL HUB").TextSize = 30
+Credits:AddLabel("INFINITY HUB").TextSize = 30
 
 Credits:AddLabel(" ").TextSize = 30
 
