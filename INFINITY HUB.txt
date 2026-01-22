@@ -2,7 +2,7 @@
 local v1 = 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Moha-space/elerium-v2-ui-library/refs/heads/main/Library", 
 true))():AddWindow("INFINITY PUBLIC ||MUSCLE LEGENDS ||WELCOME TO INFINITY HUB ", {
-    main_color = Color3.fromRGB(1, 1, 1),
+    main_color = Color3.fromRGB(255, 255, 255),
     min_size = Vector2.new(615, 685),
     can_resize = false,
     scrollable = true
