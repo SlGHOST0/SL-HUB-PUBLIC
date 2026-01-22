@@ -1,3 +1,19 @@
+pcall(function()
+    settings().Network.IncomingReplicationLag = 0
+    settings().Network.PhysicsSend = Enum.PhysicsSendMethod.TopNEver
+end)
+
+pcall(function()
+    workspace.StreamingEnabled = true
+end)
+
+pcall(function()
+    workspace.PhysicsSteppingMethod = Enum.PhysicsSteppingMethod.Fixed
+end)
+
+pcall(function()
+    game:GetService("RunService"):Set3dRenderingEnabled(true)
+end)
 -- ===== ONE KEY SYSTEM ONLY (ANTI DUPLICATE) =====
 if getgenv().SL_SINGLE_KEY then return end
 getgenv().SL_SINGLE_KEY = true
