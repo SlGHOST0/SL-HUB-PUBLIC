@@ -1,0 +1,587 @@
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local VirtualUser = game:GetService("VirtualUser")
+local TeleportService = game:GetService("TeleportService")
+local LocalPlayer = Players.LocalPlayer
+
+-- Credits to Henne for hes Library ofc :)
+
+local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/01ff35dd3c31b0fd.lua%20(1).txt'))()
+
+--// TODO: Update this TO Use Faster racing system
+local AR, loop, selectedRaceType, selectedHoopType, selectedOrb, selectedPlace, farmSpeed, rebirthStopPoint, isRebirthing = false, false, "V1", "V1", "", "", 50, 0, false
+
+local function formatNumber(n)
+    if n >= 1e9 then return string.format("%.2fB", n/1e9)
+    elseif n >= 1e6 then return string.format("%.2fM", n/1e6)    -- States system Very Bad didn't know wht to make in time :(
+    elseif n >= 1e3 then return string.format("%.1fK", n/1e3)
+    else return tostring(n) end
+end
+
+local function teleportToSky()
+    local part = Instance.new("Part")
+    part.Size = Vector3.new(20, 2, 20)
+    part.Anchored = true
+    part.Position = Vector3.new(0, 2000, 0)
+    part.Parent = workspace
+    LocalPlayer.Character:MoveTo(part.Position)
+end
+
+local function returnToGround()
+    LocalPlayer.Character:MoveTo(Vector3.new(0, 0, 0))
+end
+
+ReplicatedStorage.raceInProgress.Changed:Connect(function()
+    if AR and ReplicatedStorage.raceInProgress.Value then
+        ReplicatedStorage.rEvents.raceEvent:FireServer("joinRace")
+    end
+end)
+
+ReplicatedStorage.raceStarted.Changed:Connect(function()
+    if AR and ReplicatedStorage.raceStarted.Value then
+        for _, map in ipairs(workspace.raceMaps:GetChildren()) do
+            local originalCFrame = map.finishPart.CFrame
+            map.finishPart.CFrame = LocalPlayer.Character.HumanoidRootPart.CFrame
+            wait()
+            map.finishPart.CFrame = originalCFrame
+        end
+        wait(2)
+    end
+end)
+
+local window = library:AddWindow("Elite Hub V1 | Legends Of Speed", {   -- Ui System
+                title_bar = {
+                    Color3.fromRGB(40, 0, 60),
+                    Color3.fromRGB(60, 0, 90),
+                    Color3.fromRGB(80, 0, 120)
+                },
+                title_bar_transparency = 0.2,
+                background = {
+                    Color3.fromRGB(20, 0, 30),
+                    Color3.fromRGB(10, 0, 20),
+                    Color3.fromRGB(5, 0, 15)
+                },
+                background_transparency = 0.1,
+                main_color = Color3.fromRGB(200, 100, 255),
+                min_size = Vector2.new(600, 500),
+                can_resize = true
+            })
+
+local GeneralTab = window:AddTab("General")   -- Tabs Clean And Smooth Thanks to Hennes Lib OMGG Love ts so much
+local UniversalFarmTab = window:AddTab("Universal Farm")
+local AutoFarmTab = window:AddTab("Auto Farm")
+local TeleportsTab = window:AddTab("Teleports")
+local CrystalsTab = window:AddTab("Crystals")
+local PetsTab = window:AddTab("Pets")
+local TrailsTab = window:AddTab("Trails")
+local AdvancedTab = window:AddTab("Advanced")
+
+GeneralTab:Show()
+
+GeneralTab:AddLabel("Information")
+GeneralTab:AddButton("Copy Discord Invite", function() setclipboard("https://discord.gg/JaKSXht5ev") end)
+GeneralTab:AddButton("Copy Author", function() setclipboard(" THIS SCRIPT WAS MADE BY SLAYERSON | ELITE HUB") end)
+
+GeneralTab:AddLabel("Main Settings")
+GeneralTab:AddButton("Anti Kick", function()
+    LocalPlayer.Idled:connect(function()
+        VirtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+        wait(1)
+        VirtualUser:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+    end)
+end)
+
+GeneralTab:AddButton("Low Graphics", function()
+    local Workspace, Lighting, Terrain = game.Workspace, game.Lighting, workspace.Terrain
+    sethiddenproperty(Lighting, "Technology", 2)
+    sethiddenproperty(Terrain, "Decoration", false)
+    Terrain.WaterWaveSize, Terrain.WaterWaveSpeed, Terrain.WaterReflectance, Terrain.WaterTransparency = 0, 0, 0, 0
+    Lighting.GlobalShadows, Lighting.FogEnd, Lighting.Brightness = 0, 9e9, 0
+    settings().Rendering.QualityLevel = "Level01"
+    for _, descendant in ipairs(Workspace:GetDescendants()) do
+        if descendant:IsA("BasePart") and not descendant:IsA("MeshPart") then
+            descendant.Material, descendant.Reflectance = "Plastic", 0
+        elseif (descendant:IsA("Decal") or descendant:IsA("Texture")) then
+            descendant.Transparency = 1
+        elseif descendant:IsA("ParticleEmitter") or descendant:IsA("Trail") then
+            descendant.Lifetime = NumberRange.new(0)
+        elseif descendant:IsA("Explosion") then
+            descendant.BlastPressure, descendant.BlastRadius = 1, 1
+        elseif descendant:IsA("Fire") or descendant:IsA("SpotLight") or descendant:IsA("Smoke") or descendant:IsA("Sparkles") then
+            descendant.Enabled = false
+        elseif descendant:IsA("MeshPart") then
+            descendant.Material, descendant.Reflectance, descendant.TextureID = "Plastic", 0, 1.0385902758728955e16
+        elseif descendant:IsA("SpecialMesh") then
+            descendant.TextureId = 0
+        elseif descendant:IsA("ShirtGraphic") then
+            descendant.Graphic = 0
+        elseif descendant:IsA("Shirt") or descendant:IsA("Pants") then
+            descendant[descendant.ClassName .. "Template"] = 0
+        end
+    end
+    for _, effect in ipairs(Lighting:GetChildren()) do
+        if effect:IsA("BlurEffect") or effect:IsA("SunRaysEffect") or effect:IsA("ColorCorrectionEffect") or effect:IsA("BloomEffect") or effect:IsA("DepthOfFieldEffect") then
+            effect.Enabled = false
+        end
+    end
+    Workspace.DescendantAdded:Connect(function(descendant)
+        wait()
+        if descendant:IsA("BasePart") and not descendant:IsA("MeshPart") then
+            descendant.Material, descendant.Reflectance = "Plastic", 0
+        elseif descendant:IsA("Decal") or descendant:IsA("Texture") then
+            descendant.Transparency = 1
+        elseif descendant:IsA("ParticleEmitter") or descendant:IsA("Trail") then
+            descendant.Lifetime = NumberRange.new(0)
+        elseif descendant:IsA("Explosion") then
+            descendant.BlastPressure, descendant.BlastRadius = 1, 1
+        elseif descendant:IsA("Fire") or descendant:IsA("SpotLight") or descendant:IsA("Smoke") or descendant:IsA("Sparkles") then
+            descendant.Enabled = false
+        elseif descendant:IsA("MeshPart") then
+            descendant.Material, descendant.Reflectance, descendant.TextureID = "Plastic", 0, 1.0385902758728955e16
+        elseif descendant:IsA("SpecialMesh") then
+            descendant.TextureId = 0
+        elseif descendant:IsA("ShirtGraphic") then
+            descendant.ShirtGraphic = 0
+        elseif descendant:IsA("Shirt") or descendant:IsA("Pants") then
+            descendant[descendant.ClassName .. "Template"] = 0
+        end
+    end)
+end)
+
+GeneralTab:AddButton("Rejoin", function() TeleportService:Teleport(game.PlaceId, LocalPlayer) end)
+
+GeneralTab:AddLabel("Player Settings")
+GeneralTab:AddTextBox("Walk Speed", function(value) LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(value) or 16 end, {clear = false})
+GeneralTab:AddTextBox("Jump Power", function(value) LocalPlayer.Character.Humanoid.JumpPower = tonumber(value) or 50 end, {clear = false})
+GeneralTab:AddTextBox("Hip Height", function(value) LocalPlayer.Character.Humanoid.HipHeight = tonumber(value) or 0 end, {clear = false})
+
+UniversalFarmTab:AddLabel("Races")
+local raceDropdown = UniversalFarmTab:AddDropdown("Select Race Type", function(text) selectedRaceType = text end)
+raceDropdown:Add("Race V1")
+raceDropdown:Add("Race V2")
+
+local autoRaceSwitch = UniversalFarmTab:AddSwitch("Auto Race", function(bool)
+    AR = bool
+    if not bool then loop = false end
+    if bool and selectedRaceType == "Race V2" then
+        loop = true
+        while loop do
+            wait()
+            ReplicatedStorage.rEvents.raceEvent:FireServer("joinRace")  -- hated this part i had to find the CFrames :(
+            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(48.3109131, 36.3147125, -8680.45312, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+            wait(0.4)
+            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1686.07495, 36.3147125, -5946.63428, -0.984812617, 0, 0.173621148, 0, 1, 0, -0.173621148, 0, -0.984812617)
+            wait(0.4)
+            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1001.33118, 36.3147125, -10986.2178, -0.996191859, 0, -0.0871884301, 0, 1, 0, 0.0871884301, 0, -0.996191859)
+            wait(0.4)
+        end
+    end
+end)
+
+UniversalFarmTab:AddLabel("Hoops")
+local hoopDropdown = UniversalFarmTab:AddDropdown("Select Hoop Type", function(text) selectedHoopType = text end)
+hoopDropdown:Add("Hoops V1")
+hoopDropdown:Add("Hoops V2")
+
+local autoHoopsSwitch = UniversalFarmTab:AddSwitch("Auto Hoops", function(bool)
+    if bool then
+        loop = true
+        teleportToSky()
+        if selectedHoopType == "Hoops V2" then
+            while loop do
+                wait()
+                for _, hoop in ipairs(workspace.Hoops:GetChildren()) do
+                    if hoop.Name == "Hoop" then hoop.CFrame = LocalPlayer.Character.HumanoidRootPart.CFrame end
+                end
+            end
+        else
+            while loop do
+                wait()
+                for _, hoop in ipairs(workspace.Hoops:GetChildren()) do
+                    firetouchinterest(hoop, LocalPlayer.Character.HumanoidRootPart, 0)
+                    wait()
+                    firetouchinterest(hoop, LocalPlayer.Character.HumanoidRootPart, 1)
+                end
+            end
+        end
+    else
+        loop = false
+        returnToGround()
+    end
+end)
+
+UniversalFarmTab:AddLabel("Rebirths")
+UniversalFarmTab:AddTextBox("Enter Stopping Point", function(value) rebirthStopPoint = tonumber(value) or 0 end, {clear = false})
+
+local autoRebirthStopSwitch = UniversalFarmTab:AddSwitch("Auto Rebirth Stopping Point", function(bool)
+    if bool then
+        loop = true
+        while loop do
+            wait()
+            local success, err = pcall(function()
+                local before = LocalPlayer.leaderstats.Rebirths.Value
+                ReplicatedStorage.rEvents.rebirthEvent:FireServer("rebirthRequest")
+                wait(1)
+                local after = LocalPlayer.leaderstats.Rebirths.Value
+                if before < after then
+                    isRebirthing = true
+                    wait(0.5)
+                    isRebirthing = false
+                end
+                if rebirthStopPoint <= after then
+                    print("Reached rebirth " .. rebirthStopPoint .. "!")
+                    loop = false
+                end
+            end)
+            if not success then warn("Error while rebirthing:", err) loop = false end
+        end
+    else
+        loop = false
+    end
+end)
+
+local autoRebirthSwitch = UniversalFarmTab:AddSwitch("Auto Rebirth", function(bool)
+    if bool then
+        loop = true
+        while loop do
+            wait()
+            local before = LocalPlayer.leaderstats.Rebirths.Value
+            ReplicatedStorage.rEvents.rebirthEvent:FireServer("rebirthRequest")
+            wait(1)
+            if before < LocalPlayer.leaderstats.Rebirths.Value then
+                isRebirthing = true
+                wait(0.5)
+                isRebirthing = false
+            end
+        end
+    else
+        loop = false
+    end
+end)
+
+local teleportAfterRebirthSwitch = UniversalFarmTab:AddSwitch("Teleport After Rebirth", function(bool)
+    if bool then
+        loop = true
+        while loop do
+            wait()
+            if isRebirthing then
+                LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11054.9688, 232.791656, 4898.62842, -0.0872479677, 0.000158954252, -0.996186614, -0.00054083002, 0.999999821, 0.00020692969, 0.996186495, 0.000556821818, -0.0872478485)
+                wait(1)
+                local x, y = getButtonCenter()
+                VirtualInputManager:SendMouseButtonEvent(x, y, 0, true, game, 1)
+                VirtualInputManager:SendMouseButtonEvent(x, y, 0, false, game, 1)
+            end
+        end
+    else
+        loop = false
+    end
+end)
+
+AutoFarmTab:AddLabel("Auto Farm Options")
+local orbDropdown = AutoFarmTab:AddDropdown("Select Auto Farm Orb", function(text) selectedOrb = text end)
+orbDropdown:Add("Yellow Orb")
+orbDropdown:Add("Orange Orb")
+orbDropdown:Add("Blue Orb")
+orbDropdown:Add("Red Orb")
+orbDropdown:Add("Gem")
+
+local placeDropdown = AutoFarmTab:AddDropdown("Select Auto Farm Place", function(text) selectedPlace = text end)
+placeDropdown:Add("City")
+placeDropdown:Add("Snow City")
+placeDropdown:Add("Magma City")
+placeDropdown:Add("Legends Highway")
+placeDropdown:Add("Space")
+placeDropdown:Add("Desert")
+
+local speedDropdown = AutoFarmTab:AddDropdown("Select Auto Farm Speed", function(text) farmSpeed = tonumber(text:match("%d+")) or 50 end)
+speedDropdown:Add("50 Farm Speed")
+speedDropdown:Add("100 Farm Speed")
+speedDropdown:Add("150 Farm Speed")
+speedDropdown:Add("200 Farm Speed")
+
+AutoFarmTab:AddLabel("AutoFarm")
+local startAutoFarmSwitch = AutoFarmTab:AddSwitch("Start Auto Farming", function(bool)
+    if bool then
+        loop = true
+        while loop do
+            for _ = 1, farmSpeed do
+                ReplicatedStorage.rEvents.orbEvent:FireServer("collectOrb", selectedOrb, selectedPlace)
+            end
+            wait(0.26)
+        end
+    else
+        loop = false
+    end
+end)
+
+TeleportsTab:AddLabel("Main Teleports")
+local mainTeleportDropdown = TeleportsTab:AddDropdown("Choose Destination", function(selected)
+    local cframe
+    -- THIS WAS MAD ANNOYING LIKE OMGGGGGGGG shit was so buggy...
+    if selected == "City" then cframe = CFrame.new(-9682.98828, 74.8522873, 3099.03394, 0.087131381, 0, 0.996196866, 0, 1, 0, -0.996196866, 0, 0.087131381)
+    elseif selected == "Snow City" then cframe = CFrame.new(-9676.13867, 74.8522873, 3782.69385, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+    elseif selected == "Magma City" then cframe = CFrame.new(-11054.9688, 232.791656, 4898.62842, -0.0872479677, 0.000158954252, -0.996186614, -0.00054083002, 0.999999821, 0.00020692969, 0.996186495, 0.000556821818, -0.0872478485)
+    elseif selected == "Legends Highway" then cframe = CFrame.new(-13098.8711, 232.791656, 5907.62793, -0.0872479677, 0.000158954252, -0.996186614, -0.00054083002, 0.999999821, 0.00020692969, 0.996186495, 0.000556821818, -0.0872478485)
+    elseif selected == "Space" then cframe = CFrame.new(-331.764069, 5.45415115, 585.201721, -0.0000103712082, 0.93968749, 0.34203434, -1, -0.0000103712082, -1.81794167e-6, 1.81794167e-6, -0.34203434, 0.939687431)
+    elseif selected == "Desert" then cframe = CFrame.new(2519.90063, 15.7072296, 4355.74072, 0.0000169873238, 0.93922013, 0.343315423, -0.99999994, 0.0000169873238, 2.9951334e-6, -2.9951334e-6, -0.343315423, 0.93922019)
+    end
+    LocalPlayer.Character.HumanoidRootPart.CFrame = cframe
+end)
+mainTeleportDropdown:Add("City")
+mainTeleportDropdown:Add("Snow City")
+mainTeleportDropdown:Add("Magma City")
+mainTeleportDropdown:Add("Legends Highway")
+mainTeleportDropdown:Add("Space")
+mainTeleportDropdown:Add("Desert")
+
+TeleportsTab:AddLabel("Race Teleports")
+local raceTeleportDropdown = TeleportsTab:AddDropdown("Choose Destination", function(selected)
+    local cframe
+    if selected == "Desert" then cframe = CFrame.new(48.3109131, 36.3147125, -8680.45312, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+    elseif selected == "Magma" then cframe = CFrame.new(1001.33118, 36.3147125, -10986.2178, -0.996191859, 0, -0.0871884301, 0, 1, 0, 0.0871884301, 0, -0.996191859)
+    elseif selected == "Grassland" then cframe = CFrame.new(1686.07495, 36.3147125, -5946.63428, -0.984812617, 0, 0.173621148, 0, 1, 0, -0.173621148, 0, -0.984812617)
+    end
+    LocalPlayer.Character.HumanoidRootPart.CFrame = cframe
+end)
+raceTeleportDropdown:Add("Desert")
+raceTeleportDropdown:Add("Magma")
+raceTeleportDropdown:Add("Grassland")
+
+CrystalsTab:AddLabel("Main Crystals")
+local function addCrystalToggle(name)
+    local switch = CrystalsTab:AddSwitch(name, function(bool)
+        if bool then
+            loop = true
+            while loop do
+                wait()
+                ReplicatedStorage.rEvents.openCrystalRemote:InvokeServer("openCrystal", name)
+            end
+        else
+            loop = false
+        end
+    end)
+end
+addCrystalToggle("Red Crystal")
+addCrystalToggle("Lightning Crystal")
+addCrystalToggle("Yellow Crystal")
+addCrystalToggle("Purple Crystal")
+addCrystalToggle("Blue Crystal")
+addCrystalToggle("Snow Crystal")
+addCrystalToggle("Lava Crystal")
+addCrystalToggle("Inferno Crystal")
+addCrystalToggle("Electro Legends Crystal")
+
+CrystalsTab:AddLabel("Space Crystals")
+addCrystalToggle("Space Crystal")
+addCrystalToggle("Alien Crystal")
+
+CrystalsTab:AddLabel("Desert Crystals")
+addCrystalToggle("Desert Crystal")
+addCrystalToggle("Electro Crystal")
+
+PetsTab:AddLabel("Basic Pets")
+local function addPetToggle(name)
+    local switch = PetsTab:AddSwitch(name, function(bool)
+        if bool then
+            loop = true
+            while loop do
+                wait()
+                ReplicatedStorage.cPetShopRemote:InvokeServer(ReplicatedStorage.cPetShopFolder[name])
+            end
+        else
+            loop = false
+        end
+    end)
+end
+addPetToggle("Red Kitty")
+addPetToggle("Red Bunny")
+addPetToggle("Blue Bunny")
+addPetToggle("Silver Dog")
+addPetToggle("Yellow Squeak")
+
+PetsTab:AddLabel("Advanced Pets")
+addPetToggle("Green Vampy")
+addPetToggle("Dark Golem")
+addPetToggle("Pink Butterfly")
+addPetToggle("Yellow Butterfly")
+addPetToggle("Green Golem")
+
+PetsTab:AddLabel("Rare Pets")
+addPetToggle("Purple Pegasus")
+addPetToggle("Golden Angel")
+addPetToggle("Orange Pegasus")
+addPetToggle("Orange Falcon")
+
+PetsTab:AddLabel("Epic Pets")
+addPetToggle("Golden Phoenix")
+addPetToggle("Green Firecaster")
+addPetToggle("White Phoenix")
+addPetToggle("Blue Firecaster")
+addPetToggle("Red Phoenix")
+addPetToggle("Red Firecaster")
+
+PetsTab:AddLabel("Omega Pets")
+addPetToggle("Dark Soul Birdie")
+addPetToggle("Eternal Nebula Dragon")
+addPetToggle("Hypersonic Pegasus")
+addPetToggle("Shadows Edge Kitty")
+addPetToggle("Soul Fusion Dog")
+addPetToggle("Ultimate Overdrive Bunny")
+
+PetsTab:AddLabel("Unique Pets")
+addPetToggle("Flaming Hedgehog")
+addPetToggle("Voltaic Falcon")
+addPetToggle("Electro Golem")
+addPetToggle("Magical Pegasus")
+addPetToggle("Void Dragon")
+addPetToggle("Ultra Birdie")
+
+TrailsTab:AddLabel("Numbers")
+local function addTrailToggle(name)
+    local switch = TrailsTab:AddSwitch(name, function(bool)
+        if bool then
+            loop = true
+            while loop do
+                wait()
+                ReplicatedStorage.cPetShopRemote:InvokeServer(ReplicatedStorage.cPetShopFolder[name])
+            end
+        else
+            loop = false
+        end
+    end)
+end
+addTrailToggle("1st Trail")
+addTrailToggle("2nd Trail")
+addTrailToggle("Third Trail")
+addTrailToggle("Fourth Trail")
+addTrailToggle("Fifth Trail")
+
+TrailsTab:AddLabel("B")
+addTrailToggle("BG Speed")
+addTrailToggle("Blue & Green")
+addTrailToggle("Blue Coin")
+addTrailToggle("Blue Gem")
+addTrailToggle("Blue Lightning")
+addTrailToggle("Blue Snow")
+addTrailToggle("Blue Soul")
+addTrailToggle("Blue Sparks")
+addTrailToggle("Blue Storm")
+addTrailToggle("Blue Trail")
+
+TrailsTab:AddLabel("G")
+addTrailToggle("Golden Lightning")
+addTrailToggle("Green & Orange")
+addTrailToggle("Green Coin")
+addTrailToggle("Green Gem")
+addTrailToggle("Green Lightning")
+addTrailToggle("Green Snow")
+addTrailToggle("Green Soul")
+addTrailToggle("Green Sparks")
+addTrailToggle("Green Storm")
+addTrailToggle("Green Trail")
+
+TrailsTab:AddLabel("O")
+addTrailToggle("OG Speed")
+addTrailToggle("Orange Coin")
+addTrailToggle("Orange Gem")
+addTrailToggle("Orange Lightning")
+addTrailToggle("Orange Snow")
+addTrailToggle("Orange Soul")
+addTrailToggle("Orange Sparks")
+addTrailToggle("Orange Storm")
+addTrailToggle("Orange Trail")
+
+TrailsTab:AddLabel("P")
+addTrailToggle("PP Speed")
+addTrailToggle("Pink Gem")
+addTrailToggle("Pink Lightning")
+addTrailToggle("Pink Snow")
+addTrailToggle("Pink Soul")
+addTrailToggle("Pink Sparks")
+addTrailToggle("Pink Storm")
+addTrailToggle("Pink Trail")
+addTrailToggle("Purple & Pink")
+addTrailToggle("Purple Coin")
+addTrailToggle("Purple Gem")
+addTrailToggle("Purple Lightning")
+addTrailToggle("Purple Soul")
+addTrailToggle("Purple Sparks")
+addTrailToggle("Purple Storm")
+addTrailToggle("Purple Trail")
+
+TrailsTab:AddLabel("R")
+addTrailToggle("RB Speed")
+addTrailToggle("Rainbow Lightning")
+addTrailToggle("Rainbow Soul")
+addTrailToggle("Rainbow Sparks")
+addTrailToggle("Rainbow Speed")
+addTrailToggle("Rainbow Steps")
+addTrailToggle("Rainbow Storm")
+addTrailToggle("Rainbow Trail")
+addTrailToggle("Red & Blue")
+addTrailToggle("Red Coin")
+addTrailToggle("Red Gem")
+addTrailToggle("Red Lightning")
+addTrailToggle("Red Snow")
+addTrailToggle("Red Soul")
+addTrailToggle("Red Sparks")
+addTrailToggle("Red Storm")
+addTrailToggle("Red Trail")
+
+TrailsTab:AddLabel("W")
+addTrailToggle("White Snow")
+
+TrailsTab:AddLabel("Y")
+addTrailToggle("YB Speed")
+addTrailToggle("Yellow & Blue")
+addTrailToggle("Yellow Soul")
+addTrailToggle("Yellow Sparks")
+addTrailToggle("Yellow Trail")
+
+AdvancedTab:AddLabel("Only use if you know how to!")
+AdvancedTab:AddTextBox("Backtrack", function(value) settings():GetService("NetworkSettings").IncomingReplicationLag = tonumber(value) or 0 end, {clear = false})
+
+local connectionEnhancerSwitch = AdvancedTab:AddSwitch("Connection Enhancer", function(bool)
+    if bool then
+        loop = true
+        while loop do
+            wait()
+            game:GetService("NetworkClient"):SetOutgoingKBPSLimit(800000)
+            game:GetService("NetworkClient"):SetIncomingKBPSLimit(800000)
+            game:ClearCache()
+            wait(0.4)
+        end
+    else
+        loop = false
+    end
+end)
+
+spawn(function()
+    while true do
+        wait(1)
+        if LocalPlayer.leaderstats then
+            local steps = LocalPlayer.leaderstats.Steps.Value
+            local rebirths = LocalPlayer.leaderstats.Rebirths.Value
+            local hoops = LocalPlayer.leaderstats:FindFirstChild("Hoops") and LocalPlayer.leaderstats.Hoops.Value or 0
+            local races = LocalPlayer.leaderstats:FindFirstChild("Races") and LocalPlayer.leaderstats.Races.Value or 0
+            
+            for _, tab in pairs(window.Tabs) do
+                for _, element in pairs(tab.Elements) do
+                    if element.Type == "Label" then
+                        if element.Text:match("Steps:") then
+                            element.Text = "Steps: " .. formatNumber(steps)
+                        elseif element.Text:match("Rebirths:") then
+                            element.Text = "Rebirths: " .. formatNumber(rebirths)
+                        elseif element.Text:match("Hoops:") then
+                            element.Text = "Hoops: " .. formatNumber(hoops)
+                        elseif element.Text:match("Races:") then
+                            element.Text = "Races: " .. formatNumber(races)
+                        end
+                    end
+                end
+            end
+        end
+    end
+end)
+
+print("Made By Slayerson :) Yw Skid From This if u want IDC")
