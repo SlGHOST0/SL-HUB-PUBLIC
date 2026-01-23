@@ -6,7 +6,7 @@ local RunService = game:GetService("RunService")
 local LocalPlayer = Players.LocalPlayer
 
 local CORRECT_KEY = "SPACEHUBONTOP"
-local GET_KEY_LINK = "https://discord.gg/pqXwmXFS"
+local GET_KEY_LINK = "https://discord.gg/um47REkwjp"
 
 getgenv().KEY_PASSED = false
 
