@@ -5,21 +5,25 @@ getgenv().SL_KEY_SYSTEM_LOADED = true
 repeat task.wait() until game:IsLoaded()
 
 -- ===== KEYS =====
-local NORMAL_KEY = "SLLNTOP"
+local NORMAL_KEY = "SLONTOP"
 local GHOST_KEY  = "SLXGHOST"
 
 -- ===== LOADERS =====
-local NORMAL_LOADER = "https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20MUSCLE%20LEGENDS"
-local GHOST_LOADER  = "https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/beta.txt"
+local NORMAL_LOADER = "https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/main/SL HUB MUSCLE LEGENDS.lua"
+local GHOST_LOADER  = "https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/main/beta.lua"
 
 getgenv().KEY_RESULT = nil
 getgenv().KEY_PASSED = false
 getgenv().KEY_TYPE = nil
 
+local GET_KEY_LINK = "https://discord.gg/jNCaMqgBdt"
+
 -- ===== GUI =====
-local Gui = Instance.new("ScreenGui", game.CoreGui)
+local Players = game:GetService("Players")
+local Gui = Instance.new("ScreenGui")
 Gui.Name = "SL_KEY_SYSTEM"
 Gui.ResetOnSpawn = false
+Gui.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
 
 local Main = Instance.new("Frame", Gui)
 Main.Size = UDim2.new(0, 360, 0, 210)
@@ -61,7 +65,7 @@ Instance.new("UICorner", Verify)
 
 -- ===== VERIFY KEY =====
 Verify.MouseButton1Click:Connect(function()
-    local key = string.upper(string.gsub(Box.Text, "%s+", ""))
+    local key = string.upper(Box.Text:gsub("%s+", ""))
 
     if key == NORMAL_KEY or key == GHOST_KEY then
         getgenv().KEY_RESULT = key
@@ -73,11 +77,11 @@ Verify.MouseButton1Click:Connect(function()
 end)
 
 -- ===== WAIT FOR KEY =====
-repeat task.wait() until getgenv().KEY_RESULT ~= nil
+repeat task.wait() until getgenv().KEY_RESULT
 
 -- ===== LOAD BY KEY =====
 if getgenv().KEY_RESULT == NORMAL_KEY then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20MUSCLE%20LEGENDS"))()
+    loadstring(game:HttpGet(https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20MUSCLE))()
 elseif getgenv().KEY_RESULT == GHOST_KEY then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20LEGENDS%20OF%20SPEED"))()
+    loadstring(game:HttpGet(https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20LEGENDS%20OF%20SPEED))()
 end
