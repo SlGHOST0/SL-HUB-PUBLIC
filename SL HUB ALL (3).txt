@@ -81,7 +81,7 @@ repeat task.wait() until getgenv().KEY_RESULT
 
 -- ===== LOAD BY KEY =====
 if getgenv().KEY_RESULT == NORMAL_KEY then
-    loadstring(game:HttpGet(https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20MUSCLE))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20MUSCLE"))()
 elseif getgenv().KEY_RESULT == GHOST_KEY then
-    loadstring(game:HttpGet(https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20LEGENDS%20OF%20SPEED))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20LEGENDS%20OF%20SPEED"))()
 end
