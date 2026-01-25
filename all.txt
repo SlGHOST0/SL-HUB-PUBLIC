@@ -1,96 +1,159 @@
--- ===== SINGLE KEY SYSTEM (2 LOADERS) =====
-if getgenv().SL_KEY_SYSTEM_LOADED then return end
-getgenv().SL_KEY_SYSTEM_LOADED = true
+pcall(function()
+    settings().Network.IncomingReplicationLag = 0
+    settings().Network.PhysicsSend = Enum.PhysicsSendMethod.TopNEver
+end)
+
+pcall(function()
+    workspace.StreamingEnabled = true
+end)
+
+pcall(function()
+    workspace.PhysicsSteppingMethod = Enum.PhysicsSteppingMethod.Fixed
+end)
+
+pcall(function()
+    game:GetService("RunService"):Set3dRenderingEnabled(true)
+end)
+-- ===== ONE KEY SYSTEM ONLY (ANTI DUPLICATE) =====
+if getgenv().SL_SINGLE_KEY then return end
+getgenv().SL_SINGLE_KEY = true
 
 repeat task.wait() until game:IsLoaded()
+pcall(function()
+    settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+    settings().Rendering.MeshPartDetailLevel = Enum.MeshPartDetailLevel.Level01
+    settings().Rendering.EagerBulkExecution = false
+end)
+
+pcall(function()
+    game:GetService("Workspace").StreamingEnabled = true
+end)
+-- ===== SERVICES =====
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
 
 -- ===== KEYS =====
 local NORMAL_KEY = "SLONTOP"
+local PAID_KEY   = "PREMIUM2012"
 local GHOST_KEY  = "SLXGHOST"
 
 -- ===== LOADERS =====
-local NORMAL_LOADER = "https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/main/SL HUB MUSCLE LEGENDS.lua"
-local GHOST_LOADER  = "https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/main/beta.lua"
+local NORMAL_LOADER = "https://junk-code-security--seyxn.replit.app/raw/8xzjgpcwc6ytqr598f78zf"
+local PAID_LOADER   = "https://junk-code-security--seyxn.replit.app/raw/azye54zw4ih9htrr147dfb"
+local GHOST_LOADER  = "https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/beta.txt"
 
-getgenv().KEY_RESULT = nil
+local GET_KEY_LINK = "https://discord.gg/5hYUFxKnPa"
+getgenv().KEY_TYPE = nil
 
 -- ===== GUI =====
-local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-local Gui = Instance.new("ScreenGui")
+local Gui = Instance.new("ScreenGui", game.CoreGui)
 Gui.Name = "SL_KEY_SYSTEM"
 Gui.ResetOnSpawn = false
-Gui.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
 
 local Main = Instance.new("Frame", Gui)
-Main.Size = UDim2.new(0, 360, 0, 210)
-Main.Position = UDim2.new(0.5, -180, 0.5, -105)
-Main.BackgroundColor3 = Color3.fromRGB(255,0,0) -- RGP starts red
+Main.Size = UDim2.new(0,360,0,230)
+Main.Position = UDim2.new(0.5,-180,0.5,-115)
+Main.BackgroundColor3 = Color3.fromRGB(15,15,15)
 Main.BorderSizePixel = 0
 Main.Active = true
 Main.Draggable = true
 Instance.new("UICorner", Main)
 
+local Stroke = Instance.new("UIStroke", Main)
+Stroke.Thickness = 2
+
+-- ===== RGB EFFECT =====
+local hue = 0
+RunService.RenderStepped:Connect(function()
+	hue = (hue + 0.002) % 1
+	local rgb = Color3.fromHSV(hue,1,1)
+	Stroke.Color = rgb
+end)
+
+-- ===== TITLE =====
 local Title = Instance.new("TextLabel", Main)
 Title.Size = UDim2.new(1,0,0,45)
 Title.BackgroundTransparency = 1
-Title.Text = "🔒 SL HUB KEY SYSTEM"
+Title.Text = "🔒SL HUB KEY SYSTEM"
 Title.Font = Enum.Font.GothamBold
 Title.TextSize = 18
-Title.TextColor3 = Color3.fromRGB(255,255,255)
 
+RunService.RenderStepped:Connect(function()
+	Title.TextColor3 = Color3.fromHSV(hue,1,1)
+end)
+
+-- ===== TEXTBOX =====
 local Box = Instance.new("TextBox", Main)
 Box.Size = UDim2.new(0.85,0,0,40)
 Box.Position = UDim2.new(0.075,0,0.35,0)
 Box.PlaceholderText = "ENTER KEY"
 Box.Text = ""
-Box.ClearTextOnFocus = true
 Box.Font = Enum.Font.Gotham
 Box.TextSize = 14
-Box.BackgroundColor3 = Color3.fromRGB(0,0,255) -- blue box
-Box.TextColor3 = Color3.fromRGB(255,255,255)
+Box.BackgroundColor3 = Color3.fromRGB(25,25,25)
 Instance.new("UICorner", Box)
 
-local Verify = Instance.new("TextButton", Main)
-Verify.Size = UDim2.new(0.85,0,0,38)
-Verify.Position = UDim2.new(0.075,0,0.65,0)
-Verify.Text = "VERIFY"
-Verify.Font = Enum.Font.GothamBold
-Verify.TextSize = 14
-Verify.TextColor3 = Color3.fromRGB(255,255,255)
-Verify.BackgroundColor3 = Color3.fromRGB(0,255,0) -- green button
-Instance.new("UICorner", Verify)
-
--- ===== RGP COLOR CYCLE =====
-spawn(function()
-    local colors = {Color3.fromRGB(255,0,0), Color3.fromRGB(0,255,0), Color3.fromRGB(0,0,255)}
-    local index = 1
-    while Gui.Parent do
-        Main.BackgroundColor3 = colors[index]
-        index = index + 1
-        if index > #colors then index = 1 end
-        task.wait(0.5) -- change color every 0.5s
-    end
+RunService.RenderStepped:Connect(function()
+	Box.TextColor3 = Color3.fromHSV(hue,1,1)
 end)
 
--- ===== VERIFY KEY =====
+-- ===== BUTTON CREATOR =====
+local function RGBButton(text,pos)
+	local btn = Instance.new("TextButton", Main)
+	btn.Size = UDim2.new(0.4,0,0,36)
+	btn.Position = pos
+	btn.Text = text
+	btn.Font = Enum.Font.GothamBold
+	btn.TextSize = 14
+	btn.BackgroundColor3 = Color3.fromRGB(30,30,30)
+	Instance.new("UICorner", btn)
+
+	RunService.RenderStepped:Connect(function()
+		btn.TextColor3 = Color3.fromHSV(hue,1,1)
+	end)
+
+	return btn
+end
+
+local Verify = RGBButton("VERIFY", UDim2.new(0.075,0,0.65,0))
+local GetKey = RGBButton("GET KEY", UDim2.new(0.525,0,0.65,0))
+
+-- ===== BUTTON LOGIC =====
 Verify.MouseButton1Click:Connect(function()
-    local key = string.upper(Box.Text:gsub("%s+",""))
-    if key == NORMAL_KEY or key == GHOST_KEY then
-        getgenv().KEY_RESULT = key
-        Gui:Destroy()
-    else
-        Box.Text = ""
-        Box.PlaceholderText = "WRONG KEY"
-    end
+	local key = string.upper(string.gsub(Box.Text,"%s+",""))
+
+	if key == NORMAL_KEY or key == PAID_KEY or key == GHOST_KEY then
+		getgenv().KEY_TYPE = key
+		Gui:Destroy()
+	else
+		Box.Text = ""
+		Box.PlaceholderText = "WRONG KEY!"
+		TweenService:Create(Main,TweenInfo.new(0.1),{
+			Position = Main.Position + UDim2.new(0,6,0,0)
+		}):Play()
+		task.wait(0.1)
+		TweenService:Create(Main,TweenInfo.new(0.1),{
+			Position = Main.Position
+		}):Play()
+	end
+end)
+
+GetKey.MouseButton1Click:Connect(function()
+	if setclipboard then
+		setclipboard(GET_KEY_LINK)
+	end
 end)
 
 -- ===== WAIT FOR KEY =====
-repeat task.wait() until getgenv().KEY_RESULT
+repeat task.wait() until getgenv().KEY_TYPE
 
--- ===== LOAD BY KEY =====
-if getgenv().KEY_RESULT == NORMAL_KEY then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/main/SL HUB MUSCLE LEGENDS.lua"))()
-elseif getgenv().KEY_RESULT == GHOST_KEY then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20LEGENDS%20OF%20SPEED"))()
+-- ===== LOAD =====
+if getgenv().KEY_TYPE == NORMAL_KEY then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20MUSCLE"))()
+elseif getgenv().KEY_TYPE == PAID_KEY then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PAID/refs/heads/main/SL%20HUB%20PAID"))()
+elseif getgenv().KEY_TYPE == GHOST_KEY then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/SL%20HUB%20LEGENDS%20OF%20SPEED"))()
 end
