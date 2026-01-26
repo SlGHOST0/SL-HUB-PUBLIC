@@ -1,0 +1,15 @@
+repeat task.wait() until game:IsLoaded()
+
+local url = "https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/beta%20(1).txt"
+
+local success, err = pcall(function()
+
+    loadstring(game:HttpGet(url))()
+
+end)
+
+if not success then
+
+    warn("Failed to load SL HUB:", err)
+
+end
