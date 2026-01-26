@@ -1,22 +1,16 @@
-repeat task.wait() until game:IsLoaded()
-
---// Anti-AFK
-local VirtualUser = game:GetService("VirtualUser")
+--// Anti AFK Script
 local Players = game:GetService("Players")
+local VirtualUser = game:GetService("VirtualUser")
 local LocalPlayer = Players.LocalPlayer
 
 LocalPlayer.Idled:Connect(function()
-    VirtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+    -- Move mouse slightly and click to prevent AFK
+    VirtualUser:Button2Down(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
     task.wait(1)
-    VirtualUser:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+    VirtualUser:Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
 end)
 
-repeat task.wait() until game:IsLoaded()
-
-local Players = game:GetService("Players")
-local TweenService = game:GetService("TweenService")
-local RunService = game:GetService("RunService")
-local LocalPlayer = Players.LocalPlayer
+print("Anti-AFK is active")
 local WindUI = (loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/GUI.txt")))();
 local Window = WindUI:CreateWindow({
 	Title = "SL HUB",
