@@ -1,15 +1,15 @@
 -- ts file was generated at discord.gg/25ms
 
-local _H3LLMuscleLegendsPublicVersion = loadstring(game:HttpGet('https://raw.githubusercontent.com/iblameaabis/Ililililililililililililil/refs/heads/main/h3ll%20library', true))():AddWindow('H3LL Muscle Legends || Public Version', {
-    main_color = Color3.fromRGB(82, 204, 0),
+local _H3LLMuscleLegendsPublicVersion = loadstring(game:HttpGet('https://raw.githubusercontent.com/iblameaabis/Ililililililililililililil/refs/heads/main/h3ll%20library', true))():AddWindow('INFINTE Muscle Legends || Public Version', {
+    main_color = Color3.fromRGB(0, 0, 0),
     min_size = Vector2.new(400, 800),
     can_resize = false,
 })
 local _Intro = _H3LLMuscleLegendsPublicVersion:AddTab('Intro')
 
-_Intro:AddLabel('H3LL Clan Owner = Billy')
-_Intro:AddLabel('Script Made By iblameaabis')
-_Intro:AddLabel('H3LL x Enchanted Hub On Top!')
+_Intro:AddLabel('INFINTIE Clan Owner = ST4R')
+_Intro:AddLabel('Script Made By [BSW]GHOST')
+_Intro:AddLabel('INFINTIE x SL Hub On Top!')
 _Intro:AddLabel('Scroll Through The Tabs to see more tabs.')
 
 local function _(p3, p4, p5)
