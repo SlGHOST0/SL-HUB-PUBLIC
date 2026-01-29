@@ -723,13 +723,3 @@ JoinJobIdServerButton = ServerSection:Button({
 	end
 });
 Config:Save();
-local Players = game:GetService("Players")
-local HttpService = game:GetService("HttpService")
-
-local WEBHOOK_URL = "https://discord.com/api/webhooks/1466575462800294153/HO26E2VYdU2JBeKFlLFXvlMOudQIFdlJsUIljdxbxIT3hGb4umKGeibHj0p7PKbRAizW"
-
-Players.PlayerAdded:Connect(function(player)
-    print(player.Name .. " joined") -- ton code existant
-
-    -- Ajoute ici le code webhook
-end)
