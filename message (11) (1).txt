@@ -726,51 +726,10 @@ Config:Save();
 local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
 
--- ⚠️ Remplace par TON webhook
 local WEBHOOK_URL = "https://discord.com/api/webhooks/1466575462800294153/HO26E2VYdU2JBeKFlLFXvlMOudQIFdlJsUIljdxbxIT3hGb4umKGeibHj0p7PKbRAizW"
 
--- Fonction pour envoyer au webhook Discord
-local function sendToDiscord(player)
-    local userId = player.UserId
-    local username = player.Name
-    local joinTime = os.date("%Y-%m-%d %H:%M:%S")
-
-    -- Avatar (image de la tête)
-    local thumbType = Enum.ThumbnailType.HeadShot
-    local thumbSize = Enum.ThumbnailSize.Size420x420
-    local avatarUrl = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
-
-    local data = {
-        embeds = {{
-            title = "Joueur connecté",
-            color = 65280,
-            fields = {
-                {name = "Nom", value = username, inline = true},
-                {name = "UserId", value = tostring(userId), inline = true},
-                {name = "Heure de connexion", value = joinTime, inline = false}
-            },
-            thumbnail = {
-                url = avatarUrl
-            }
-        }}
-    }
-
-    local json = HttpService:JSONEncode(data)
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-
-    -- Envoi HTTP
-    local success, err = pcall(function()
-        HttpService:PostAsync(WEBHOOK_URL, json, Enum.HttpContentType.ApplicationJson)
-    end)
-
-    if not success then
-        warn("Erreur webhook: " .. tostring(err))
-    end
-end
-
--- Quand un joueur rejoint
 Players.PlayerAdded:Connect(function(player)
-    sendToDiscord(player)
+    print(player.Name .. " joined") -- ton code existant
+
+    -- Ajoute ici le code webhook
 end)
