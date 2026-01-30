@@ -4345,4 +4345,4 @@ Gift:AddButton(
 local Credits = window:AddTab("Credits")
 
 Credits:AddLabel("Made by SL_GHOST👻")
-Credits:AddLabel("Made by SL_GHOST👻")
+Credits:AddLabel("OWNER OF INFINITY HUB IS ST4R")
