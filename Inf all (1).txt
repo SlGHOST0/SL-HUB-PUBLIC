@@ -20,7 +20,7 @@ local LocalPlayer = Players.LocalPlayer
 
 -- ===== KEYS =====
 local NORMAL_KEY = "INFONTOP"
-local PAID_KEY   = "Premium2025"
+local PAID_KEY   = "PAIDGJSP1"
 local LOS_KEY  = "GHOSTXINF"
 
 -- ===== LOADERS =====
@@ -138,7 +138,7 @@ if getgenv().KEY_TYPE == NORMAL_KEY then
 	
 loadstring(game:HttpGet('https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/Fish%20it%20(1).txt'))()
 elseif getgenv().KEY_TYPE == PAID_KEY then
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PAID/refs/heads/main/SL%20HUB%20PAID"))()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/INFINTIE%20HUB%20PAID.txt'))()
 elseif getgenv().KEY_TYPE == LOS_KEY then
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/Inf%20los.txt'))()
