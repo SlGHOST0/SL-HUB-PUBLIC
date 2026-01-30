@@ -165,8 +165,8 @@ AutoFarm:AddSwitch("Eat Egg (30 Min)", function(state)
 end)
 
 
--- 4ÃƒÂ¯Ã‚Â¸Ã‚ÂÃƒÂ¢Ã†â€™Ã‚Â£ Switch: Anti Lag
-AutoFarm:AddSwitch("Anti Lag", function(State)
+-- 4ÃƒÂ¯Ã‚Â¸Ã‚ÂÃƒÂ¢Ã†â€™Ã‚Â£ Switch: Anti Lag with only farming
+AutoFarm:AddSwitch("Anti Lag with only farming", function(State)
     local lighting = game:GetService("Lighting")
     if State then
         for _, gui in pairs(LocalPlayer.PlayerGui:GetChildren()) do
