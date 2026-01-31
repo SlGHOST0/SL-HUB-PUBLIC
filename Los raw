@@ -6,7 +6,7 @@ local RunService = game:GetService("RunService")
 local LocalPlayer = Players.LocalPlayer
 
 local CORRECT_KEY = "SLONTOP"
-local GET_KEY_LINK = "https://discord.gg/TA5J8cDNeH"
+local GET_KEY_LINK = "https://discord.gg/5hYUFxKnPa"
 
 getgenv().KEY_PASSED = false
 
@@ -126,8 +126,8 @@ GetKey.MouseButton1Click:Connect(function()
 end)
 
 repeat task.wait() until getgenv().KEY_PASSED == true
-                
---// Anti AFK Script
+
+-// Anti AFK Script
 local Players = game:GetService("Players")
 local VirtualUser = game:GetService("VirtualUser")
 local LocalPlayer = Players.LocalPlayer
@@ -138,13 +138,15 @@ LocalPlayer.Idled:Connect(function()
     task.wait(1)
     VirtualUser:Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
 end)
+
+print("Anti-AFK is active")
 local WindUI = (loadstring(game:HttpGet("https://raw.githubusercontent.com/SlGHOST0/SL-HUB-PUBLIC/refs/heads/main/GUI.txt")))();
 local Window = WindUI:CreateWindow({
 	Title = "SL HUB",
 	Author = "Legends Of Speed",
 	Folder = "SL HUB",
-	Icon = "rbxassetid://78704487974306",
-	Background = "rbxassetid://94846344741255",
+	Icon = "rbxassetid://72777483581546",
+	Background = "rbxassetid://121528576341444",
 	Size = UDim2.fromOffset(450, 300),
 	MinSize = Vector2.new(520, 330),
 	Transparent = false,
@@ -154,7 +156,7 @@ local Window = WindUI:CreateWindow({
 	ScrollBarEnabled = false
 });
 Window:EditOpenButton({
-	Icon = "rbxassetid://78704487974306",
+	Icon = "rbxassetid://72777483581546",
 	CornerRadius = UDim.new(0, 10),
 	Position = UDim2.new(0, 75, 0, 100),
 	OnlyMobile = false,
@@ -211,17 +213,17 @@ Window:CreateTopbarButton("Save Config", "save", function()
 	WindUI:Notify({
 		Title = "Config Saved!",
 		Content = "Config automatically loads when the script is run",
-		Icon = "rbxassetid://78704487974306",
+		Icon = "rbxassetid://72777483581546",
 		Duration = 5
 	});
 end, 990);
 Window:CreateTopbarButton("Reset Config", "trash-2", function()
-	if isfile("WindUI/Relz Hub/config/Grow a Garden Config.json") then
-		delfile("WindUI/SL HUB Hub/config/LEGENDS OF SPERD Config.json");
+	if isfile("WindUI/SL Hub/config/Grow a Garden Config.json") then
+		delfile("WindUI/SL Hub/config/ LEGENDSOFSPEED Config.json");
 		WindUI:Notify({
 			Title = "Config Deleted!",
 			Content = "Config reset to default",
-			Icon = "rbxassetid://90888007617642",
+			Icon = "rbxassetid://9088800761764",
 			Duration = 5
 		});
 	end;
