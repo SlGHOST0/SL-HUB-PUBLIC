@@ -145,8 +145,8 @@ local Window = WindUI:CreateWindow({
 	Title = "SL HUB",
 	Author = "Legends Of Speed",
 	Folder = "SL HUB",
-	Icon = "rbxassetid://72777483581546",
-	Background = "rbxassetid://80977801702698",
+	Icon = "rbxassetid://90888007617642",
+	Background = "rbxassetid://114411419357961",
 	Size = UDim2.fromOffset(450, 300),
 	MinSize = Vector2.new(520, 330),
 	Transparent = false,
@@ -156,7 +156,7 @@ local Window = WindUI:CreateWindow({
 	ScrollBarEnabled = false
 });
 Window:EditOpenButton({
-	Icon = "rbxassetid:/72777483581546",
+	Icon = "rbxassetid:/90888007617642",
 	CornerRadius = UDim.new(0, 10),
 	Position = UDim2.new(0, 75, 0, 100),
 	OnlyMobile = false,
