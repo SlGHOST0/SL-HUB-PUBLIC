@@ -113,7 +113,7 @@ Window.ClipsDescendants = true
 Window.Position = UDim2.new(0, 20, 0, 20)
 Window.Selectable = true
 Window.Size = UDim2.new(0, 200, 0, 200)
-Window.Image = "rbxassetid://72777483581546"
+Window.Image = "rbxassetid://2851926732"
 Window.ImageColor3 = Color3.new(0.0823529, 0.0862745, 0.0901961)
 Window.ScaleType = Enum.ScaleType.Slice
 Window.SliceCenter = Rect.new(12, 12, 12, 12)
@@ -142,7 +142,7 @@ Toggle.Position = UDim2.new(0, 5, 0, -2)
 Toggle.Rotation = 90
 Toggle.Size = UDim2.new(0, 20, 0, 20)
 Toggle.ZIndex = 2
-Toggle.Image = "rbxthumb://type=Asset&id=72777483581546&w=420&h=420"
+Toggle.Image = "https://www.roblox.com/Thumbs/Asset.ashx?width=420&height=420&assetId=140396981095890"
 
 local corner = Instance.new("UICorner")
 corner.CornerRadius = UDim.new(1, 0) -- full circle
@@ -154,7 +154,7 @@ Base.BackgroundColor3 = Color3.new(0.160784, 0.290196, 0.478431)
 Base.BorderSizePixel = 0
 Base.Position = UDim2.new(0, 0, 0.800000012, 0)
 Base.Size = UDim2.new(1, 0, 0, 10)
-Base.Image = "rbxassetid://72777483581546"
+Base.Image = "rbxassetid://2851926732"
 Base.ImageColor3 = Color3.new(0.160784, 0.290196, 0.478431)
 Base.ScaleType = Enum.ScaleType.Slice
 Base.SliceCenter = Rect.new(12, 12, 12, 12)
@@ -165,7 +165,7 @@ Top.BackgroundColor3 = Color3.new(1, 1, 1)
 Top.BackgroundTransparency = 1
 Top.Position = UDim2.new(0, 0, 0, -5)
 Top.Size = UDim2.new(1, 0, 0, 10)
-Top.Image = "rbxassetid://72777483581546"
+Top.Image = "rbxassetid://2851926732"
 Top.ImageColor3 = Color3.new(0.160784, 0.290196, 0.478431)
 Top.ScaleType = Enum.ScaleType.Slice
 Top.SliceCenter = Rect.new(12, 12, 12, 12)
