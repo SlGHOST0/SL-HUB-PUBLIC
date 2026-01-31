@@ -6,7 +6,7 @@ local RunService = game:GetService("RunService")
 local LocalPlayer = Players.LocalPlayer
 
 local CORRECT_KEY = "SLONTOP"
-local GET_KEY_LINK = "https://discord.gg/5hYUFxKnPa"
+local GET_KEY_LINK = "https://discord.gg/Pv89sBheF"
 
 getgenv().KEY_PASSED = false
 
@@ -127,7 +127,7 @@ end)
 
 repeat task.wait() until getgenv().KEY_PASSED == true
 
--// Anti AFK Script
+--// Anti AFK Script
 local Players = game:GetService("Players")
 local VirtualUser = game:GetService("VirtualUser")
 local LocalPlayer = Players.LocalPlayer
@@ -145,8 +145,8 @@ local Window = WindUI:CreateWindow({
 	Title = "SL HUB",
 	Author = "Legends Of Speed",
 	Folder = "SL HUB",
-	Icon = "rbxassetid://72777483581546",
-	Background = "rbxassetid://121528576341444",
+	Icon = "rbxassetid://92815713349334",
+	Background = "rbxassetid://94846344741255",
 	Size = UDim2.fromOffset(450, 300),
 	MinSize = Vector2.new(520, 330),
 	Transparent = false,
@@ -156,7 +156,7 @@ local Window = WindUI:CreateWindow({
 	ScrollBarEnabled = false
 });
 Window:EditOpenButton({
-	Icon = "rbxassetid://72777483581546",
+	Icon = "rbxassetid://92815713349334",
 	CornerRadius = UDim.new(0, 10),
 	Position = UDim2.new(0, 75, 0, 100),
 	OnlyMobile = false,
@@ -213,17 +213,17 @@ Window:CreateTopbarButton("Save Config", "save", function()
 	WindUI:Notify({
 		Title = "Config Saved!",
 		Content = "Config automatically loads when the script is run",
-		Icon = "rbxassetid://72777483581546",
+		Icon = "rbxassetid://78704487974306",
 		Duration = 5
 	});
 end, 990);
 Window:CreateTopbarButton("Reset Config", "trash-2", function()
-	if isfile("WindUI/SL Hub/config/Grow a Garden Config.json") then
-		delfile("WindUI/SL Hub/config/ LEGENDSOFSPEED Config.json");
+	if isfile("WindUI/Sl Hub/config/Grow a Garden Config.json") then
+		delfile("WindUI/Sl Hub/config/Grow a Garden Config.json");
 		WindUI:Notify({
 			Title = "Config Deleted!",
 			Content = "Config reset to default",
-			Icon = "rbxassetid://9088800761764",
+			Icon = "rbxassetid://90888007617642",
 			Duration = 5
 		});
 	end;
