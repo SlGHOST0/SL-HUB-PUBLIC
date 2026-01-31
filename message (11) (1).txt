@@ -143,7 +143,7 @@ local Window = WindUI:CreateWindow({
 	Title = "SL HUB",
 	Author = "Legends Of Speed",
 	Folder = "SL HUB",
-	Icon = "rbxassetid://72777483581546",
+	Icon = "rbxassetid://78704487974306",
 	Background = "rbxassetid://94846344741255",
 	Size = UDim2.fromOffset(450, 300),
 	MinSize = Vector2.new(520, 330),
@@ -154,7 +154,7 @@ local Window = WindUI:CreateWindow({
 	ScrollBarEnabled = false
 });
 Window:EditOpenButton({
-	Icon = "rbxassetid://72777483581546",
+	Icon = "rbxassetid://78704487974306",
 	CornerRadius = UDim.new(0, 10),
 	Position = UDim2.new(0, 75, 0, 100),
 	OnlyMobile = false,
@@ -217,7 +217,7 @@ Window:CreateTopbarButton("Save Config", "save", function()
 end, 990);
 Window:CreateTopbarButton("Reset Config", "trash-2", function()
 	if isfile("WindUI/Relz Hub/config/Grow a Garden Config.json") then
-		delfile("WindUI/Relz Hub/config/Grow a Garden Config.json");
+		delfile("WindUI/SL HUB Hub/config/LEGENDS OF SPERD Config.json");
 		WindUI:Notify({
 			Title = "Config Deleted!",
 			Content = "Config reset to default",
