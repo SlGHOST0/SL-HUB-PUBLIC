@@ -113,7 +113,7 @@ Window.ClipsDescendants = true
 Window.Position = UDim2.new(0, 20, 0, 20)
 Window.Selectable = true
 Window.Size = UDim2.new(0, 200, 0, 200)
-Window.Image = "rbxassetid://92815713349334"
+Window.Image = "rbxassetid://2851926732"
 Window.ImageColor3 = Color3.new(0.0823529, 0.0862745, 0.0901961)
 Window.ScaleType = Enum.ScaleType.Slice
 Window.SliceCenter = Rect.new(12, 12, 12, 12)
@@ -142,7 +142,7 @@ Toggle.Position = UDim2.new(0, 5, 0, -2)
 Toggle.Rotation = 90
 Toggle.Size = UDim2.new(0, 20, 0, 20)
 Toggle.ZIndex = 2
-Toggle.Image = "rbxassetid://92815713349334
+Toggle.Image = "https://www.roblox.com/Thumbs/Asset.ashx?width=420&height=420&assetId=140396981095890"
 
 local corner = Instance.new("UICorner")
 corner.CornerRadius = UDim.new(1, 0) -- full circle
@@ -351,7 +351,7 @@ Indicator_2.Position = UDim2.new(0.899999976, -10, 0.100000001, 0)
 Indicator_2.Rotation = -90
 Indicator_2.Size = UDim2.new(0, 15, 0, 15)
 Indicator_2.ZIndex = 2
-Indicator_2.Image = "https://www.roblox.com/Thumbs/Asset.ashx?width=420&height=420&assetId=4744658743"
+Indicator_2.Image = "rbxthumb://type=Asset&id=72777483581546&w=420&h=420"
 
 Box.Name = "Box"
 Box.Parent = Dropdown
